@@ -1,0 +1,27 @@
+{
+  "slug": "add-a-phone-caller-to-a-video-room",
+  "title": "Add a phone caller to a video room",
+  "alias": "PSTN dial-in to a video conference",
+  "summary": "Create a video room through REST, then connect a phone call to that room.",
+  "scenario": "A workshop stand-up on video that the mechanic on the road joins by phone",
+  "surfaces": [
+    "swml",
+    "python"
+  ],
+  "demo": "none",
+  "category": "video",
+  "products": [
+    "video",
+    "voice"
+  ],
+  "capabilities": [
+    "video"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "create-a-video-room-and-join-from-the-browser"
+  ],
+  "related": [
+    "build-a-conference-call"
+  ]
+}

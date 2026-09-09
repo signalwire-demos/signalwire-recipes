@@ -1,0 +1,26 @@
+{
+  "slug": "send-from-a-number-group-with-sticky-sender",
+  "title": "Send from a number group with sticky sender",
+  "alias": "sticky sender for SMS number pools",
+  "summary": "When you create a number group with sticky_sender: true, the platform picks From numbers out of that pool and holds one per recipient. A compat send names the group as MessagingServiceSid and carries no From.",
+  "scenario": "A bike shop texting repair updates from several numbers, where each customer should keep seeing the same one",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "sticky-sender",
+    "numbers"
+  ],
+  "subcategory": "routing",
+  "prerequisites": [
+    "send-an-sms"
+  ],
+  "related": [
+    "handle-opt-outs-yourself"
+  ]
+}

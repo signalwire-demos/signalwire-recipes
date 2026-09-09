@@ -1,0 +1,26 @@
+{
+  "slug": "move-a-twiml-app-by-changing-the-endpoint",
+  "title": "Move a TwiML app by changing the endpoint",
+  "alias": "Twilio migration (TwiML compatibility)",
+  "summary": "Point your TwiML app at SignalWire's compatible REST endpoint and credentials while keeping the same call request and XML response.",
+  "scenario": "A shop's Twilio voice app, a Say and a Hangup behind one URL, moving without a rewrite",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "migration"
+  ],
+  "subcategory": "other",
+  "prerequisites": [
+    "answer-an-inbound-call"
+  ],
+  "related": [
+    "handle-call-status-callbacks",
+    "build-an-ivr-without-a-server"
+  ]
+}

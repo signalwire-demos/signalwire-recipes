@@ -1,0 +1,33 @@
+{
+  "slug": "normalize-spoken-dates-and-phone-numbers-in-a-tool-handler",
+  "title": "Normalize spoken dates and phone numbers in a voice AI tool handler",
+  "alias": "spoken input normalization for voice AI",
+  "summary": "Take a date and a phone number in the caller's words, turn them into an ISO date and an E.164 number in the tool handler, and read both back for the caller to check.",
+  "scenario": "A repair shop scheduling a callback by phone",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "tool-calling"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "talk",
+  "subcategory": "tools",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "commit-a-transaction-from-a-call",
+    "collect-required-details-in-any-order"
+  ],
+  "also_known_as": [
+    "speech-to-text date parsing",
+    "phone number from spoken digits",
+    "voice form validation",
+    "callback scheduling by phone"
+  ]
+}

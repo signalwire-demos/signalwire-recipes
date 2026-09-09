@@ -1,0 +1,15 @@
+# Record a call - background recording that covers the bridged leg too.
+# record_call starts before connect, so the whole conversation is recorded.
+# The recording URL arrives at status_url when the recording finishes.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - record_call:
+        format: wav
+        stereo: true
+        direction: both
+        status_url: "https://your-host.example.com/recording-status"
+    - play: { url: "say:This call is recorded for quality purposes." }
+    - connect: { to: "+15550100001" }
+    - hangup: {}

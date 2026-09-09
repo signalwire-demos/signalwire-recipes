@@ -1,0 +1,36 @@
+{
+  "slug": "host-a-twiml-bin-without-a-server",
+  "title": "Host a TwiML bin without a server",
+  "alias": "hosted cXML script (TwiML bin)",
+  "summary": "Store a cXML document on SignalWire with one REST call, get back the URL it is served from, and route a number to it, with no server of yours in the call.",
+  "scenario": "A shop's main line greets the caller and forwards to the workshop",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "cxml",
+    "call-fabric",
+    "serverless"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "routing",
+  "prerequisites": [
+    "buy-a-number-and-point-it-at-your-app"
+  ],
+  "related": [
+    "move-a-twiml-app-by-changing-the-endpoint",
+    "build-an-ivr-without-a-server",
+    "forward-calls-to-a-phone-and-keep-the-callers-number"
+  ],
+  "also_known_as": [
+    "TwiML bin",
+    "LaML bin",
+    "hosted cXML",
+    "serverless call forwarding"
+  ]
+}

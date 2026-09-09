@@ -1,0 +1,28 @@
+{
+  "slug": "push-events-from-an-agent-to-the-browser",
+  "title": "Push events from a voice AI agent to the browser",
+  "alias": "voice-controlled website navigation",
+  "summary": "Return a JSON event from a voice AI agent tool and deliver it to the browser connected to the call.",
+  "scenario": "A booking page that highlights the slot the caller picked, the moment the agent records it",
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "call-fabric"
+  ],
+  "subcategory": "tools",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "call-from-a-browser",
+    "inject-a-message-into-a-live-ai-call"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "let-your-users-buy-a-phone-number-through-your-app",
+  "title": "Let your users buy a phone number through your app",
+  "alias": "self-service number provisioning for tenants",
+  "summary": "Give each customer their own project and API token, then search, buy, route and release phone numbers with their credentials rather than yours.",
+  "scenario": "Your customers pick a local number during signup and give it back when they cancel",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "rest",
+    "multi-tenant"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "isolate-tenants-with-subprojects-and-scoped-tokens",
+    "buy-a-number-and-point-it-at-your-app"
+  ],
+  "related": [
+    "register-an-e911-address-for-a-number",
+    "configure-an-agent-per-request"
+  ]
+}

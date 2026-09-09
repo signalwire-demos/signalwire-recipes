@@ -1,0 +1,34 @@
+{
+  "slug": "control-when-a-caller-can-interrupt-a-voice-agent",
+  "title": "Control when a caller can interrupt a voice AI agent",
+  "alias": "barge-in and turn-taking for voice AI",
+  "summary": "Set which speech events may cut a voice AI agent off, how many words it takes, and how much silence ends the caller's turn, as bounded ai.params.",
+  "scenario": "A bike shop's front desk that finishes its greeting and lets a caller cut in after a few words",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "voice-tuning"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "talk",
+  "subcategory": "call-control",
+  "prerequisites": [
+    "route-a-call-to-an-ai-agent"
+  ],
+  "related": [
+    "switch-language-mid-call",
+    "give-an-agent-a-tool"
+  ],
+  "also_known_as": [
+    "barge-in",
+    "interruption handling",
+    "end of speech timeout",
+    "voice activity detection settings",
+    "turn detection"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "verify-a-webhook-signature",
+  "title": "Verify a webhook signature",
+  "alias": "webhook signature verification",
+  "summary": "The gate refuses, with 403 and before any route runs, a request whose signature header does not match hex(HMAC(signing_key, url + raw_body)). X-Signalwire-SHA256-Signature decides when present; otherwise X-Signalwire-Signature, the SHA-1 one, does.",
+  "scenario": "A public webhook that refuses any request without a valid SignalWire signature",
+  "category": "voice",
+  "products": [
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "security",
+    "webhooks"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "subcategory": "governance",
+  "prerequisites": [
+    "answer-an-inbound-call"
+  ],
+  "related": [
+    "handle-call-status-callbacks",
+    "protect-tool-webhooks-with-per-call-tokens"
+  ]
+}

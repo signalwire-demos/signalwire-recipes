@@ -1,0 +1,33 @@
+{
+  "slug": "register-a-sip-endpoint-and-receive-calls",
+  "title": "Register a SIP endpoint and receive calls",
+  "alias": "SIP endpoint registration",
+  "summary": "Create SIP credentials for a softphone, register it as an endpoint, and route calls to its address.",
+  "scenario": "A shop that wants the workshop's desk phone on a SIP softphone, reached from the main number",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "sip",
+    "call-fabric"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "answer-an-inbound-call"
+  ],
+  "related": [
+    "receive-calls-in-the-browser",
+    "route-sip-calls-to-agents-by-username"
+  ],
+  "also_known_as": [
+    "SIP registration",
+    "softphone or desk phone",
+    "Grandstream",
+    "Zoiper"
+  ]
+}

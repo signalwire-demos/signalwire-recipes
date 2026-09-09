@@ -1,0 +1,34 @@
+{
+  "slug": "reply-to-an-inbound-sms",
+  "title": "Reply to an inbound SMS",
+  "alias": "two-way SMS",
+  "summary": "Receive a text and answer it in the same thread.",
+  "scenario": "Two-way texting",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "sms"
+  ],
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "text",
+  "subcategory": "other",
+  "prerequisites": [
+    "buy-a-number-and-point-it-at-your-app"
+  ],
+  "related": [
+    "send-an-sms"
+  ],
+  "next": [
+    "run-the-same-agent-over-text"
+  ],
+  "also_known_as": [
+    "SMS autoresponder",
+    "two-way SMS",
+    "SMS keyword reply"
+  ]
+}

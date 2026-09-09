@@ -1,0 +1,35 @@
+{
+  "slug": "queue-a-call-until-an-agent-is-free",
+  "title": "Queue a call until an agent is free",
+  "alias": "call queuing",
+  "summary": "Callers wait in a named queue with hold audio and are bridged in order as agents connect to it.",
+  "scenario": "",
+  "surfaces": [
+    "swml",
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "queue"
+  ],
+  "subcategory": "routing",
+  "prerequisites": [
+    "answer-an-inbound-call"
+  ],
+  "related": [
+    "offer-a-callback-instead-of-a-hold",
+    "hand-off-from-ai-to-a-human-agent"
+  ],
+  "next": [
+    "transfer-a-call"
+  ],
+  "also_known_as": [
+    "call queue with hold music",
+    "hold music",
+    "ACD queue"
+  ]
+}

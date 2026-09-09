@@ -1,0 +1,27 @@
+{
+  "slug": "handle-opt-outs-yourself",
+  "title": "Handle SMS STOP and START in your own code",
+  "alias": "SMS opt-out (STOP) handling",
+  "summary": "Verify inbound webhook signatures, record STOP or START, send a confirmation, and check the consent record before every outbound SMS.",
+  "scenario": "A bike shop that texts repair updates and must stop the moment a customer says so",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "opt-out",
+    "compliance"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "send-an-sms"
+  ],
+  "related": [
+    "redact-a-message-body-after-sending",
+    "verify-a-webhook-signature"
+  ]
+}

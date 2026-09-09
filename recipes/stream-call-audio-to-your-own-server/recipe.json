@@ -1,0 +1,27 @@
+{
+  "slug": "stream-call-audio-to-your-own-server",
+  "title": "Stream call audio to your own server",
+  "alias": "media streaming and audio forking",
+  "summary": "Copy live call audio to your WebSocket or RTP server, then stop the stream by its control ID.",
+  "scenario": "A workshop that wants every support call's audio on its own server, live",
+  "surfaces": [
+    "swml",
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "media-streaming"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "record-a-call"
+  ],
+  "related": [
+    "start-live-transcription",
+    "listen-to-a-live-call"
+  ]
+}

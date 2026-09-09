@@ -1,0 +1,31 @@
+{
+  "slug": "take-a-voicemail",
+  "title": "Take a voicemail",
+  "alias": "voicemail",
+  "summary": "If a bridge fails, play a voicemail prompt, record the caller's message, and send its download URL to a status webhook.",
+  "scenario": "A one-person shop whose number should take a message when the owner cannot pick up",
+  "surfaces": [
+    "swml",
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "recording"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "try-destinations-in-order"
+  ],
+  "related": [
+    "record-a-call",
+    "detect-an-answering-machine"
+  ],
+  "also_known_as": [
+    "voicemail box",
+    "missed call handling"
+  ]
+}

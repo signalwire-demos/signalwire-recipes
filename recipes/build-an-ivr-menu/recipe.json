@@ -1,0 +1,35 @@
+{
+  "slug": "build-an-ivr-menu",
+  "title": "Build an IVR menu",
+  "alias": "IVR menu (DTMF)",
+  "summary": "Play a menu, collect keypad input, and route the caller to the right place.",
+  "scenario": "Press 1 for sales",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "dtmf"
+  ],
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "talk",
+  "subcategory": "routing",
+  "prerequisites": [
+    "answer-an-inbound-call"
+  ],
+  "related": [
+    "collect-speech-input-and-branch"
+  ],
+  "next": [
+    "queue-a-call-until-an-agent-is-free",
+    "transfer-a-call"
+  ],
+  "also_known_as": [
+    "phone menu",
+    "auto attendant",
+    "press 1 menu"
+  ]
+}

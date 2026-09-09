@@ -1,0 +1,23 @@
+{
+  "slug": "publish-events-to-browsers-with-pubsub",
+  "title": "Publish events to browsers with PubSub",
+  "alias": "real-time browser events (PubSub)",
+  "summary": "A PubSub token grants read or write on named channels for a number of minutes. Your server mints one per member, and decides who may write. The browser never holds the project API token.",
+  "scenario": "A workshop status board in the shop's browser that updates when a repair is done, with customers' phones allowed to read and only the board allowed to write",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "pubsub"
+  ],
+  "subcategory": "tools",
+  "related": [
+    "push-events-from-an-agent-to-the-browser",
+    "let-a-browser-dial-your-agent-with-no-dashboard-setup"
+  ]
+}

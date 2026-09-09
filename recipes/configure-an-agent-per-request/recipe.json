@@ -1,0 +1,30 @@
+{
+  "slug": "configure-an-agent-per-request",
+  "title": "Configure a voice AI agent per request for many tenants",
+  "alias": "multi-tenant voice AI",
+  "summary": "Configure a temporary voice AI agent for each request from tenant data in a query string or header, without changing the deployed agent.",
+  "scenario": "Two bicycle shops sharing one front-desk deployment",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "multi-tenant"
+  ],
+  "subcategory": "other",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "switch-language-mid-call"
+  ],
+  "also_known_as": [
+    "caller ID greeting",
+    "personalise the greeting by caller",
+    "multi-tenant AI agent"
+  ]
+}

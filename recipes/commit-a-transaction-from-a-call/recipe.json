@@ -1,0 +1,27 @@
+{
+  "slug": "commit-a-transaction-from-a-call",
+  "title": "Commit a transaction from a call",
+  "alias": "voice transaction confirmation",
+  "summary": "Use an allow-list to validate the caller's confirmation before one transaction tool commits the request.",
+  "scenario": "A bicycle shop taking accessory orders by phone",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "tool-calling",
+    "contexts"
+  ],
+  "subcategory": "tools",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "enforce-state-transitions-in-a-tool-handler",
+    "write-a-disposition-from-handler-owned-data"
+  ]
+}

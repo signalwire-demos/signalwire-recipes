@@ -1,0 +1,46 @@
+# Call an API without a backend.
+#
+# The whole tool is data. The request, the response template and the failure
+# path all sit inside the document SignalWire runs, so there is no service of
+# yours in the path and nothing to deploy.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - ai:
+        prompt:
+          text: >
+            You take book orders for an independent bookshop. Confirm the title
+            with the lookup tool before you add anything to an order.
+        SWAIG:
+          functions:
+            - function: look_up_book
+              description: >
+                Look up a book by its ISBN to confirm the title before
+                ordering. Use this whenever the caller reads out an ISBN.
+              parameters:
+                type: object
+                properties:
+                  isbn:
+                    type: string
+                    description: The 10 or 13 digit ISBN, digits only, no dashes.
+                required:
+                  - isbn
+              data_map:
+                webhooks:
+                  # ${args.isbn} is substituted before SignalWire sends this
+                  - url: "https://openlibrary.org/isbn/${args.isbn}.json"
+                    method: GET
+                    # this output belongs to the webhook above it
+                    output:
+                      response: >-
+                        ISBN ${args.isbn} is ${response.title}, published
+                        ${response.publish_date}.
+                    # a body carrying this key means the lookup failed
+                    error_keys:
+                      - error
+                # top level: spoken only when every webhook above has failed
+                output:
+                  response: >-
+                    I could not reach the book catalogue. Ask the caller to read
+                    the ISBN again, or offer to take the title instead.

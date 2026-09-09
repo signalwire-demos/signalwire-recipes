@@ -1,0 +1,29 @@
+{
+  "slug": "receive-an-inbound-fax",
+  "title": "Receive an inbound fax",
+  "alias": "inbound fax to webhook",
+  "summary": "Receive an inbound fax at a webhook URL and get a status callback when delivery completes.",
+  "scenario": "",
+  "surfaces": [
+    "swml",
+    "python"
+  ],
+  "demo": "none",
+  "category": "fax",
+  "products": [
+    "fax"
+  ],
+  "capabilities": [
+    "fax"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "buy-a-number-and-point-it-at-your-app"
+  ],
+  "related": [
+    "send-a-fax"
+  ],
+  "next": [
+    "extract-structured-data-after-a-call"
+  ]
+}

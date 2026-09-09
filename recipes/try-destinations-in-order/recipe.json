@@ -1,0 +1,32 @@
+{
+  "slug": "try-destinations-in-order",
+  "title": "Dial destinations in order or all at once, with a failure path",
+  "alias": "sequential and simultaneous ring",
+  "summary": "Dial destinations sequentially or simultaneously, then run a failure branch if no connection succeeds.",
+  "scenario": "A shop line that hunts through the counter, the workshop's SIP phone and the owner's mobile",
+  "surfaces": [
+    "swml",
+    "python"
+  ],
+  "demo": "talk",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "failover"
+  ],
+  "subcategory": "routing",
+  "prerequisites": [
+    "transfer-a-call"
+  ],
+  "related": [
+    "queue-a-call-until-an-agent-is-free"
+  ],
+  "also_known_as": [
+    "ring group",
+    "hunt group",
+    "find me follow me",
+    "failover dialing"
+  ]
+}

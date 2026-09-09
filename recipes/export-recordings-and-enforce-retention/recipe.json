@@ -1,0 +1,27 @@
+{
+  "slug": "export-recordings-and-enforce-retention",
+  "title": "Export recordings and enforce retention",
+  "alias": "call recording retention and export",
+  "summary": "Copy recordings older than your retention window to your storage, then delete each SignalWire original after a successful copy.",
+  "scenario": "A shop that must keep call recordings for a year in its own archive and nowhere else",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "recording",
+    "compliance"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "record-a-call"
+  ],
+  "related": [
+    "reconcile-webhooks-against-the-logs-api",
+    "redact-a-message-body-after-sending"
+  ]
+}

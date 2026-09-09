@@ -1,0 +1,19 @@
+{
+  "slug": "dental-receptionist-with-outbound-confirmations",
+  "title": "Dental receptionist with outbound confirmations",
+  "alias": "AI receptionist with appointment confirmations",
+  "summary": "Handle inbound reception calls and place outbound appointment confirmations from one service connected to a practice-management API.",
+  "scenario": "",
+  "surfaces": [],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "outbound",
+    "contexts"
+  ],
+  "kind": "build"
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "switch-language-mid-call",
+  "title": "Switch language mid-call",
+  "alias": "multilingual voice AI",
+  "summary": "Change the conversation language and matching voice during a live voice AI call.",
+  "scenario": "Bilingual support lines",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "multilingual"
+  ],
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "talk",
+  "subcategory": "other"
+}

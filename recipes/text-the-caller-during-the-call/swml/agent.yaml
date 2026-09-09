@@ -1,0 +1,15 @@
+# Text the caller during the call, in plain SWML: answer, send the text to the
+# number that dialled in, and carry on talking. `%{call.from}` is the caller's
+# number. Replace from_number with a messaging-enabled number on your project
+# before you deploy this document; +15551230000 is a placeholder.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - send_sms:
+        to_number: "%{call.from}"
+        from_number: "+15551230000"
+        body: "Ridgeline Cycles: workshop hours are 8 to 6, Monday to Saturday."
+        tags: ["hours"]
+    - play: { url: "say:We have texted you our hours. How can we help today?" }
+    - hangup: {}

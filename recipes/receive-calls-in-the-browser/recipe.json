@@ -1,0 +1,28 @@
+{
+  "slug": "receive-calls-in-the-browser",
+  "title": "Receive calls in the browser",
+  "alias": "WebRTC softphone in the browser",
+  "summary": "Register a browser as a WebRTC endpoint with a subscriber token, then route calls to its address.",
+  "scenario": "A workshop mechanic who takes the shop's calls at a laptop, with no desk phone",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "call-fabric",
+    "tokens"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "call-from-a-browser"
+  ],
+  "related": [
+    "let-a-browser-dial-your-agent-with-no-dashboard-setup",
+    "register-a-sip-endpoint-and-receive-calls"
+  ]
+}

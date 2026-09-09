@@ -1,0 +1,20 @@
+{
+  "slug": "build-a-conference-call",
+  "title": "Build a conference call",
+  "alias": "conference calling",
+  "summary": "Put several legs in one room and control each member independently.",
+  "scenario": "Three-way calls and bridging",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "conference"
+  ],
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "ai-to-ai",
+  "subcategory": "call-control"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "call-an-api-without-a-backend",
+  "title": "Let a voice AI agent call an API without your server",
+  "alias": "serverless API integration for voice AI",
+  "summary": "SignalWire makes the API call, so no service of yours is in the tool path.",
+  "scenario": "Package tracking, weather, stock quotes",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "datamap",
+    "serverless"
+  ],
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "talk",
+  "subcategory": "tools"
+}

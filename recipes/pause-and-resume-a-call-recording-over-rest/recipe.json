@@ -1,0 +1,29 @@
+{
+  "slug": "pause-and-resume-a-call-recording-over-rest",
+  "title": "Pause and resume a call recording over REST",
+  "alias": "call recording pause and resume",
+  "summary": "Start recording a live call from your own backend, pause it while a card number is read out, resume it, and stop it, all by control id over REST.",
+  "scenario": "Your agent desktop pauses the recording while the caller reads a card number, then resumes it",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "rest",
+    "recording"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "record-a-call"
+  ],
+  "related": [
+    "end-or-transfer-a-live-call-over-rest",
+    "get-recording-consent-before-recording",
+    "export-recordings-and-enforce-retention"
+  ]
+}

@@ -1,0 +1,14 @@
+# Connect a PBX - the two SWML documents that sit on either side of the SIP link.
+# `main` is what the Domain Application runs when the PBX sends a call in: bridge
+# it to whatever PSTN number the PBX dialled. `to_pbx` is what a PSTN number runs
+# to ring into the PBX through the SIP Gateway resource created by app.py.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - connect: { to: "${call.to}" }
+    - hangup: {}
+  to_pbx:
+    - answer: {}
+    - connect: { to: "/private/acme-pbx-gateway" }
+    - hangup: {}

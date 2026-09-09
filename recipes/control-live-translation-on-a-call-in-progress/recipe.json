@@ -1,0 +1,30 @@
+{
+  "slug": "control-live-translation-on-a-call-in-progress",
+  "title": "Start, steer and stop live translation on a call in progress",
+  "alias": "real-time call translation over REST",
+  "summary": "Switch translation on partway through a call, speak a translated line into it, ask for a summary, and switch it off, each with one REST command.",
+  "scenario": "An agent realises mid-call that the customer would rather speak Spanish, and a supervisor wants a summary afterwards",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice",
+    "ai-agents"
+  ],
+  "capabilities": [
+    "rest",
+    "translation"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "translate-a-call-in-real-time"
+  ],
+  "related": [
+    "start-live-transcription",
+    "switch-language-mid-call",
+    "end-or-transfer-a-live-call-over-rest"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "look-up-the-caller-and-branch-inside-the-call-flow",
+  "title": "Look up the caller and branch inside the call flow",
+  "alias": "data-driven call routing (CRM lookup)",
+  "summary": "Have the call itself fetch the caller's record from your API, branch on a field of the reply, and still reach a human when the lookup fails.",
+  "scenario": "A bike shop routes a known customer to their own desk and everyone else to the main line",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "swml",
+    "call-fabric",
+    "serverless"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "routing",
+  "prerequisites": [
+    "build-an-ivr-without-a-server"
+  ],
+  "related": [
+    "route-calls-by-dialed-number-or-time",
+    "try-destinations-in-order",
+    "host-a-twiml-bin-without-a-server"
+  ],
+  "also_known_as": [
+    "CRM lookup during a call",
+    "screen pop routing",
+    "route by customer tier",
+    "database-driven IVR"
+  ]
+}

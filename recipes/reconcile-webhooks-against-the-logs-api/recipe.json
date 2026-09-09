@@ -1,0 +1,31 @@
+{
+  "slug": "reconcile-webhooks-against-the-logs-api",
+  "title": "Reconcile webhooks against the Logs API",
+  "alias": "webhook reconciliation against call logs",
+  "summary": "Page through voice and message logs, find entries missing from your webhook store, and retrieve each missing call's event history.",
+  "scenario": "A nightly job that finds the calls and messages your status handler has no record of",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "observability"
+  ],
+  "subcategory": "observe",
+  "prerequisites": [
+    "send-an-sms"
+  ],
+  "related": [
+    "place-an-outbound-call"
+  ],
+  "also_known_as": [
+    "CDR",
+    "call detail records",
+    "call logs API"
+  ]
+}

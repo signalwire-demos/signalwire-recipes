@@ -1,0 +1,25 @@
+{
+  "slug": "offer-a-callback-instead-of-a-hold",
+  "title": "Offer a callback instead of a hold",
+  "alias": "virtual hold with callback",
+  "summary": "Collect the caller's number and context, end the held call, then call them back with that context.",
+  "scenario": "Queues that do not waste the caller's time",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "queue",
+    "outbound"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "subcategory": "routing",
+  "also_known_as": [
+    "virtual hold",
+    "callback queue",
+    "call-back option"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "enforce-state-transitions-in-a-tool-handler",
+  "title": "Enforce an AI agent's next step in code",
+  "alias": "code-enforced AI conversation flow",
+  "summary": "Return the next allowed conversation state from code instead of letting the AI agent choose it.",
+  "scenario": "When step instructions alone are not enough",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "governance"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "subcategory": "governance"
+}

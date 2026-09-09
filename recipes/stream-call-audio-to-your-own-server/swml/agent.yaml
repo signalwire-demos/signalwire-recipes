@@ -1,0 +1,19 @@
+# Stream call audio to your own server. `tap` forks the call's audio to a
+# WebSocket or RTP destination while the call carries on; `stop_tap` ends the
+# fork by its control_id. Here both sides of the conversation stream to a
+# wss:// server while the caller talks to the workshop, then the tap stops.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - tap:
+        uri: "wss://media.example.com/tap"
+        control_id: "workshop-tap"
+        direction: "both"
+        codec: "PCMU"
+    - connect:
+        to: "+15550100001"
+        timeout: 20
+    - stop_tap:
+        control_id: "workshop-tap"
+    - hangup: {}

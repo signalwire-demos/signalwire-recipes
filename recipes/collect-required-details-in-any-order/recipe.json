@@ -1,0 +1,35 @@
+{
+  "slug": "collect-required-details-in-any-order",
+  "title": "Collect required details in any order with a voice AI agent",
+  "alias": "slot filling for voice AI agents",
+  "summary": "Let a caller give the required details of a report in any order, keep the checklist in the tool handlers, and refuse to file until every required detail is in.",
+  "scenario": "An employee absence reporting line for a warehouse",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "tool-calling",
+    "governance"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "talk",
+  "subcategory": "governance",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "commit-a-transaction-from-a-call",
+    "enforce-state-transitions-in-a-tool-handler",
+    "write-a-disposition-from-handler-owned-data"
+  ],
+  "also_known_as": [
+    "form filling by voice",
+    "absence reporting line",
+    "intake checklist",
+    "required fields before submit"
+  ]
+}

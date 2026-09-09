@@ -1,0 +1,29 @@
+{
+  "slug": "end-or-transfer-a-live-call-over-rest",
+  "title": "End or transfer a live call over REST",
+  "alias": "REST call control (hangup and transfer)",
+  "summary": "Hang up a live call with a reason, send it to a new destination, or unbridge it from its peer, each with one REST command addressed to the call id.",
+  "scenario": "Your agent desktop has a Hang up button and a Transfer box, and the call was not started by that page",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "rest"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "place-an-outbound-call"
+  ],
+  "related": [
+    "inject-a-message-into-a-live-ai-call",
+    "transfer-a-call",
+    "play-a-prompt-and-collect-input-over-rest",
+    "pause-and-resume-a-call-recording-over-rest"
+  ]
+}

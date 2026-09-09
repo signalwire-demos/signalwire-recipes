@@ -1,0 +1,27 @@
+{
+  "slug": "split-one-number-into-isolated-personas",
+  "title": "Run isolated personas behind one number",
+  "alias": "multi-persona AI on one number",
+  "summary": "Route one phone number among isolated sales, support, and billing AI personas, each with access only to its own tools.",
+  "scenario": "A bicycle shop with one number and three desks that must not blur into each other",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "contexts",
+    "governance"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "scope-tools-per-step"
+  ],
+  "related": [
+    "change-the-agents-instructions-mid-call",
+    "require-verification-before-unlocking-tools"
+  ]
+}

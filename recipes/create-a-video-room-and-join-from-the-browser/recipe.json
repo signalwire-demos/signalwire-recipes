@@ -1,0 +1,30 @@
+{
+  "slug": "create-a-video-room-and-join-from-the-browser",
+  "title": "Create a video room and join from the browser",
+  "alias": "WebRTC video rooms",
+  "summary": "A room is created over REST, a token is minted per participant, and the browser joins with layouts and screen share.",
+  "scenario": "",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "video",
+  "products": [
+    "video"
+  ],
+  "capabilities": [
+    "video"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "call-from-a-browser"
+  ],
+  "related": [
+    "get-a-webrtc-token-with-restricted-dial-targets"
+  ],
+  "next": [],
+  "featured": true,
+  "feature_line": "Video rooms from one REST call",
+  "feature_rank": 7
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "control-a-call-from-your-own-process-over-relay",
+  "title": "Control a call from your own process over WebSocket",
+  "alias": "programmable call control over WebSocket",
+  "summary": "One persistent WebSocket answers inbound calls and places outbound ones from your process; no HTTP webhook is exposed.",
+  "scenario": "",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "relay"
+  ],
+  "subcategory": "call-control"
+}

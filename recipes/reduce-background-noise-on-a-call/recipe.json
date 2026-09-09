@@ -1,0 +1,24 @@
+{
+  "slug": "reduce-background-noise-on-a-call",
+  "title": "Reduce background noise on a call",
+  "alias": "AI noise suppression",
+  "summary": "Turn call noise reduction on or off in the call flow or during a live call through REST.",
+  "scenario": "A caller leaving a message from a busy workshop floor",
+  "surfaces": [
+    "swml",
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "take-a-voicemail"
+  ],
+  "related": [
+    "record-a-call"
+  ]
+}

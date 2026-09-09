@@ -1,0 +1,29 @@
+{
+  "slug": "pause-a-voice-ai-agent-mid-call",
+  "title": "Pause a voice AI agent mid-call and bring it back",
+  "alias": "AI agent hold and resume",
+  "summary": "Put the caller on hold with a spoken line, take them off it, or end the AI on a call that keeps running, each with one REST command.",
+  "scenario": "Your backend needs a moment to finish a lookup, and the agent should stop listening until it is done",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "rest"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "route-a-call-to-an-ai-agent"
+  ],
+  "related": [
+    "inject-a-message-into-a-live-ai-call",
+    "keep-heavy-state-out-of-global-data",
+    "end-or-transfer-a-live-call-over-rest"
+  ]
+}

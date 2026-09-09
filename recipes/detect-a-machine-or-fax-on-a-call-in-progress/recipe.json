@@ -1,0 +1,29 @@
+{
+  "slug": "detect-a-machine-or-fax-on-a-call-in-progress",
+  "title": "Detect a machine, fax tone or digits on a call in progress",
+  "alias": "answering machine detection (AMD) over REST",
+  "summary": "Start answering machine, fax tone or keypad detection on a call that is already up, and read the result at your webhook.",
+  "scenario": "Your dialer answers a transferred call and needs to know whether a person, a voicemail or a fax machine is on the line",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "rest",
+    "amd"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "place-an-outbound-call"
+  ],
+  "related": [
+    "detect-an-answering-machine",
+    "end-or-transfer-a-live-call-over-rest",
+    "handle-call-status-callbacks"
+  ]
+}

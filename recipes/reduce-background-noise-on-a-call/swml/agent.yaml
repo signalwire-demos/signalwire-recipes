@@ -1,0 +1,16 @@
+# Reduce background noise on a call. `denoise` switches noise reduction on for
+# this leg and `stop_denoise` switches it off again; both take no parameters.
+# Here it is on while the caller records a message and off for the goodbye.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - denoise: {}
+    - play: { url: "say:Leave your message after the tone." }
+    - record:
+        beep: true
+        max_length: 60
+        terminators: "#"
+    - stop_denoise: {}
+    - play: { url: "say:Thanks. Goodbye." }
+    - hangup: {}

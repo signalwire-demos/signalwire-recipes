@@ -1,0 +1,19 @@
+{
+  "slug": "send-dtmf-to-an-external-ivr",
+  "title": "Send DTMF to someone else's IVR",
+  "alias": "automated DTMF navigation",
+  "summary": "Send programmed keypad tones during an outbound call to navigate an external IVR.",
+  "scenario": "Reaching a human at a carrier",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "dtmf"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "subcategory": "call-control"
+}

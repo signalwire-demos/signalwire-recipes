@@ -1,0 +1,29 @@
+{
+  "slug": "ground-an-agent-in-your-docs",
+  "title": "Ground a voice AI agent in your documents",
+  "alias": "RAG for voice AI",
+  "summary": "Connect a voice AI agent to your documents so it retrieves relevant content before answering.",
+  "scenario": "A docs hotline that does not invent features",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "datasphere",
+    "rag"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "subcategory": "knowledge",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "call-an-api-without-a-backend"
+  ],
+  "next": [
+    "write-a-reusable-agent-skill"
+  ]
+}

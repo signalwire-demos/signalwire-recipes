@@ -1,0 +1,25 @@
+{
+  "slug": "listen-to-a-live-call",
+  "title": "Listen to a live call",
+  "alias": "silent call monitoring",
+  "summary": "Attach to a call in progress and hear both sides without joining it.",
+  "scenario": "Silent monitoring",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "tap",
+    "media-streaming"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "observe",
+  "subcategory": "observe",
+  "also_known_as": [
+    "call monitoring",
+    "silent monitor",
+    "live call listening"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "get-toll-free-messaging-verified",
+  "title": "Get toll-free messaging verified",
+  "alias": "toll-free SMS verification",
+  "summary": "Submit the verification form required before a toll-free number can send SMS, then wait for carrier review.",
+  "scenario": "",
+  "surfaces": [],
+  "demo": "none",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "compliance"
+  ],
+  "subcategory": "governance"
+}

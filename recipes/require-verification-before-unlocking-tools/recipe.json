@@ -1,0 +1,33 @@
+{
+  "slug": "require-verification-before-unlocking-tools",
+  "title": "Require verification before unlocking AI agent tools",
+  "alias": "verification-gated AI agent tools",
+  "summary": "The account tools do not exist in the model's world until a handler says the caller passed.",
+  "scenario": "Balance and account enquiries",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "governance",
+    "tool-calling"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "subcategory": "governance",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "scope-tools-per-step",
+    "hide-fields-from-the-model"
+  ],
+  "next": [
+    "send-an-otp-by-sms-with-voice-fallback"
+  ],
+  "featured": true,
+  "feature_line": "Verification-gated AI agent tools",
+  "feature_rank": 3
+}

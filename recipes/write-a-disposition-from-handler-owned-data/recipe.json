@@ -1,0 +1,32 @@
+{
+  "slug": "write-a-disposition-from-handler-owned-data",
+  "title": "Write call dispositions from data your handlers recorded",
+  "alias": "call disposition from handler data",
+  "summary": "Build call dispositions only from qualification fields recorded by tool handlers, not from transcripts or model summaries.",
+  "scenario": "Qualifying inbound leads for a fleet bicycle supplier",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "governance",
+    "post-prompt"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "extract-structured-data-after-a-call",
+    "enforce-state-transitions-in-a-tool-handler"
+  ],
+  "also_known_as": [
+    "CRM logging after a call",
+    "call disposition",
+    "lead qualification notes"
+  ]
+}

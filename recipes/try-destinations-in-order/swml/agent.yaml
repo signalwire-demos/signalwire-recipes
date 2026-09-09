@@ -1,0 +1,36 @@
+# Try destinations in order. `connect` takes a `serial` list of destinations
+# to dial in order. When the bridge ends, `result` runs: `connect_result` is
+# "connected" or "failed", and the "failed" branch is the failure path.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - play: { url: "say:One moment while I find someone to help you." }
+    - connect:
+        timeout: 15
+        serial:
+          - { to: "+15550100001" }
+          - { to: "sip:workshop@pbx.example.com" }
+          - { to: "+15550100003" }
+        result:
+          case:
+            connected:
+              - play: { url: "say:Thanks for calling Ridgeline Cycles. Goodbye." }
+              - hangup: {}
+            failed:
+              - play: { url: "say:Nobody could take your call. Please try again later." }
+              - hangup: {}
+  # Variant: dial the phone destinations at once.
+  parallel:
+    - answer: {}
+    - connect:
+        timeout: 20
+        parallel:
+          - { to: "+15550100001" }
+          - { to: "+15550100003" }
+        result:
+          case:
+            failed:
+              - play: { url: "say:Nobody could take your call." }
+              - hangup: {}
+    - hangup: {}

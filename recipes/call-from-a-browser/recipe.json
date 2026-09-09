@@ -1,0 +1,29 @@
+{
+  "slug": "call-from-a-browser",
+  "title": "Call from a browser",
+  "alias": "WebRTC browser calling",
+  "summary": "Place a call from a web page into the same flow a phone reaches.",
+  "scenario": "Support widget on a website",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "call-fabric",
+    "tokens"
+  ],
+  "surfaces": [
+    "typescript",
+    "python"
+  ],
+  "demo": "talk",
+  "subcategory": "call-control",
+  "prerequisites": [],
+  "related": [
+    "get-a-webrtc-token-with-restricted-dial-targets"
+  ],
+  "next": [
+    "create-a-video-room-and-join-from-the-browser",
+    "route-a-call-to-an-ai-agent"
+  ]
+}

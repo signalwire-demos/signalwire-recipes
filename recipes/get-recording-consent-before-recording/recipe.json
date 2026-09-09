@@ -1,0 +1,27 @@
+{
+  "slug": "get-recording-consent-before-recording",
+  "title": "Get recording consent before recording",
+  "alias": "call recording consent",
+  "summary": "Speak the disclosure and capture the answer before any audio is written to disk.",
+  "scenario": "Two-party-consent jurisdictions",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "governance",
+    "recording",
+    "compliance",
+    "contexts"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "subcategory": "governance",
+  "also_known_as": [
+    "recording disclosure announcement",
+    "this call may be recorded prompt"
+  ]
+}

@@ -1,0 +1,27 @@
+# Translate a call in real time. Each side speaks their own language and hears
+# the other translated, in a voice you choose per direction.
+#
+# live_translate starts before connect, so the leg the bridge adds is inside the
+# translation session. Started after connect it would only cover the caller.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - live_translate:
+        action:
+          start:
+            from_lang: en-US
+            to_lang: es-ES
+            # the voice each side hears the other in
+            from_voice: Polly.Joanna
+            to_voice: Polly.Lucia
+            # both legs: without local-caller the agent is never translated
+            direction:
+              - remote-caller
+              - local-caller
+            webhook: "https://your-host.example.com/translation"
+            live_events: true
+            ai_summary: true
+            speech_engine: deepgram
+    - connect: { to: "+15550100001" }
+    - hangup: {}

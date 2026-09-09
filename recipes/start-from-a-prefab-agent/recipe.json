@@ -1,0 +1,30 @@
+{
+  "slug": "start-from-a-prefab-agent",
+  "title": "Start from a prefab AI agent",
+  "alias": "prebuilt AI receptionist and survey agents",
+  "summary": "A complete receptionist or survey agent runs from a prefab class and a short configuration block.",
+  "scenario": "A bicycle shop's front desk and its workshop follow-up survey",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "prefabs"
+  ],
+  "subcategory": "other",
+  "related": [
+    "give-an-agent-a-tool",
+    "transfer-a-call"
+  ],
+  "also_known_as": [
+    "conversational IVR",
+    "AI IVR",
+    "AI receptionist",
+    "intent routing"
+  ]
+}

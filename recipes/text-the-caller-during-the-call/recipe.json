@@ -1,0 +1,32 @@
+{
+  "slug": "text-the-caller-during-the-call",
+  "title": "Text the caller during the call",
+  "alias": "in-call SMS",
+  "summary": "Have an AI agent tool text the caller during a live voice call without exposing the phone number to the model.",
+  "scenario": "A workshop booking line that texts the agreed appointment time to the caller",
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "talk",
+  "category": "messaging",
+  "products": [
+    "messaging",
+    "ai-agents"
+  ],
+  "capabilities": [
+    "sms"
+  ],
+  "subcategory": "tools",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "send-an-sms",
+    "hide-fields-from-the-model"
+  ],
+  "also_known_as": [
+    "send a link by text during a call",
+    "in-call SMS"
+  ]
+}

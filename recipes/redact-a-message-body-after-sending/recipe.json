@@ -1,0 +1,25 @@
+{
+  "slug": "redact-a-message-body-after-sending",
+  "title": "Redact a message body after sending",
+  "alias": "SMS content redaction",
+  "summary": "One PATCH with body \"\" clears a sent message's stored body in SignalWire's records. The empty string is the only value the spec accepts, and only a message in a terminal state is eligible.",
+  "scenario": "You texted a one-time code and want it gone from SignalWire's stored records",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "compliance"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "send-an-sms"
+  ],
+  "related": [
+    "send-an-otp-by-sms-with-voice-fallback"
+  ]
+}

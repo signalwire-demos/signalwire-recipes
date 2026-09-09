@@ -1,0 +1,16 @@
+# Stream agent debug events, in plain SWML: two params on the ai verb turn the
+# stream on. The platform POSTs each event to debug_webhook_url as it happens.
+# debug_webhook_level selects them: 1 for barge, errors, session start and end
+# and step changes; 2 adds every LLM request and response. Credentials in the
+# URL protect the endpoint.
+version: "1.0.0"
+sections:
+  main:
+    - ai:
+        prompt:
+          text: >
+            You take messages for a bicycle workshop. Ask for the caller's
+            name and what they need, then say the workshop will call back.
+        params:
+          debug_webhook_url: "https://user:password@your-host.example/debug_events"
+          debug_webhook_level: 1

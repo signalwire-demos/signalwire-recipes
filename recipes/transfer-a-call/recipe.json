@@ -1,0 +1,34 @@
+{
+  "slug": "transfer-a-call",
+  "title": "Transfer a call",
+  "alias": "call transfer",
+  "summary": "Move a live caller to another number or address.",
+  "scenario": "The simplest handoff there is",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "transfer"
+  ],
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "talk",
+  "subcategory": "handoff",
+  "prerequisites": [
+    "answer-an-inbound-call"
+  ],
+  "related": [
+    "brief-the-human-before-the-bridge-completes"
+  ],
+  "next": [
+    "transfer-a-call-without-losing-context"
+  ],
+  "also_known_as": [
+    "blind call transfer",
+    "SIP URI transfer",
+    "route a call to Vapi, Retell or ElevenLabs over SIP"
+  ]
+}

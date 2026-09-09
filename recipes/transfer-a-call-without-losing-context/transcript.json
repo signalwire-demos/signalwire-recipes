@@ -1,0 +1,13 @@
+{
+  "caption": "One handoff. The caller is not asked anything twice.",
+  "lines": [
+    {"who": "intake", "ai": true, "text": "Who am I speaking with, and what can I help with?"},
+    {"who": "caller", "text": "Dana Whitfield. There is a charge on my bill I do not recognise."},
+    {"note": "caller_name, intake_reason and verified are written to the shared context, then the call connects to the billing specialist."},
+    {"who": "intake", "ai": true, "text": "Thanks Dana, connecting you to billing."},
+    {"note": "New agent, same call. The context is already present on its first turn."},
+    {"who": "billing", "ai": true, "text": "Hi Dana - I see you are asking about an unrecognised charge. Let me pull that up."},
+    {"who": "caller", "text": "You already know?"},
+    {"who": "billing", "ai": true, "text": "It came through with your call."}
+  ]
+}

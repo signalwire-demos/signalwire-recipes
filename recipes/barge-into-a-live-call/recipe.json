@@ -1,0 +1,19 @@
+{
+  "slug": "barge-into-a-live-call",
+  "title": "Barge into a live call",
+  "alias": "call barge-in",
+  "summary": "Join an in-progress call with full audio, and leave without tearing it down.",
+  "scenario": "Supervisor takeover",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "conference"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "observe",
+  "subcategory": "observe"
+}

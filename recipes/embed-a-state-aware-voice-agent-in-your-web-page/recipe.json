@@ -1,0 +1,45 @@
+{
+  "slug": "embed-a-state-aware-voice-agent-in-your-web-page",
+  "former_slugs": [
+    "docs-site-voice-guide"
+  ],
+  "kind": "build",
+  "title": "Embed a state-aware voice agent in your web page",
+  "alias": "embedded voice AI assistant for websites",
+  "summary": "Embed a voice and video assistant that searches your documentation, knows the current page, and navigates visitors to relevant sections.",
+  "scenario": "Quincy for Harbor: a documentation site whose help is a person you talk to, and who moves the page for you",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice",
+    "video"
+  ],
+  "capabilities": [
+    "rag",
+    "user-event",
+    "browser-sdk",
+    "avatar",
+    "fillers",
+    "guest-token",
+    "lambda"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/ericminessale/harbor-docs",
+  "demo_url": "https://harbor-docs-5k2.pages.dev/",
+  "featured": true,
+  "feature_line": "State-aware voice AI inside your web page",
+  "feature_rank": 1,
+  "composes": [
+    "ground-an-agent-in-your-docs",
+    "push-events-from-an-agent-to-the-browser",
+    "give-an-agent-a-video-avatar",
+    "cover-tool-latency-with-fillers",
+    "let-a-browser-dial-your-agent-with-no-dashboard-setup",
+    "call-from-a-browser",
+    "inject-a-message-into-a-live-ai-call",
+    "configure-an-agent-per-request",
+    "keep-heavy-state-out-of-global-data",
+    "run-an-agent-as-a-cloud-function"
+  ],
+  "demo": "none"
+}

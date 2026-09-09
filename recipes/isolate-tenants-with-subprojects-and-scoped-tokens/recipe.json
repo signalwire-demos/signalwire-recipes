@@ -1,0 +1,24 @@
+{
+  "slug": "isolate-tenants-with-subprojects-and-scoped-tokens",
+  "title": "Isolate tenants with subprojects and scoped tokens",
+  "alias": "multi-tenant isolation with scoped API tokens",
+  "summary": "Create a subproject for each tenant and issue API tokens limited to that subproject and an explicit permission list.",
+  "scenario": "A SaaS that gives each customer their own numbers, logs and credentials on one SignalWire account",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "multi-tenant",
+    "security"
+  ],
+  "subcategory": "governance",
+  "related": [
+    "reconcile-webhooks-against-the-logs-api"
+  ]
+}

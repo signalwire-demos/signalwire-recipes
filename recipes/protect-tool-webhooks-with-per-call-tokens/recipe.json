@@ -1,0 +1,25 @@
+{
+  "slug": "protect-tool-webhooks-with-per-call-tokens",
+  "title": "Protect AI agent tool webhooks with per-call tokens",
+  "alias": "AI agent tool webhook authentication",
+  "summary": "Mint a token for each call and AI agent tool, then reject missing, expired, edited, or mismatched tokens.",
+  "scenario": "An account line where refunds must not be triggered from outside the call that asked",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "security"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "require-verification-before-unlocking-tools"
+  ]
+}

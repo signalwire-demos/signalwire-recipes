@@ -1,0 +1,16 @@
+# Push an event to the connected client in plain SWML: `user_event` carries
+# any JSON object to the client on the call. This document places it after
+# `answer` and before `ai`.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - user_event:
+        event:
+          type: "call_answered"
+          agent: "booking"
+    - ai:
+        prompt:
+          text: >
+            You book workshop slots for Ridgeline Cycles from a web page that
+            shows the available times.

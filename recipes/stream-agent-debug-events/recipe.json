@@ -1,0 +1,26 @@
+{
+  "slug": "stream-agent-debug-events",
+  "title": "Stream voice AI agent debug events",
+  "alias": "voice AI observability",
+  "summary": "Select a voice AI debug level, stream matching events to your webhook, and handle them as they arrive.",
+  "scenario": "A message-taking agent whose barges and model errors you want to see live",
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "observability"
+  ],
+  "subcategory": "observe",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "extract-structured-data-after-a-call"
+  ]
+}

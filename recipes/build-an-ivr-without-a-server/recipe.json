@@ -1,0 +1,26 @@
+{
+  "slug": "build-an-ivr-without-a-server",
+  "title": "Build an IVR without a server",
+  "alias": "serverless IVR",
+  "summary": "Create and assign a serverless IVR call flow through REST, without hosting a webhook server.",
+  "scenario": "A bike shop that wants press 1 for sales, 2 for the workshop on its main number and nothing to keep running",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "serverless"
+  ],
+  "subcategory": "routing",
+  "prerequisites": [
+    "answer-an-inbound-call"
+  ],
+  "related": [
+    "collect-speech-input-and-branch",
+    "route-calls-by-dialed-number-or-time"
+  ]
+}

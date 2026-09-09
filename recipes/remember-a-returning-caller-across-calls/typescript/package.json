@@ -1,0 +1,21 @@
+{
+  "name": "remember-a-returning-caller-across-calls",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.18.1"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@signalwire/sdk": "2.0.5",
+    "dotenv": "16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10",
+    "typescript": "5.4.5"
+  }
+}

@@ -1,0 +1,37 @@
+# Build an IVR menu - one SWML document, no server.
+# Host this as a SWML Script in the Dashboard and point a number at it, or serve
+# it from any URL. Replace the two phone numbers before you use it.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - prompt:
+        play: >-
+          say:Thanks for calling. Press 1 for sales, 2 for support,
+          or 3 for opening hours.
+        max_digits: 1
+        digit_timeout: 6
+        initial_timeout: 8
+    - switch:
+        variable: prompt_value
+        case:
+          "1":
+            - transfer: { dest: sales }
+          "2":
+            - transfer: { dest: support }
+          "3":
+            - transfer: { dest: hours }
+        default:
+          - play: { url: "say:Sorry, I did not catch that." }
+          - transfer: { dest: main }
+  sales:
+    - play: { url: "say:Connecting you to sales." }
+    - connect: { to: "+15550100001" }
+    - hangup: {}
+  support:
+    - play: { url: "say:Connecting you to support." }
+    - connect: { to: "+15550100002" }
+    - hangup: {}
+  hours:
+    - play: { url: "say:We are open Monday to Friday, nine to five, Eastern time." }
+    - hangup: {}

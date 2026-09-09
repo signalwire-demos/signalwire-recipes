@@ -1,0 +1,22 @@
+# Several callers in one named audio conference.
+#
+# `name` is the whole identity: two calls running this document are in the same
+# room. Everything else here is about who controls the room's lifetime.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - join_conference:
+        name: standup
+        # a guest does not start the room and does not end it
+        start_on_enter: false
+        end_on_exit: false
+        muted: false
+        beep: onEnter
+        max_participants: 25
+        record: do-not-record
+        # who is in the room, as it changes
+        status_callback: "https://your-host.example.com/conference-status"
+        # one value: the schema takes a single event, not a list
+        status_callback_event: join
+    - hangup: {}

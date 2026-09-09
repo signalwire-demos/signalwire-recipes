@@ -1,0 +1,20 @@
+{
+  "slug": "extract-structured-data-after-a-call",
+  "title": "Extract structured data after a call",
+  "alias": "post-call structured data extraction",
+  "summary": "Get typed fields out of a finished conversation instead of parsing a transcript.",
+  "scenario": "Dispositions and CRM writeback",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "post-prompt",
+    "observability"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "subcategory": "tools"
+}

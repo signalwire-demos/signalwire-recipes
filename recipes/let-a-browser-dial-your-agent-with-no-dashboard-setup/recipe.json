@@ -1,0 +1,28 @@
+{
+  "slug": "let-a-browser-dial-your-agent-with-no-dashboard-setup",
+  "title": "Let a browser dial your agent with no dashboard setup",
+  "alias": "programmatic WebRTC voice agent access",
+  "summary": "Create a dialable voice AI endpoint and a restricted guest token over REST, without configuring either in the dashboard.",
+  "scenario": "A support page whose talk-to-us button should reach the agent you deployed a minute ago, with no Dashboard visit first",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "call-fabric",
+    "tokens"
+  ],
+  "subcategory": "tools",
+  "prerequisites": [
+    "route-a-call-to-an-ai-agent"
+  ],
+  "related": [
+    "call-from-a-browser",
+    "protect-tool-webhooks-with-per-call-tokens"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "place-an-outbound-call",
+  "title": "Place an outbound call",
+  "alias": "programmatic outbound calling",
+  "summary": "Dial a number from your own code and follow the call through to completion.",
+  "scenario": "Notification and reminder calls",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "outbound"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "subcategory": "call-control"
+}

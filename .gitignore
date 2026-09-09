@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.env
+recipes/*/typescript/node_modules/
+recipes/*/typescript/dist/

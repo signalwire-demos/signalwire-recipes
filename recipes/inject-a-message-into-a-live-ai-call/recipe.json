@@ -1,0 +1,26 @@
+{
+  "slug": "inject-a-message-into-a-live-ai-call",
+  "title": "Inject a message into a live AI call",
+  "alias": "live AI agent prompt updates",
+  "summary": "Send a REST command to update a live AI call with a system message, shared data, or a replacement prompt.",
+  "scenario": "Your CRM finishes a lookup after the call started and tells the agent who is on the line",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "observability"
+  ],
+  "subcategory": "observe",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "change-the-agents-instructions-mid-call",
+    "whisper-to-an-agent-mid-call"
+  ]
+}

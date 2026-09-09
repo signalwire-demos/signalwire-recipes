@@ -1,0 +1,26 @@
+# Take a voicemail. `connect` rings the owner. When the bridge does not happen,
+# `result`'s failed branch plays a prompt and `record` takes the message in
+# the foreground. It stops on `#`, silence or max_length. The platform POSTs
+# recording events, including the download URL, to status_url.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - connect:
+        to: "+15550100001"
+        timeout: 20
+        result:
+          case:
+            connected:
+              - hangup: {}
+            failed:
+              - play: { url: "say:Leave a message after the tone." }
+              - record:
+                  beep: true
+                  format: "mp3"
+                  max_length: 120
+                  end_silence_timeout: 5
+                  terminators: "#"
+                  status_url: "https://your-host.example.com/recording-status"
+              - play: { url: "say:Thanks. We will call you back." }
+              - hangup: {}

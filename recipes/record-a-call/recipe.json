@@ -1,0 +1,29 @@
+{
+  "slug": "record-a-call",
+  "title": "Record a call",
+  "alias": "call recording",
+  "summary": "Start a recording and pick it up from the completion webhook.",
+  "scenario": "Keeping the tape",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "recording"
+  ],
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "talk",
+  "subcategory": "call-control",
+  "prerequisites": [
+    "answer-an-inbound-call"
+  ],
+  "related": [
+    "get-recording-consent-before-recording"
+  ],
+  "next": [
+    "start-live-transcription"
+  ]
+}

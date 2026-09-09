@@ -1,0 +1,32 @@
+{
+  "slug": "hand-off-from-ai-to-a-human-agent",
+  "title": "Hand off from AI to a human agent",
+  "alias": "AI-to-human handoff with context",
+  "summary": "Store the AI agent's notes by call ID, transfer the caller to a queue, and load those notes for the human agent.",
+  "scenario": "A bike shop front desk that takes the name and the problem, then puts the caller through to a person who already knows both",
+  "category": "voice",
+  "products": [
+    "voice",
+    "ai-agents"
+  ],
+  "capabilities": [
+    "queue",
+    "transfer"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "observe",
+  "subcategory": "handoff",
+  "prerequisites": [
+    "route-a-call-to-an-ai-agent",
+    "queue-a-call-until-an-agent-is-free"
+  ],
+  "related": [
+    "write-a-disposition-from-handler-owned-data"
+  ],
+  "also_known_as": [
+    "AI escalation to a live agent",
+    "warm transfer from AI"
+  ]
+}

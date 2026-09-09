@@ -1,0 +1,7 @@
+# What a clone needs to run the verifiers. Each recipe pins its own runtime
+# dependencies in recipes/<slug>/<surface>/requirements.txt.
+#
+#   pip install -r requirements.txt
+#
+PyYAML>=6.0             # tools/verifylib.py reads the swml surface
+httpx>=0.27,<0.29       # starlette.testclient, which six verifiers drive an app with

@@ -1,0 +1,19 @@
+{
+  "slug": "drive-thru-order-taker",
+  "title": "Drive-thru order taker",
+  "alias": "voice AI order taking",
+  "summary": "Apply menu rules in code, use a voice for each guest, and push live order events to a browser board.",
+  "scenario": "",
+  "surfaces": [],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts",
+    "call-fabric"
+  ],
+  "kind": "build"
+}

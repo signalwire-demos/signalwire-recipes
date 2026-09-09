@@ -1,0 +1,25 @@
+{
+  "slug": "cover-tool-latency-with-fillers",
+  "title": "Cover AI agent tool latency with fillers",
+  "alias": "AI agent tool latency fillers",
+  "summary": "Play localized filler phrases or a hosted wait file while a slow AI agent tool finishes.",
+  "scenario": "A parts desk checking a slow inventory system",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "tool-calling"
+  ],
+  "subcategory": "tools",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "switch-language-mid-call"
+  ]
+}

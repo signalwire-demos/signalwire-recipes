@@ -1,0 +1,24 @@
+{
+  "slug": "handle-call-status-callbacks",
+  "title": "Handle call status callbacks",
+  "alias": "call status webhooks",
+  "summary": "Receive ordered webhooks for initiated, ringing, answered, and completed call states, keyed by call ID.",
+  "scenario": "A shop that calls customers when repairs are done and wants a record of what happened to each call",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "webhooks",
+    "observability"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "subcategory": "observe",
+  "related": [
+    "reconcile-webhooks-against-the-logs-api",
+    "check-consent-before-an-outbound-call"
+  ]
+}

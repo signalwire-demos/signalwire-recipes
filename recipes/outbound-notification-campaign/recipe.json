@@ -1,0 +1,21 @@
+{
+  "slug": "outbound-notification-campaign",
+  "title": "Outbound notification campaign",
+  "alias": "outbound SMS and voice notifications",
+  "summary": "A list is worked over SMS first and voice second, paced to rate limits, with AMD on the calls and opt-outs honoured.",
+  "scenario": "",
+  "surfaces": [],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "outbound",
+    "amd",
+    "opt-out",
+    "sms"
+  ],
+  "kind": "build"
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "give-an-agent-a-tool",
+  "title": "Give a voice AI agent a tool",
+  "alias": "tool calling for voice AI",
+  "summary": "Let the model call your function, and decide what it gets back.",
+  "scenario": "Looking something up mid-conversation",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "tool-calling"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "talk",
+  "subcategory": "tools",
+  "also_known_as": [
+    "function calling",
+    "SWAIG function",
+    "AI agent webhook tool"
+  ]
+}

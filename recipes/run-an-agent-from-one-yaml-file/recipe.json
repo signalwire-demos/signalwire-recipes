@@ -1,0 +1,19 @@
+{
+  "slug": "run-an-agent-from-one-yaml-file",
+  "title": "Run a voice AI agent from one YAML file",
+  "alias": "declarative voice agent in YAML",
+  "summary": "Define and run a voice AI agent from one YAML file without installing an SDK or hosting a server.",
+  "scenario": "For teams that are not a Python shop",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "serverless"
+  ],
+  "surfaces": [
+    "swml"
+  ],
+  "demo": "talk",
+  "subcategory": "other"
+}

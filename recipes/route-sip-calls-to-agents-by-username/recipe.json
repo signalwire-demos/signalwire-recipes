@@ -1,0 +1,30 @@
+{
+  "slug": "route-sip-calls-to-agents-by-username",
+  "title": "Route SIP calls to AI agents by username",
+  "alias": "SIP routing to AI agents",
+  "summary": "Map SIP usernames on one domain to different AI agents and return the selected agent's call flow.",
+  "scenario": "A PBX trunk that sends sales@ and workshop@ to one webhook and expects two different agents",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice",
+    "ai-agents"
+  ],
+  "capabilities": [
+    "sip"
+  ],
+  "subcategory": "routing",
+  "prerequisites": [
+    "connect-a-pbx-with-a-domain-application"
+  ],
+  "related": [
+    "transfer-a-call-without-losing-context"
+  ],
+  "also_known_as": [
+    "SIP URI routing",
+    "dial a voice AI agent from a PBX"
+  ]
+}

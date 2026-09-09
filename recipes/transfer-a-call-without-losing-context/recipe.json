@@ -1,0 +1,34 @@
+{
+  "slug": "transfer-a-call-without-losing-context",
+  "title": "Transfer a call without losing context",
+  "alias": "context-preserving call transfer",
+  "summary": "Pass caller identity and state with the transfer so the next call leg receives the context.",
+  "scenario": "The thing that breaks on every other platform",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "governance",
+    "transfer"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "ai-to-ai",
+  "subcategory": "handoff",
+  "prerequisites": [
+    "give-an-agent-a-tool",
+    "transfer-a-call"
+  ],
+  "related": [
+    "hand-off-from-ai-to-a-human-agent",
+    "brief-the-human-before-the-bridge-completes"
+  ],
+  "next": [
+    "offer-a-callback-instead-of-a-hold"
+  ],
+  "featured": true,
+  "feature_line": "Context-preserving transfers",
+  "feature_rank": 4
+}

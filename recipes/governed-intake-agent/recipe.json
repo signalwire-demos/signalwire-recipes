@@ -1,0 +1,25 @@
+{
+  "slug": "governed-intake-agent",
+  "title": "Governed AI intake agent",
+  "alias": "AI intake workflow guardrails",
+  "summary": "Enforce intake steps, field visibility, and transfer prerequisites in code instead of relying on the AI agent's prompt.",
+  "scenario": "Intake that survives a risk review",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "governance"
+  ],
+  "composes": [
+    "scope-tools-per-step",
+    "hide-fields-from-the-model",
+    "enforce-state-transitions-in-a-tool-handler",
+    "require-verification-before-unlocking-tools",
+    "extract-structured-data-after-a-call"
+  ],
+  "kind": "build",
+  "surfaces": [],
+  "demo": "observe",
+  "repo": ""
+}

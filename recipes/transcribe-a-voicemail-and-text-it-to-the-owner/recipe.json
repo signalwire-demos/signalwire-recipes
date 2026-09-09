@@ -1,0 +1,37 @@
+{
+  "slug": "transcribe-a-voicemail-and-text-it-to-the-owner",
+  "title": "Transcribe a voicemail and text it to the owner",
+  "alias": "voicemail transcription (voicemail to text)",
+  "summary": "Turn transcription on in a cXML Record, then text the owner the words and the recording link when the transcription callback arrives.",
+  "scenario": "A one-person shop reads its voicemail as a text instead of dialling in for it",
+  "category": "voice",
+  "products": [
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "cxml",
+    "recording",
+    "webhooks"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "call-control",
+  "prerequisites": [
+    "take-a-voicemail"
+  ],
+  "related": [
+    "verify-a-webhook-signature",
+    "move-a-twiml-app-by-changing-the-endpoint",
+    "call-when-a-text-goes-undelivered"
+  ],
+  "also_known_as": [
+    "voicemail to text",
+    "voicemail to email or SMS",
+    "transcribe a recording",
+    "visual voicemail"
+  ]
+}

@@ -1,0 +1,42 @@
+# A complete AI agent in one document. No SDK, no server, nothing to deploy.
+#
+# Paste this into a SWML Script in the Dashboard and point a number at it. The
+# platform hosts the document and runs the agent; there is no callback to you,
+# because this agent has no tools that need one.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - ai:
+        prompt:
+          # markdown, because the model reads it better than a paragraph
+          text: |
+            ## Role
+            You take reservations for Ridgeline Kitchen, a 40 seat restaurant.
+
+            ## What to collect
+            The name, the party size, and the day and time they want.
+            Confirm all three back before you finish.
+
+            ## Boundaries
+            The kitchen seats parties up to 8. For anything larger, take a
+            phone number and say the manager will call back.
+            Do not quote prices and do not promise a specific table.
+        post_prompt:
+          text: >-
+            Return only JSON with the keys name, party_size, requested_time
+            and outcome (one of booked, callback_needed, abandoned).
+        post_prompt_url: "https://your-host.example.com/reservation"
+        params:
+          # end the call rather than holding an empty line open
+          inactivity_timeout: 120000
+          attention_timeout: 15000
+        languages:
+          - name: English
+            code: en-US
+            voice: rime.spore
+        # words the recogniser would otherwise guess at
+        hints:
+          - Ridgeline
+          - Ridgeline Kitchen
+    - hangup: {}

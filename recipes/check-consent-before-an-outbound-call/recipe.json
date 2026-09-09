@@ -1,0 +1,27 @@
+{
+  "slug": "check-consent-before-an-outbound-call",
+  "title": "Check consent before an outbound call",
+  "alias": "outbound call consent and hours checks",
+  "summary": "Check stored consent and the callee's local calling window before your code sends an outbound dial request.",
+  "scenario": "A workshop that calls customers when their bikes are ready, and only the ones who asked",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "compliance",
+    "outbound"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "place-an-outbound-call"
+  ],
+  "related": [
+    "handle-opt-outs-yourself",
+    "place-an-outbound-ai-call"
+  ]
+}

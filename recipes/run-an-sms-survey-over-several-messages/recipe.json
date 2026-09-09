@@ -1,0 +1,32 @@
+{
+  "slug": "run-an-sms-survey-over-several-messages",
+  "title": "Run an SMS survey over several messages",
+  "alias": "SMS survey (text message survey)",
+  "summary": "Text a customer a question, keep track of where each number is in the survey, ask the next question when a reply arrives, re-ask when it does not fit, and stop the moment they say STOP.",
+  "scenario": "A bike shop texts three questions after every service visit and keeps the answers by phone number",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "webhooks",
+    "state",
+    "opt-out"
+  ],
+  "subcategory": "routing",
+  "prerequisites": [
+    "reply-to-an-inbound-sms",
+    "handle-opt-outs-yourself"
+  ],
+  "related": [
+    "register-a-10dlc-brand-and-campaign",
+    "verify-a-webhook-signature",
+    "send-an-sms",
+    "keep-heavy-state-out-of-global-data"
+  ]
+}

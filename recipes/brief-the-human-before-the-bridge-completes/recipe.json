@@ -1,0 +1,25 @@
+{
+  "slug": "brief-the-human-before-the-bridge-completes",
+  "title": "Whisper a summary to the agent before connecting the caller",
+  "alias": "warm transfer with agent whisper",
+  "summary": "Compose a bounded summary, play it to the agent, then join the caller.",
+  "scenario": "No more \"can you repeat all that\"",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "transfer",
+    "conference"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "observe",
+  "subcategory": "handoff",
+  "also_known_as": [
+    "warm transfer",
+    "agent whisper",
+    "announce the caller before connecting"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "relay-calls-and-texts-through-a-proxy-number",
+  "title": "Relay calls and texts through a proxy number",
+  "alias": "phone number masking (call and text by proxy)",
+  "summary": "Pair two people on one number of yours so calls and texts between them are relayed with your number showing, and neither ever sees the other's.",
+  "scenario": "A marketplace connects a buyer and a seller for one transaction without giving either the other's phone number",
+  "category": "voice",
+  "products": [
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "swml",
+    "webhooks",
+    "masking"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "routing",
+  "prerequisites": [
+    "buy-a-number-and-point-it-at-your-app",
+    "forward-calls-to-a-phone-and-keep-the-callers-number"
+  ],
+  "related": [
+    "reply-to-an-inbound-sms",
+    "text-the-caller-during-the-call",
+    "send-an-sms"
+  ]
+}

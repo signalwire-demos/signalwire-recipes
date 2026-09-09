@@ -1,0 +1,11 @@
+# Add a phone caller to a video room. `join_room` puts the leg running this
+# document into the named room. The room is a Fabric conference room
+# resource; python/app.py creates one over REST.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - play: { url: "say:Joining the workshop stand-up. One moment." }
+    - join_room:
+        name: "workshop-standup"
+    - hangup: {}

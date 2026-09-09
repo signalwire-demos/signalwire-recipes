@@ -1,0 +1,25 @@
+{
+  "slug": "route-a-call-to-an-ai-agent",
+  "title": "Route a call to an AI agent",
+  "alias": "AI call answering",
+  "summary": "Point a phone number at an agent and let it answer.",
+  "scenario": "The first voice AI call you will make",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "call-fabric"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "talk",
+  "subcategory": "routing",
+  "also_known_as": [
+    "AI phone answering",
+    "point a number at a voice bot"
+  ]
+}

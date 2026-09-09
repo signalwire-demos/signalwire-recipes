@@ -1,0 +1,27 @@
+{
+  "slug": "transcribe-a-call-in-the-background",
+  "title": "Transcribe a call in the background",
+  "alias": "asynchronous call transcription",
+  "summary": "Start or stop background transcription on a live call through REST and receive available transcript text at your status webhook.",
+  "scenario": "You want each support call's text filed against its ticket",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "transcription"
+  ],
+  "subcategory": "observe",
+  "prerequisites": [
+    "record-a-call"
+  ],
+  "related": [
+    "handle-call-status-callbacks",
+    "reconcile-webhooks-against-the-logs-api",
+    "verify-a-webhook-signature"
+  ]
+}

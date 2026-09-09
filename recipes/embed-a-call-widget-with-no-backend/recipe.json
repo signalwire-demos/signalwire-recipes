@@ -1,0 +1,24 @@
+{
+  "slug": "embed-a-call-widget-with-no-backend",
+  "title": "Embed a call widget with no backend",
+  "alias": "click-to-call widget",
+  "summary": "A sw-click-to-call element with a Click to Call token from the Dashboard and a destination address puts a call button on a page. No server of yours is in the call path.",
+  "scenario": "A bike shop's website that wants a talk-to-the-workshop button without standing up anything to answer it",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "call-fabric",
+    "tokens"
+  ],
+  "subcategory": "call-control",
+  "related": [
+    "call-from-a-browser",
+    "let-a-browser-dial-your-agent-with-no-dashboard-setup"
+  ]
+}

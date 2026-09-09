@@ -1,0 +1,33 @@
+{
+  "slug": "scope-tools-per-step",
+  "title": "Control which tools an AI agent can call at each step",
+  "alias": "per-step tool scoping for AI agents",
+  "summary": "At each point in the conversation the model can only see the tools you allowed there.",
+  "scenario": "An agent that structurally cannot go off-script",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "contexts",
+    "governance"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "subcategory": "governance",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "require-verification-before-unlocking-tools",
+    "enforce-state-transitions-in-a-tool-handler"
+  ],
+  "next": [
+    "hide-fields-from-the-model"
+  ],
+  "featured": true,
+  "feature_line": "Per-step tool scoping for AI agents",
+  "feature_rank": 6
+}

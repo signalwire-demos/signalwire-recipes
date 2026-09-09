@@ -1,0 +1,23 @@
+{
+  "slug": "run-a-bedrock-voice-agent",
+  "title": "Run a Bedrock voice agent",
+  "alias": "Amazon Bedrock voice agent",
+  "summary": "Run the same voice AI agent and tool handler through Amazon Bedrock by changing the agent class and Bedrock settings.",
+  "scenario": "A parts desk you want to run on Amazon Bedrock without rewriting its tools",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [],
+  "subcategory": "other",
+  "prerequisites": [
+    "route-a-call-to-an-ai-agent"
+  ],
+  "related": [
+    "start-from-a-prefab-agent"
+  ]
+}

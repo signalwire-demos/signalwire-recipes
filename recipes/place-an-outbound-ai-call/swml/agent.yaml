@@ -1,0 +1,19 @@
+# Place an outbound AI call: a plain-SWML version of the document app.py
+# renders from its AgentBase and puts in the dial request. It shares the two
+# params. direction forces the call's direction to the assistant, which makes
+# the agent the caller; wait_for_user makes the agent wait for the callee's
+# first words.
+version: "1.0.0"
+sections:
+  main:
+    - ai:
+        prompt:
+          text: >
+            You are calling from Ridgeline Cycles to say the caller's bike is
+            ready for collection. Wait for them to speak, greet them, say the
+            bike is ready, ask when they would like to collect it, then say
+            goodbye.
+        params:
+          direction: "outbound"
+          wait_for_user: true
+          outbound_attention_timeout: 20000

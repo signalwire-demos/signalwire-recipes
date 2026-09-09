@@ -1,0 +1,25 @@
+{
+  "slug": "walk-a-caller-through-ordered-steps",
+  "title": "Walk a caller through steps they cannot skip",
+  "alias": "guided AI conversation flow",
+  "summary": "Expose only the next allowed AI agent tool at each step so callers cannot move backward or skip ahead.",
+  "scenario": "Opening a roadside assistance request, three questions in order",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "contexts"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "scope-tools-per-step"
+  ],
+  "related": [
+    "enforce-state-transitions-in-a-tool-handler"
+  ]
+}

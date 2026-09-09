@@ -1,0 +1,29 @@
+{
+  "slug": "remember-a-returning-caller-across-calls",
+  "title": "Remember a returning caller across calls",
+  "alias": "conversation memory for voice AI (returning callers)",
+  "summary": "Have the platform save a summary when a call ends and hand it back when the same number calls again, so the agent picks up where it left off.",
+  "scenario": "A customer who called yesterday about a tune-up calls back and the agent already knows",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "memory",
+    "post-prompt"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "knowledge",
+  "prerequisites": [
+    "configure-an-agent-per-request"
+  ],
+  "related": [
+    "write-a-disposition-from-handler-owned-data",
+    "transfer-a-call-without-losing-context",
+    "keep-heavy-state-out-of-global-data"
+  ]
+}

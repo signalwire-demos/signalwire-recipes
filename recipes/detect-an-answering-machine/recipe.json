@@ -1,0 +1,24 @@
+{
+  "slug": "detect-an-answering-machine",
+  "title": "Detect an answering machine",
+  "alias": "answering machine detection (AMD)",
+  "summary": "Use answering machine detection to classify a pickup as human or voicemail before playing the main message.",
+  "scenario": "Outbound dialing that does not leave half a message",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "amd"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "subcategory": "call-control",
+  "also_known_as": [
+    "voicemail detection",
+    "human or machine detection",
+    "voice broadcast detection step"
+  ]
+}

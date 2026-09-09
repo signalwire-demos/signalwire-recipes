@@ -1,0 +1,36 @@
+{
+  "slug": "forward-an-inbound-sms-to-other-numbers",
+  "title": "Forward an inbound SMS to other numbers",
+  "alias": "SMS forwarding to a group",
+  "summary": "Send every text that arrives on your number on to a list of other numbers with the Messaging reply method, prefixed with the sender, without replying to the sender.",
+  "scenario": "A shop's public number forwards customer texts to the two people on shift",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "swml",
+    "webhooks",
+    "forwarding"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "routing",
+  "prerequisites": [
+    "reply-to-an-inbound-sms"
+  ],
+  "related": [
+    "relay-calls-and-texts-through-a-proxy-number",
+    "handle-opt-outs-yourself",
+    "send-an-sms"
+  ],
+  "also_known_as": [
+    "SMS forwarding",
+    "text message forwarding",
+    "forward texts to a cell phone",
+    "SMS to group"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "give-an-agent-a-video-avatar",
+  "title": "Give a voice AI agent a video avatar",
+  "alias": "AI video avatar",
+  "summary": "Assign idle, listening, and talking video files so a voice AI agent shows the matching avatar state during video calls.",
+  "scenario": "A bike shop's video front desk that shows a face rather than a blank tile",
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "video"
+  ],
+  "capabilities": [
+    "video"
+  ],
+  "subcategory": "other",
+  "prerequisites": [
+    "route-a-call-to-an-ai-agent"
+  ],
+  "related": [
+    "create-a-video-room-and-join-from-the-browser"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "give-an-ai-agent-a-sip-address",
+  "title": "Give an AI agent a SIP address",
+  "alias": "SIP URI for a voice AI agent",
+  "summary": "Create a SIP address that rings a hosted AI agent, so a SIP phone or PBX can reach it without a phone number in between.",
+  "scenario": "A PBX admin wants to dial the AI receptionist from any desk phone as an extension",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "rest",
+    "sip"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "routing",
+  "prerequisites": [
+    "create-a-hosted-voice-ai-agent-with-one-rest-call"
+  ],
+  "related": [
+    "connect-a-pbx-with-a-domain-application",
+    "route-sip-calls-to-agents-by-username",
+    "register-a-sip-endpoint-and-receive-calls"
+  ]
+}

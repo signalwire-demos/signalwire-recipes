@@ -1,0 +1,18 @@
+{
+  "slug": "answer-an-inbound-call",
+  "title": "Answer an inbound call",
+  "alias": "inbound call handling",
+  "summary": "Accept an incoming call, greet the caller, and hang up cleanly.",
+  "scenario": "The hello-world of telephony",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [],
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "talk",
+  "subcategory": "call-control"
+}

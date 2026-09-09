@@ -1,0 +1,27 @@
+{
+  "slug": "register-an-e911-address-for-a-number",
+  "title": "Register an E911 address for a number",
+  "alias": "E911 address registration",
+  "summary": "Create an emergency address through REST, look up the phone number, and attach that address to it.",
+  "scenario": "A US workshop that puts its street address behind the number its staff dial out on",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "e911",
+    "numbers",
+    "compliance"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "buy-a-number-and-point-it-at-your-app"
+  ],
+  "related": [
+    "verify-a-caller-id-for-outbound-calls"
+  ]
+}

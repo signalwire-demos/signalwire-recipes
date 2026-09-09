@@ -1,0 +1,15 @@
+# Give an agent a video avatar in plain SWML. The three `params` name a clip
+# for each state the schema describes: idle, listening, talking. The schema
+# notes each one requires a call that supports video.
+version: "1.0.0"
+sections:
+  main:
+    - ai:
+        prompt:
+          text: >-
+            You are the front desk at Ridgeline Cycles, on a video call. Greet the
+            caller, find out what they need, and keep answers short.
+        params:
+          video_idle_file: "https://media.example.com/avatar/idle.mp4"
+          video_listening_file: "https://media.example.com/avatar/listening.mp4"
+          video_talking_file: "https://media.example.com/avatar/talking.mp4"

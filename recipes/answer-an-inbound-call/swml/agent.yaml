@@ -1,0 +1,18 @@
+# Answer an inbound call, greet the caller, hang up.
+#
+# The smallest complete call. SignalWire fetches this document when the number
+# rings and runs the verbs in order.
+version: "1.0.0"
+sections:
+  main:
+    # Until this runs the call is still ringing, and the caller is not
+    # billed or connected. max_duration is a backstop against a stuck call.
+    - answer:
+        max_duration: 300
+    # "say:" is text to speak. A real URL here would play a file instead.
+    # The object form is used because the SDK's bundled schema requires it;
+    # the bare `play: "say:..."` shorthand in the docs does not validate.
+    - play:
+        url: "say:Thanks for calling Ridgeline Cycles. We are open until six."
+    # Without this the call sits open until max_duration expires.
+    - hangup: {}

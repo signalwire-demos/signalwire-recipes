@@ -1,0 +1,34 @@
+{
+  "slug": "forward-calls-to-a-phone-and-keep-the-callers-number",
+  "title": "Forward calls to a phone and keep the caller's number",
+  "alias": "call forwarding with caller ID pass-through",
+  "summary": "Forward every call on a number to a phone, and show that phone the original caller's number instead of your own.",
+  "scenario": "A one-person shop forwards the business line to a mobile and wants to see who is calling before picking up",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "swml",
+    "forwarding",
+    "caller-id"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "routing",
+  "prerequisites": [],
+  "related": [
+    "transfer-a-call",
+    "try-destinations-in-order",
+    "route-calls-by-dialed-number-or-time",
+    "reject-callers-on-a-blocklist-before-answering"
+  ],
+  "also_known_as": [
+    "call forwarding",
+    "forward calls to a cell phone",
+    "caller ID pass-through"
+  ]
+}

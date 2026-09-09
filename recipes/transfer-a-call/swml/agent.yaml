@@ -1,0 +1,24 @@
+# Transfer a call - bridge the live call to a number, and take it back when the
+# far end hangs up. Verbs after `connect` run only when the bridge ends: that is
+# the return path. To make the transfer permanent, add
+# `transfer_after_bridge: "true"` to connect.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - play: { url: "say:Please hold while I connect you." }
+    - connect:
+        to: "+15550100001"
+        timeout: 20
+        ringback: ["ring:us"]
+    - play: { url: "say:The other party has left the call. Thank you for calling." }
+    - hangup: {}
+  # Variant: bridge to a SIP URI and stamp custom headers on the INVITE.
+  sip:
+    - answer: {}
+    - connect:
+        to: "sip:support@pbx.example.com"
+        headers:
+          - { name: "X-Account-Id", value: "acct-1234" }
+          - { name: "X-Source", value: "signalwire-recipes" }
+    - hangup: {}

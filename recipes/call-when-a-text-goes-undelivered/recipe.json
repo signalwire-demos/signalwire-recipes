@@ -1,0 +1,38 @@
+{
+  "slug": "call-when-a-text-goes-undelivered",
+  "title": "Call the recipient when a text goes undelivered",
+  "alias": "SMS with voice fallback",
+  "summary": "Turn an undelivered or failed message status callback into one outbound call that speaks the same message, once per message and only when SignalWire signed the callback.",
+  "scenario": "A bike shop's pickup notice reaches a landline customer by voice when the text fails",
+  "category": "messaging",
+  "products": [
+    "messaging",
+    "voice"
+  ],
+  "capabilities": [
+    "webhooks",
+    "outbound",
+    "rest"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "call-control",
+  "prerequisites": [
+    "send-an-sms",
+    "place-an-outbound-call"
+  ],
+  "related": [
+    "verify-a-webhook-signature",
+    "send-an-otp-by-sms-with-voice-fallback",
+    "detect-an-answering-machine"
+  ],
+  "also_known_as": [
+    "SMS fallback to voice",
+    "text to call fallback",
+    "undelivered SMS handling",
+    "voice notification when SMS fails"
+  ]
+}

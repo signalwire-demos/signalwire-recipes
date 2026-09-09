@@ -1,0 +1,37 @@
+{
+  "slug": "connect-a-pbx-with-a-domain-application",
+  "title": "Connect a PBX with a Domain Application",
+  "alias": "SIP trunking for a PBX",
+  "summary": "An IP-authenticated Domain Application takes inbound SIP from your PBX and a SIP Gateway carries calls back to it.",
+  "scenario": "",
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "sip",
+    "byoc"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "transfer-a-call"
+  ],
+  "related": [
+    "route-a-call-to-an-ai-agent"
+  ],
+  "next": [
+    "build-an-ivr-menu"
+  ],
+  "also_known_as": [
+    "SIP trunk",
+    "FreePBX",
+    "3CX",
+    "Asterisk",
+    "FusionPBX"
+  ]
+}

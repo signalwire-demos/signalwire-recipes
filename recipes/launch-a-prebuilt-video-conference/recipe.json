@@ -1,0 +1,24 @@
+{
+  "slug": "launch-a-prebuilt-video-conference",
+  "title": "Launch a prebuilt video conference",
+  "alias": "hosted video conferencing",
+  "summary": "Create a themed hosted video conference over REST, then retrieve participant tokens with names and access scopes.",
+  "scenario": "A workshop that wants a video room in its own colours without building a room UI",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "video",
+  "products": [
+    "video"
+  ],
+  "capabilities": [
+    "video"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [],
+  "related": [
+    "create-a-video-room-and-join-from-the-browser",
+    "add-a-phone-caller-to-a-video-room"
+  ]
+}

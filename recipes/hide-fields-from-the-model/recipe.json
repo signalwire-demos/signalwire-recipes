@@ -1,0 +1,28 @@
+{
+  "slug": "hide-fields-from-the-model",
+  "title": "Show the AI model only the fields it needs",
+  "alias": "data minimization for LLM prompts",
+  "summary": "Load the whole record, expose a curated slice, and keep the rest out of the prompt entirely.",
+  "scenario": "Risk flags and pricing the caller must not hear",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "governance"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "subcategory": "governance",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "scope-tools-per-step"
+  ],
+  "next": [
+    "require-verification-before-unlocking-tools"
+  ]
+}

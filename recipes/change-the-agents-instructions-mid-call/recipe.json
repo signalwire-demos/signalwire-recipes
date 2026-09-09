@@ -1,0 +1,27 @@
+{
+  "slug": "change-the-agents-instructions-mid-call",
+  "title": "Change a voice AI agent's instructions mid-call",
+  "alias": "voice AI prompt switching mid-call",
+  "summary": "A tool result replaces the system prompt on the call in progress, summarising or dropping the earlier turns, with no transfer.",
+  "scenario": "A front desk that becomes billing or the workshop once it knows why you called",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "contexts"
+  ],
+  "subcategory": "handoff",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "scope-tools-per-step",
+    "transfer-a-call-without-losing-context",
+    "enforce-state-transitions-in-a-tool-handler"
+  ]
+}

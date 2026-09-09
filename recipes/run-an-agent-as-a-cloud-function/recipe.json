@@ -1,0 +1,25 @@
+{
+  "slug": "run-an-agent-as-a-cloud-function",
+  "title": "Run a voice AI agent as an AWS Lambda function",
+  "alias": "serverless voice AI on AWS Lambda",
+  "summary": "Deploy one voice AI agent file as an AWS Lambda handler for both call-flow and tool requests behind basic authentication.",
+  "scenario": "A request-driven stock-lookup agent",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "serverless"
+  ],
+  "subcategory": "other",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "test-an-agent-offline-with-swaig-test"
+  ]
+}

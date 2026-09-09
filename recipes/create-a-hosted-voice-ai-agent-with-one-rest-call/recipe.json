@@ -1,0 +1,31 @@
+{
+  "slug": "create-a-hosted-voice-ai-agent-with-one-rest-call",
+  "title": "Create a hosted voice AI agent with one REST call",
+  "alias": "hosted voice AI agent (no server)",
+  "summary": "Turn the agent definition you would serve yourself into a resource SignalWire hosts, with one POST, then put a phone number on it with one more.",
+  "scenario": "A shop wants an AI receptionist on its number without running anything of its own",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "rest",
+    "hosted"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "tools",
+  "prerequisites": [
+    "route-a-call-to-an-ai-agent",
+    "build-an-ivr-without-a-server"
+  ],
+  "related": [
+    "run-an-agent-from-one-yaml-file",
+    "buy-a-number-and-point-it-at-your-app",
+    "configure-an-agent-per-request"
+  ]
+}

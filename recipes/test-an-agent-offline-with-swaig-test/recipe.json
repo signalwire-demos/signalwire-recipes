@@ -1,0 +1,25 @@
+{
+  "slug": "test-an-agent-offline-with-swaig-test",
+  "title": "Test a voice AI agent offline with swaig-test",
+  "alias": "offline testing for voice agents",
+  "summary": "The SDK's swaig-test command loads an agent file with no number, tunnel or account. It prints the SWML the platform would fetch, lists the tools, and runs any tool with the arguments you give it.",
+  "scenario": "Checking a shop-hours agent before it ever answers a call",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "testing"
+  ],
+  "subcategory": "observe",
+  "prerequisites": [
+    "give-an-agent-a-tool"
+  ],
+  "related": [
+    "stream-agent-debug-events"
+  ]
+}

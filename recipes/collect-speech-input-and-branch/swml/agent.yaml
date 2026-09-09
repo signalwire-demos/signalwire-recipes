@@ -1,0 +1,48 @@
+# Branch on what the caller says, with no AI agent in the document.
+#
+# `prompt` plays a question and waits. Speech detection is not enabled unless at
+# least one speech parameter is set, and setting only speech parameters leaves
+# digit detection off, so this document listens for words and nothing else.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - prompt:
+        play: "say:Are you calling about sales, support, or your account?"
+        # speech parameters only: no max_digits, so the keypad is not armed
+        speech_timeout: 12
+        speech_end_timeout: 1.5
+        speech_language: en-US
+        # the words the recogniser should expect to hear
+        speech_hints:
+          - sales
+          - support
+          - account
+          - billing
+    - switch:
+        # prompt_value is what the caller said; prompt_result is the status
+        variable: prompt_value
+        case:
+          sales:
+            - transfer: { dest: sales }
+          support:
+            - transfer: { dest: support }
+          account:
+            - transfer: { dest: billing }
+          billing:
+            - transfer: { dest: billing }
+        default:
+          - play: { url: "say:Sorry, I did not catch that." }
+          - transfer: { dest: main }
+  sales:
+    - play: { url: "say:Connecting you to sales." }
+    - connect: { to: "+15550100001" }
+    - hangup: {}
+  support:
+    - play: { url: "say:Connecting you to support." }
+    - connect: { to: "+15550100002" }
+    - hangup: {}
+  billing:
+    - play: { url: "say:Connecting you to the billing team." }
+    - connect: { to: "+15550100003" }
+    - hangup: {}

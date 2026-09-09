@@ -1,0 +1,10 @@
+# Receive an inbound fax - assign this document to a fax-capable number.
+# receive_fax answers the fax tone and takes the document; the result (pages,
+# success, and the document URL) is POSTed to status_url when it completes.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - receive_fax:
+        status_url: "https://your-host.example.com/fax-received"
+    - hangup: {}

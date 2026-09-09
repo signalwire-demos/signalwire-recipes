@@ -1,0 +1,37 @@
+{
+  "slug": "ai-call-center",
+  "kind": "build",
+  "title": "AI Call Center",
+  "alias": "AI contact center with human agents",
+  "summary": "Route callers with AI, queue by priority, connect browser-based human agents, and let supervisors listen, whisper, or barge in.",
+  "scenario": "What the recipes look like assembled into a product",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "queue",
+    "transfer",
+    "tap",
+    "coach",
+    "rag",
+    "governance",
+    "translation"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/ericminessale/ai-call-center",
+  "composes": [
+    "scope-tools-per-step",
+    "hide-fields-from-the-model",
+    "transfer-a-call-without-losing-context",
+    "brief-the-human-before-the-bridge-completes",
+    "hand-off-from-ai-to-a-human-agent",
+    "listen-to-a-live-call",
+    "whisper-to-an-agent-mid-call",
+    "offer-a-callback-instead-of-a-hold",
+    "translate-a-call-in-real-time",
+    "ground-an-agent-in-your-docs"
+  ],
+  "demo": "observe"
+}

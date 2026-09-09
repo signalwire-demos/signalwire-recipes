@@ -1,0 +1,18 @@
+{
+  "slug": "improve-outbound-call-reputation",
+  "title": "Improve outbound call reputation",
+  "alias": "outbound caller reputation and spam labels",
+  "summary": "Review available attestation, CNAM, and spam-label remediation options, including which ones require a support ticket.",
+  "scenario": "",
+  "surfaces": [],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "identity",
+    "stir-shaken"
+  ],
+  "subcategory": "governance"
+}

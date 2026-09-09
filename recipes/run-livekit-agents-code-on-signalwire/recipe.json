@@ -1,0 +1,26 @@
+{
+  "slug": "run-livekit-agents-code-on-signalwire",
+  "title": "Run LiveKit Agents code on SignalWire",
+  "alias": "LiveKit Agents compatibility",
+  "summary": "Run LiveKit Agents-style instructions, sessions, and Python tools through SignalWire while keeping the same agent structure and tool functions.",
+  "scenario": "A front desk you wrote for livekit-agents that you want on SignalWire without rewriting the tool",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "migration"
+  ],
+  "subcategory": "other",
+  "prerequisites": [
+    "route-a-call-to-an-ai-agent"
+  ],
+  "related": [
+    "run-a-bedrock-voice-agent",
+    "give-an-agent-a-tool"
+  ]
+}

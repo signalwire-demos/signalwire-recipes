@@ -1,0 +1,23 @@
+{
+  "slug": "verify-a-caller-id-for-outbound-calls",
+  "title": "Verify a caller id for outbound calls",
+  "alias": "caller ID verification",
+  "summary": "Three REST requests register a number you own elsewhere as a verified caller ID. You submit the code you heard, and redial the verification call if you missed it.",
+  "scenario": "A shop that wants outbound calls to show its long-standing mobile number",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "identity"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [],
+  "related": [
+    "place-an-outbound-call"
+  ]
+}

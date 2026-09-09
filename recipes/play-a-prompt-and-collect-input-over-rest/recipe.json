@@ -1,0 +1,30 @@
+{
+  "slug": "play-a-prompt-and-collect-input-over-rest",
+  "title": "Play a prompt and collect digits or speech over REST",
+  "alias": "prompt playback and input collection on a live call",
+  "summary": "Speak a prompt into a live call from your own backend, stop it early, and collect keypad digits or speech, with the result delivered to your webhook.",
+  "scenario": "Your agent desktop asks the caller to key in an account number while the human agent stays on the line",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "rest",
+    "dtmf",
+    "speech"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "build-an-ivr-menu"
+  ],
+  "related": [
+    "end-or-transfer-a-live-call-over-rest",
+    "collect-speech-input-and-branch",
+    "handle-call-status-callbacks"
+  ]
+}

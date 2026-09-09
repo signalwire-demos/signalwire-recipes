@@ -1,0 +1,33 @@
+# One agent, three languages, no transfer.
+#
+# languages_enabled is what makes the languages list mean anything. Without it
+# the platform ignores the list and answers everything in the first voice, and
+# nothing errors to tell you.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - ai:
+        prompt:
+          text: |
+            ## Role
+            You are the front desk for a hotel in Montreal. Answer questions
+            about check-in times, parking and breakfast.
+
+            ## Language
+            Reply in whatever language the caller is speaking. If they change
+            language, change with them and do not comment on it.
+        params:
+          languages_enabled: true
+        # first in the list is what the agent opens in
+        languages:
+          - name: English
+            code: en-US
+            voice: rime.spore
+          - name: Spanish
+            code: es-ES
+            voice: rime.marisol
+          - name: French
+            code: fr-FR
+            voice: rime.celeste
+    - hangup: {}

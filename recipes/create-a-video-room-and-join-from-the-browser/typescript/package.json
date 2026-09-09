@@ -1,0 +1,16 @@
+{
+  "name": "create-a-video-room-and-join-from-the-browser",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@signalwire/js": "^4.0.0-rc.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vite": "^5.0.0"
+  }
+}

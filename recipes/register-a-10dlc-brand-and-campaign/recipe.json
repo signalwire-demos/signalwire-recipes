@@ -1,0 +1,29 @@
+{
+  "slug": "register-a-10dlc-brand-and-campaign",
+  "title": "Register a 10DLC brand and campaign",
+  "alias": "10DLC registration",
+  "summary": "A brand and campaign are registered over REST, numbers are assigned to the campaign, and the status webhook reports carrier approval.",
+  "scenario": "",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "10dlc",
+    "compliance"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "buy-a-number-and-point-it-at-your-app"
+  ],
+  "related": [
+    "send-an-sms"
+  ],
+  "next": [
+    "send-an-sms"
+  ]
+}

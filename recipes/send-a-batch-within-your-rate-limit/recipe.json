@@ -1,0 +1,26 @@
+{
+  "slug": "send-a-batch-within-your-rate-limit",
+  "title": "Send a batch within your rate limit",
+  "alias": "rate-limited bulk SMS",
+  "summary": "Start one SMS request per documented interval for the number type while leaving carrier delivery timing to the platform.",
+  "scenario": "A bike shop texting two hundred customers that the spring service special is on, from one 10DLC number",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "sms"
+  ],
+  "subcategory": "governance",
+  "prerequisites": [
+    "send-an-sms"
+  ],
+  "related": [
+    "handle-opt-outs-yourself",
+    "send-from-a-number-group-with-sticky-sender"
+  ]
+}

@@ -1,0 +1,24 @@
+# Queue a call until an agent is free.
+# Two documents in one file: `main` is what a caller runs; `agent` is what an
+# agent runs to take the next caller. The platform re-runs wait_url while the
+# caller waits, so wait_url points at a document that plays hold audio.
+version: "1.0.0"
+sections:
+  main:
+    - answer: {}
+    - play: { url: "say:All of our agents are busy. Please stay on the line." }
+    - enter_queue:
+        queue_name: support
+        wait_url: "https://your-host.example.com/wait"
+        wait_time: 600
+        transfer_after_bridge: "false"
+    - play: { url: "say:Sorry, no one could take your call. Goodbye." }
+    - hangup: {}
+  # Serve this section at wait_url. It plays once; the platform loops it.
+  wait:
+    - play: { url: "https://cdn.signalwire.com/default-music/welcome.mp3" }
+  # An agent dials a number pointed at this section and gets the next caller.
+  agent:
+    - answer: {}
+    - connect: { to: "queue:support" }
+    - hangup: {}

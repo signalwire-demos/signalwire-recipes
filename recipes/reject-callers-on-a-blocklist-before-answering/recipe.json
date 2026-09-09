@@ -1,0 +1,28 @@
+{
+  "slug": "reject-callers-on-a-blocklist-before-answering",
+  "title": "Reject callers on a blocklist before answering",
+  "alias": "call blocking and screening (blocklist)",
+  "summary": "Read the caller's number when SignalWire fetches your call document, and decline a listed number before the call is answered while everyone else is connected.",
+  "scenario": "A shop keeps getting the same robocaller and wants those numbers refused without a human hearing them ring",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "swml",
+    "webhooks",
+    "screening"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "routing",
+  "prerequisites": [],
+  "related": [
+    "route-calls-by-dialed-number-or-time",
+    "look-up-a-callers-carrier-and-name",
+    "end-or-transfer-a-live-call-over-rest"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "send-an-sms",
+  "title": "Send an SMS",
+  "alias": "programmable SMS",
+  "summary": "Send an SMS with one REST call, and handle a request that fails.",
+  "scenario": "Where every messaging project starts",
+  "category": "messaging",
+  "products": [
+    "messaging"
+  ],
+  "capabilities": [
+    "sms",
+    "webhooks"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "subcategory": "other",
+  "prerequisites": [
+    "buy-a-number-and-point-it-at-your-app"
+  ],
+  "related": [
+    "reply-to-an-inbound-sms",
+    "handle-call-status-callbacks"
+  ],
+  "next": [
+    "register-a-10dlc-brand-and-campaign"
+  ],
+  "also_known_as": [
+    "send a text message",
+    "SMS API",
+    "programmable SMS"
+  ]
+}

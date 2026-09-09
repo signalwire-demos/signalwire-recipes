@@ -1,0 +1,5 @@
+signalwire-sdk==3.0.1
+# the app builds the document as a dict, but verify.py loads the SDK to
+# report the version it ran against
+python-dotenv>=1.0.0
+flask>=3.0

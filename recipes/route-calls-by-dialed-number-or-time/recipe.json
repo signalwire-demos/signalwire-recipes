@@ -1,0 +1,30 @@
+{
+  "slug": "route-calls-by-dialed-number-or-time",
+  "title": "Route calls by dialed number or time",
+  "alias": "time-of-day call routing",
+  "summary": "Read the dialed number and local time from each inbound webhook, then return the matching call flow.",
+  "scenario": "A bike shop with a sales line in Denver and a workshop line in Los Angeles, both pointed at one URL",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [],
+  "subcategory": "routing",
+  "prerequisites": [
+    "answer-an-inbound-call"
+  ],
+  "related": [
+    "check-consent-before-an-outbound-call",
+    "route-sip-calls-to-agents-by-username"
+  ],
+  "also_known_as": [
+    "after-hours call routing",
+    "business hours routing",
+    "time-of-day routing",
+    "call forwarding schedule"
+  ]
+}

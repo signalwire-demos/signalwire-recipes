@@ -1,0 +1,29 @@
+{
+  "slug": "stream-call-audio-to-an-authenticated-websocket",
+  "title": "Stream call audio to a WebSocket that checks a bearer token",
+  "alias": "authenticated media streaming over WebSocket",
+  "summary": "Send one side of a call, or both, to your own WebSocket over TLS, with a bearer token on the connection and your own metadata attached.",
+  "scenario": "Your transcription service accepts connections only with a bearer token, and needs to know which ticket each stream belongs to",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "rest",
+    "media-streaming"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "stream-call-audio-to-your-own-server"
+  ],
+  "related": [
+    "start-live-transcription",
+    "transcribe-a-call-in-the-background",
+    "end-or-transfer-a-live-call-over-rest"
+  ]
+}

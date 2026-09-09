@@ -1,0 +1,33 @@
+{
+  "slug": "start-live-transcription",
+  "title": "Start live transcription and consume the webhook",
+  "alias": "real-time call transcription",
+  "summary": "Turn on transcription for a call and receive the text as it is spoken.",
+  "scenario": "Feeding a transcript to your own system",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "transcription"
+  ],
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "observe",
+  "subcategory": "observe",
+  "prerequisites": [
+    "answer-an-inbound-call"
+  ],
+  "related": [
+    "record-a-call",
+    "listen-to-a-live-call"
+  ],
+  "next": [
+    "extract-structured-data-after-a-call"
+  ],
+  "featured": true,
+  "feature_line": "Live call transcription",
+  "feature_rank": 5
+}

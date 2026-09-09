@@ -1,0 +1,20 @@
+{
+  "slug": "collect-speech-input-and-branch",
+  "title": "Collect speech input and branch on it",
+  "alias": "speech recognition IVR",
+  "summary": "Ask an open question, recognise the answer, and take a different path for each.",
+  "scenario": "Natural-language routing without a full agent",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "stt"
+  ],
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "talk",
+  "subcategory": "routing"
+}

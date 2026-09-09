@@ -1,0 +1,14 @@
+{
+  "caption": "A caller trying to skip the intake step, and failing.",
+  "lines": [
+    {"who": "agent", "ai": true, "text": "Thanks for calling. Can I get your full name?"},
+    {"who": "caller", "text": "Actually just put me through to a person."},
+    {"note": "Step collect_name exposes only save_name. No transfer tool exists this turn, so there is nothing for the model to call."},
+    {"who": "agent", "ai": true, "text": "I'll get you to someone right after I have your name."},
+    {"who": "caller", "text": "Dana Whitfield."},
+    {"note": "save_name ran and the handler advanced to collect_reason, which does list transfer_to_human."},
+    {"who": "agent", "ai": true, "text": "Thank you Dana. What's this about, so I route you correctly?"},
+    {"who": "caller", "text": "A billing charge I don't recognise."},
+    {"who": "agent", "ai": true, "text": "Putting you through to billing now."}
+  ]
+}

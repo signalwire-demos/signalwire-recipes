@@ -1,0 +1,28 @@
+{
+  "slug": "let-an-agent-see-the-callers-camera",
+  "title": "Let a voice AI agent see the caller's camera",
+  "alias": "multimodal voice AI with vision",
+  "summary": "Enable visual input, choose a vision model, and play a filler while the voice AI agent analyzes the caller's camera.",
+  "scenario": "A workshop desk on a video call that wants to see the worn part before it gives advice",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "video"
+  ],
+  "capabilities": [
+    "vision",
+    "video"
+  ],
+  "subcategory": "tools",
+  "prerequisites": [
+    "route-a-call-to-an-ai-agent"
+  ],
+  "related": [
+    "give-an-agent-a-video-avatar",
+    "cover-tool-latency-with-fillers"
+  ]
+}

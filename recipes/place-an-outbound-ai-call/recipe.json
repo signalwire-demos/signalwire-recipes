@@ -1,0 +1,32 @@
+{
+  "slug": "place-an-outbound-ai-call",
+  "title": "Place an outbound AI call",
+  "alias": "outbound AI calling",
+  "summary": "Place a REST call with the voice AI agent definition and wait for the callee to speak before the agent responds.",
+  "scenario": "A workshop calling a customer to say their bike is ready",
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "outbound"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "place-an-outbound-call"
+  ],
+  "related": [
+    "detect-an-answering-machine",
+    "give-an-agent-a-tool"
+  ],
+  "also_known_as": [
+    "AI outbound calling",
+    "automated outbound AI calls"
+  ]
+}

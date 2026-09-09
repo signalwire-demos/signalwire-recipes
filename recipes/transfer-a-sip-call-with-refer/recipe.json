@@ -1,0 +1,29 @@
+{
+  "slug": "transfer-a-sip-call-with-refer",
+  "title": "Transfer a SIP call with REFER",
+  "alias": "SIP REFER transfer",
+  "summary": "Hand a SIP call to another endpoint with a REFER, sending the destination URI and, when the far end asks for them, credentials.",
+  "scenario": "A PBX wants the desk phone itself to complete the transfer rather than bridging a second leg",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "rest",
+    "sip"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "connect-a-pbx-with-a-domain-application"
+  ],
+  "related": [
+    "end-or-transfer-a-live-call-over-rest",
+    "route-sip-calls-to-agents-by-username",
+    "transfer-a-call"
+  ]
+}

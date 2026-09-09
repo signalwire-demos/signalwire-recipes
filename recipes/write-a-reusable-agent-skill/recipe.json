@@ -1,0 +1,19 @@
+{
+  "slug": "write-a-reusable-agent-skill",
+  "title": "Write a reusable AI agent skill",
+  "alias": "reusable AI agent skills",
+  "summary": "Package a capability once and load it into any agent with one line.",
+  "scenario": "Stop copying the same tool between projects",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "skills"
+  ],
+  "surfaces": [
+    "python"
+  ],
+  "demo": "talk",
+  "subcategory": "tools"
+}

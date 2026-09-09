@@ -1,0 +1,20 @@
+{
+  "slug": "redact-pii-from-logs-and-transcripts",
+  "title": "Redact PII from logs and transcripts",
+  "alias": "PII redaction in transcripts and logs",
+  "summary": "Named PII categories are masked in logs, events, webhooks, the timeline, the transcript and post-call logs; audio and the model's input are not.",
+  "scenario": "",
+  "surfaces": [
+    "python",
+    "swml"
+  ],
+  "demo": "none",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "compliance"
+  ],
+  "subcategory": "governance"
+}

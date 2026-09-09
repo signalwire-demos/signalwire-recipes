@@ -1,0 +1,24 @@
+{
+  "slug": "look-up-a-callers-carrier-and-name",
+  "title": "Look up a caller's carrier and name",
+  "alias": "phone number lookup (carrier and CNAM)",
+  "summary": "One GET returns a number's validity, formatting, country and type. include=carrier,cnam adds the carrier record and the caller-ID name.",
+  "scenario": "A support line that wants to know who is calling before the agent picks up",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "identity",
+    "numbers"
+  ],
+  "subcategory": "other",
+  "prerequisites": [],
+  "related": [
+    "verify-a-caller-id-for-outbound-calls"
+  ]
+}

@@ -1,0 +1,15 @@
+# Reply to an inbound SMS - a messaging SWML document, no server.
+# Assign this as a number's message handler. `reply` answers the sender; the
+# inline switch branches on the message body (lower-cased, trimmed).
+version: "1.0.0"
+sections:
+  main:
+    - reply:
+        switch:
+          variable: message.body
+          transform: lowercase_trim
+          case:
+            hours: "We are open Monday to Friday, nine to five, Eastern time."
+            help: "Text HOURS for opening hours, or STOP to unsubscribe."
+            stop: "You have been unsubscribed and will receive no more messages."
+          default: "Thanks for your message. A person will reply shortly."

@@ -1,0 +1,27 @@
+{
+  "slug": "stream-a-video-room-to-rtmp",
+  "title": "Stream a video room to RTMP",
+  "alias": "RTMP live streaming of video rooms",
+  "summary": "Start, update, or stop a video room's RTMP stream through REST using your streaming server URL.",
+  "scenario": "A workshop stand-up on video that a wider audience watches on a streaming platform",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "video",
+  "products": [
+    "video"
+  ],
+  "capabilities": [
+    "video",
+    "streaming",
+    "rtmp"
+  ],
+  "subcategory": "observe",
+  "prerequisites": [
+    "create-a-video-room-and-join-from-the-browser"
+  ],
+  "related": [
+    "launch-a-prebuilt-video-conference"
+  ]
+}

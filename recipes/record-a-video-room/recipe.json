@@ -1,0 +1,27 @@
+{
+  "slug": "record-a-video-room",
+  "title": "Record a video room",
+  "alias": "video room recording",
+  "summary": "Enable recording when you create a video room, then list or delete session recordings through the REST API.",
+  "scenario": "A workshop stand-up on video that the people who missed it watch later",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "video",
+  "products": [
+    "video"
+  ],
+  "capabilities": [
+    "video",
+    "recording"
+  ],
+  "subcategory": "observe",
+  "prerequisites": [
+    "create-a-video-room-and-join-from-the-browser"
+  ],
+  "related": [
+    "stream-a-video-room-to-rtmp",
+    "export-recordings-and-enforce-retention"
+  ]
+}

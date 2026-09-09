@@ -1,0 +1,26 @@
+{
+  "slug": "send-a-fax",
+  "title": "Send a fax",
+  "alias": "programmable fax",
+  "summary": "A fax is sent from a document URL and its status webhook reports pages and result.",
+  "scenario": "",
+  "surfaces": [
+    "python"
+  ],
+  "demo": "none",
+  "category": "fax",
+  "products": [
+    "fax"
+  ],
+  "capabilities": [
+    "fax"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "buy-a-number-and-point-it-at-your-app"
+  ],
+  "related": [
+    "receive-an-inbound-fax"
+  ],
+  "next": []
+}
