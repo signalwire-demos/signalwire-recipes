@@ -24,7 +24,7 @@
     "lambda"
   ],
   "surfaces": [],
-  "repo": "https://github.com/ericminessale/harbor-docs",
+  "repo": "https://github.com/signalwire-demos/harbor-docs",
   "demo_url": "https://harbor-docs-5k2.pages.dev/",
   "featured": true,
   "feature_line": "State-aware voice AI inside your web page",
