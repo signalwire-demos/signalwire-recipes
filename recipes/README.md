@@ -2,7 +2,7 @@
 
 Every folder here is self-contained. Clone the repository, open one, and run it.
 
-121 recipes, each proved by its own verifier.
+120 recipes, each proved by its own verifier.
 
 Each recipe proves one claim about the platform. Its `verify.py` checks that claim
 against the document the platform actually receives, so it runs without an account
@@ -279,12 +279,6 @@ Send and receive fax with status webhooks.
 ## Builds
 
 A build is an application you deploy and operate, assembled from the recipes above.
-
-### [AI Call Center](ai-call-center/)
-
-Route callers with AI, queue by priority, connect browser-based human agents, and let supervisors listen, whisper, or barge in.
-
-Composes: [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Show the AI model only the fields it needs](hide-fields-from-the-model/), [Transfer a call without losing context](transfer-a-call-without-losing-context/), [Whisper a summary to the agent before connecting the caller](brief-the-human-before-the-bridge-completes/), [Hand off from AI to a human agent](hand-off-from-ai-to-a-human-agent/), [Listen to a live call](listen-to-a-live-call/), [Whisper to an agent mid-call](whisper-to-an-agent-mid-call/), [Offer a callback instead of a hold](offer-a-callback-instead-of-a-hold/), [Translate a call in real time](translate-a-call-in-real-time/), [Ground a voice AI agent in your documents](ground-an-agent-in-your-docs/)
 
 ### [Embed a state-aware voice agent in your web page](embed-a-state-aware-voice-agent-in-your-web-page/)
 
