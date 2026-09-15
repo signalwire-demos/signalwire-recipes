@@ -4,7 +4,7 @@ Small, self-contained examples on the SignalWire platform. Each folder is one
 idea with one claim, and a verifier that proves the claim offline, with no
 account and no network.
 
-120 recipes, each with a verifier that proves its claim.
+122 recipes, each with a verifier that proves its claim.
 
 ## Running one
 

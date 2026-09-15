@@ -1,0 +1,37 @@
+{
+  "slug": "run-the-same-agent-over-text",
+  "title": "Run the same voice AI agent over text chat",
+  "alias": "omnichannel AI agent (voice and text)",
+  "also_known_as": [
+    "AI Chat API",
+    "text channel for a voice AI agent",
+    "one agent, voice and chat"
+  ],
+  "summary": "Point the AI Chat API at the URL your voice agent already serves. Create a conversation, send turns, read the log, summarise and end it, with one agent definition for both channels.",
+  "scenario": "A bike shop's phone receptionist answers the same questions in a support chat",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "chat",
+    "rest"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "tools",
+  "prerequisites": [
+    "route-a-call-to-an-ai-agent"
+  ],
+  "related": [
+    "remember-a-returning-caller-across-calls",
+    "extract-structured-data-after-a-call",
+    "create-a-hosted-voice-ai-agent-with-one-rest-call"
+  ],
+  "next": [
+    "put-an-agent-in-a-web-chat-widget"
+  ]
+}

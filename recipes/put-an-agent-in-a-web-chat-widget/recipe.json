@@ -1,0 +1,35 @@
+{
+  "slug": "put-an-agent-in-a-web-chat-widget",
+  "title": "Put an AI agent in a web chat widget",
+  "alias": "AI web chat widget",
+  "also_known_as": [
+    "website chatbot from a voice AI agent",
+    "chat gateway",
+    "publishable key for AI chat"
+  ],
+  "summary": "A small gateway on your server holds the API token, mints a signed handle per visitor and forwards the page's messages to the AI Chat API. The page learns a publishable key and nothing else.",
+  "scenario": "A talk-to-us box on a shop's site that reaches the same agent as the phone line",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents"
+  ],
+  "capabilities": [
+    "chat",
+    "browser",
+    "rest"
+  ],
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "subcategory": "tools",
+  "prerequisites": [
+    "run-the-same-agent-over-text"
+  ],
+  "related": [
+    "embed-a-state-aware-voice-agent-in-your-web-page",
+    "publish-events-to-browsers-with-pubsub",
+    "embed-a-call-widget-with-no-backend"
+  ]
+}

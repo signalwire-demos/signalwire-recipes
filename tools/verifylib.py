@@ -167,6 +167,31 @@ def _deref(s, node):
     return node
 
 
+def jsonrpc_variants(kind, path, method="post"):
+    """The request schema of a JSON-RPC endpoint, one entry per method.
+
+    `/api/ai/chat` documents its six methods as a `oneOf` discriminated by the
+    `method` enum. Each entry carries the envelope's required keys, the
+    params' required keys and the params' documented properties (dereferenced),
+    so a verifier can hold every body to the spec without knowing the method
+    list in advance.
+    """
+    s = spec(kind)
+    op = s["paths"][path][method]
+    schema = _deref(s, op["requestBody"]["content"]["application/json"]["schema"])
+    out = {}
+    for variant in schema["oneOf"]:
+        variant = _deref(s, variant)
+        (name,) = _deref(s, variant["properties"]["method"])["enum"]
+        params = _deref(s, variant["properties"]["params"])
+        out[name] = {
+            "envelope": set(variant["required"]),
+            "required": set(params.get("required", [])),
+            "documented": {k: _deref(s, v) for k, v in params["properties"].items()},
+        }
+    return out
+
+
 def _match_path(template, path):
     pattern = "^" + re.sub(r"\{[^}]+\}", r"[^/]+", template) + "$"
     return re.match(pattern, path) is not None

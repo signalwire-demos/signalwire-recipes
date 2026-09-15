@@ -2,7 +2,7 @@
 
 Every folder here is self-contained. Clone the repository, open one, and run it.
 
-120 recipes, each proved by its own verifier.
+122 recipes, each proved by its own verifier.
 
 Each recipe proves one claim about the platform. Its `verify.py` checks that claim
 against the document the platform actually receives, so it runs without an account
@@ -10,7 +10,7 @@ and without a network.
 
 ## Contents
 
-- [AI Agents](#ai-agents) (42)
+- [AI Agents](#ai-agents) (44)
 - [Voice](#voice) (57)
 - [Messaging](#messaging) (12)
 - [MFA](#mfa) (1)
@@ -89,6 +89,8 @@ Agents that answer, reason, and act on a live call.
 | [Let a voice AI agent see the caller's camera](let-an-agent-see-the-callers-camera/) | Enable visual input, choose a vision model, and play a filler while the voice AI agent analyzes the caller's camera. | Python |
 | [Normalize spoken dates and phone numbers in a voice AI tool handler](normalize-spoken-dates-and-phone-numbers-in-a-tool-handler/) | Take a date and a phone number in the caller's words, turn them into an ISO date and an E.164 number in the tool handler, and read both back for the caller to check. | Python, TypeScript |
 | [Push events from a voice AI agent to the browser](push-events-from-an-agent-to-the-browser/) | Return a JSON event from a voice AI agent tool and deliver it to the browser connected to the call. | Python, Markup |
+| [Put an AI agent in a web chat widget](put-an-agent-in-a-web-chat-widget/) | A small gateway on your server holds the API token, mints a signed handle per visitor and forwards the page's messages to the AI Chat API. The page learns a publishable key and nothing else. | Python, TypeScript |
+| [Run the same voice AI agent over text chat](run-the-same-agent-over-text/) | Point the AI Chat API at the URL your voice agent already serves. Create a conversation, send turns, read the log, summarise and end it, with one agent definition for both channels. | Python, TypeScript |
 | [Write a reusable AI agent skill](write-a-reusable-agent-skill/) | Package a capability once and load it into any agent with one line. | Python |
 
 ### Other

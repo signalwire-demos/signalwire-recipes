@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ridgeline Cycles</title>
+  <style>
+    body { font: 16px/1.4 system-ui, sans-serif; margin: 2rem auto; max-width: 40rem; }
+    #log { border: 1px solid #ccc; padding: 1rem; min-height: 12rem; }
+    #log p { margin: 0 0 .5rem; }
+    #log .agent { color: #234; }
+    form { display: flex; gap: .5rem; margin-top: .5rem; }
+    input { flex: 1; padding: .5rem; }
+  </style>
+</head>
+<body>
+  <h1>Ridgeline Cycles</h1>
+  <p>Ask the shop anything. This is the same agent that answers the phone.</p>
+  <div id="log" aria-live="polite"></div>
+  <form id="form">
+    <input id="text" autocomplete="off" placeholder="Type a message" required>
+    <button>Send</button>
+  </form>
+  <script>
+    // The page knows two things: where the gateway is, and a publishable key.
+    // Not the project, not the API token, and not which agent runs.
+    const KEY = "__CHAT_KEY__";
+    const log = document.getElementById("log");
+    let handle = null;
+
+    function show(who, text) {
+      const p = document.createElement("p");
+      p.className = who;
+      p.textContent = (who === "agent" ? "Agent: " : "You: ") + text;
+      log.append(p);
+    }
+
+    async function gateway(body) {
+      const res = await fetch("/chat/", {
+        method: "POST",
+        headers: { "content-type": "application/json", authorization: "Bearer " + KEY },
+        body: JSON.stringify(body),
+      });
+      if (res.headers.get("x-chat-handle")) handle = res.headers.get("x-chat-handle");
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || res.status);
+      return data;
+    }
+
+    gateway({ method: "start" })
+      .then((s) => { if (s.greeting) show("agent", s.greeting); })
+      .catch((e) => show("agent", "Chat is unavailable: " + e.message));
+
+    document.getElementById("form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const input = document.getElementById("text");
+      const message = input.value.trim();
+      if (!message) return;
+      input.value = "";
+      show("you", message);
+      try {
+        const turn = await gateway({ method: "chat", handle, message });
+        show("agent", turn.response);
+      } catch (e) {
+        show("agent", "Sorry, that did not go through: " + e.message);
+      }
+    });
+
+    addEventListener("pagehide", () => {
+      if (handle) gateway({ method: "end", handle }).catch(() => {});
+    });
+  </script>
+</body>
+</html>
