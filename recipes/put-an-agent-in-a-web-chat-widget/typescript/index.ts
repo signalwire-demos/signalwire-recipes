@@ -182,20 +182,26 @@ export async function gateway(req: IncomingMessage, body: Body,
   throw new Refusal(400, "malformed");
 }
 
-/** The body, or a 413 once more than MAX_BODY bytes have arrived. */
+/**
+ * The body, or a 413 once more than MAX_BODY bytes have arrived. Past the cap
+ * the rest is drained rather than the socket destroyed, so the refusal can
+ * still be written; the response then closes the connection.
+ */
 function readBody(req: IncomingMessage): Promise<string> {
   return new Promise((resolve, reject) => {
     const chunks: Buffer[] = [];
     let size = 0;
-    req.on("data", (c: Buffer) => {
+    const onData = (c: Buffer) => {
       size += c.length;
       if (size > MAX_BODY) {
-        req.destroy();
+        req.off("data", onData);
+        req.resume();
         reject(new Refusal(413, "malformed"));
         return;
       }
       chunks.push(c);
-    });
+    };
+    req.on("data", onData);
     req.on("end", () => resolve(Buffer.concat(chunks).toString()));
   });
 }
@@ -227,8 +233,10 @@ async function handle(req: IncomingMessage, res: ServerResponse, transport: Http
     const r = error instanceof Refusal ? error : new Refusal(502, "upstream");
     reply = { status: r.status, json: { error: r.reason } };
   }
-  res.writeHead(reply.status,
-                { "content-type": "application/json", ...(reply.headers ?? {}) });
+  const headers: Record<string, string> = { "content-type": "application/json",
+                                            ...(reply.headers ?? {}) };
+  if (reply.status === 413) headers["connection"] = "close";   // stop reading the rest
+  res.writeHead(reply.status, headers);
   res.end(JSON.stringify(reply.json));
 }
 

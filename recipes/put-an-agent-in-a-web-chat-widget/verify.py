@@ -215,6 +215,8 @@ def main():
         assert node["upstream"]["json"] == {"error": "upstream"}, node["upstream"]
         assert node["big"] == 413 and node["sentAfterBig"] == 0, node
         assert node["bigNoKey"] == 401, node["bigNoKey"]
+        # no declared length: the stream trips the cap and the client still gets the 413
+        assert node["bigChunked"] == 413, node["bigChunked"]
         ts_cid = node["sent"][1]["body"]["params"]["id"]
         assert node["pruned"] == sorted([ts_cid, "chat-live"]), node["pruned"]
         assert node["pageWaits"] is True, node

@@ -9,6 +9,8 @@
  * The expected values live in verify.py, which holds this output and the
  * Python surface's behaviour to the same one set.
  */
+import { request } from "node:http";
+
 const [greeting = "", reply = ""] = process.argv.slice(2);
 const recipe = await import("./index.js");
 
@@ -83,6 +85,20 @@ const bigNoKey = await fetch(`${base}/chat/`, {
   method: "POST", body: JSON.stringify({ message: oversized }),
   headers: { "content-type": "application/json" },
 });
+// the same body with no declared length: the cap has to trip on the stream, and
+// the client must still get the 413 rather than a closed socket
+const bigChunked = await new Promise<number | string>((resolve) => {
+  const req = request(`${base}/chat/`, { method: "POST", headers: {
+    "content-type": "application/json", "transfer-encoding": "chunked",
+    authorization: `Bearer ${recipe.KEY}` } }, (res) => {
+    res.resume();
+    res.on("end", () => resolve(res.statusCode ?? 0));
+  });
+  req.on("error", (e: NodeJS.ErrnoException) => resolve(e.code ?? e.message));
+  req.write('{"method":"chat","message":"');
+  for (let i = 0; i < 40; i++) req.write("x".repeat(1024));
+  req.end('"}');
+});
 // a counter left behind by a visitor who never sent end is forgotten after the timeout
 const nowSec = Date.now() / 1000;
 recipe.turns.set("chat-abandoned", { used: 1, last: nowSec - recipe.TIMEOUT - 1 });
@@ -100,7 +116,7 @@ console.log(JSON.stringify({
   turn, empty: empty.status, second: second.status, capped: capped.status,
   log, unknown: unknown.status, ended, mintCapped: mintCapped.status,
   upstream, big: big.status, sentAfterBig: sent.length - sentBeforeBig,
-  bigNoKey: bigNoKey.status, pruned,
+  bigNoKey: bigNoKey.status, bigChunked, pruned,
   pageWaits: pageText.includes('<fieldset id="controls" disabled>'),
   sent, timeout: recipe.TIMEOUT,
 }));
