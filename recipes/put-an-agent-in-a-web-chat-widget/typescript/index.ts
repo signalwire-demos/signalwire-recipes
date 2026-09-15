@@ -38,22 +38,32 @@ const env = (name: string) => {
   if (!value) throw new Error(`${name} is required; see .env.example`);
   return value;
 };
+/** A cap that fails to parse would disable itself: `NaN >= n` is always false. */
+const num = (name: string, fallback: number) => {
+  const raw = process.env[name];
+  const value = raw === undefined ? fallback : Number(raw);
+  if (!Number.isFinite(value) || value <= 0) {
+    throw new Error(`${name} must be a positive number, not '${raw}'`);
+  }
+  return value;
+};
 // the agent this gateway may talk to; never accepted from the request
 export const CONFIG_URL = env("AGENT_CONFIG_URL");
 export const KEY = env("CHAT_GATEWAY_KEY");                 // the page carries this
 const SECRET = env("CHAT_GATEWAY_SECRET");                  // the page never sees this
 const ALLOWED_ORIGINS = new Set((process.env["ALLOWED_ORIGINS"] ?? "")
   .split(",").map((o) => o.trim()).filter(Boolean));
-const MAX_NEW = Number(process.env["MAX_NEW_CONVERSATIONS"] ?? 60);
-const WINDOW = Number(process.env["WINDOW_SECONDS"] ?? 60);
-const MAX_TURNS = Number(process.env["MAX_TURNS"] ?? 200);
-export const TIMEOUT = Number(process.env["CONVERSATION_TIMEOUT"] ?? 1800);
+const MAX_NEW = num("MAX_NEW_CONVERSATIONS", 60);
+const WINDOW = num("WINDOW_SECONDS", 60);
+const MAX_TURNS = num("MAX_TURNS", 200);
+export const TIMEOUT = num("CONVERSATION_TIMEOUT", 1800);
+export const MAX_BODY = 16 * 1024;   // a chat message, not an upload
 const PAGE = readFileSync(new URL("../../web/widget.html", import.meta.url), "utf-8");
 const VISIBLE_ROLES = new Set(["user", "assistant"]);   // never the prompt or tools
 
 // counters live in this process; behind replicas each keeps its own
 const mints: number[] = [];
-const turns = new Map<string, number>();
+export const turns = new Map<string, { used: number; last: number }>();
 
 /** One JSON-RPC 2.0 request. An error arrives inside an HTTP 200. */
 export async function rpc(method: string, params: Record<string, unknown>,
@@ -93,8 +103,11 @@ class Refusal extends Error {
   constructor(public status: number, public reason: string) { super(reason); }
 }
 
-function checkKeyAndOrigin(req: IncomingMessage) {
+function checkKey(req: IncomingMessage) {
   if (req.headers.authorization !== `Bearer ${KEY}`) throw new Refusal(401, "key");
+}
+
+function checkOrigin(req: IncomingMessage) {
   const origin = req.headers.origin;
   const local = origin?.startsWith("http://localhost")
     || origin?.startsWith("http://127.0.0.1");
@@ -103,17 +116,27 @@ function checkKeyAndOrigin(req: IncomingMessage) {
   }
 }
 
-function chargeMint() {
-  const now = Date.now() / 1000;
+function chargeMint(now = Date.now() / 1000) {
   while (mints.length && mints[0]! < now - WINDOW) mints.shift();
   if (mints.length >= MAX_NEW) throw new Refusal(429, "limit");
   mints.push(now);
 }
 
-function chargeTurn(cid: string) {
-  const used = turns.get(cid) ?? 0;
+/**
+ * Forget conversations idle past the service's own timeout, so a visitor who
+ * closes the tab without `end` does not leave a counter behind forever.
+ */
+export function prune(now = Date.now() / 1000) {
+  for (const [cid, entry] of turns) {
+    if (entry.last < now - TIMEOUT) turns.delete(cid);
+  }
+}
+
+function chargeTurn(cid: string, now = Date.now() / 1000) {
+  prune(now);
+  const used = turns.get(cid)?.used ?? 0;
   if (used >= MAX_TURNS) throw new Refusal(429, "limit");
-  turns.set(cid, used + 1);
+  turns.set(cid, { used: used + 1, last: now });
 }
 
 type Body = { method?: string; handle?: unknown; message?: unknown };
@@ -122,7 +145,8 @@ type Reply = { status: number; json: unknown; headers?: Record<string, string> }
 /** The gateway, as a function of the request so a test can drive it directly. */
 export async function gateway(req: IncomingMessage, body: Body,
                               transport: Http = http): Promise<Reply> {
-  checkKeyAndOrigin(req);
+  checkKey(req);
+  checkOrigin(req);
   const method = body.method ?? "chat";
   if (method === "start") {
     chargeMint();
@@ -158,10 +182,20 @@ export async function gateway(req: IncomingMessage, body: Body,
   throw new Refusal(400, "malformed");
 }
 
+/** The body, or a 413 once more than MAX_BODY bytes have arrived. */
 function readBody(req: IncomingMessage): Promise<string> {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const chunks: Buffer[] = [];
-    req.on("data", (c: Buffer) => chunks.push(c));
+    let size = 0;
+    req.on("data", (c: Buffer) => {
+      size += c.length;
+      if (size > MAX_BODY) {
+        req.destroy();
+        reject(new Refusal(413, "malformed"));
+        return;
+      }
+      chunks.push(c);
+    });
     req.on("end", () => resolve(Buffer.concat(chunks).toString()));
   });
 }
@@ -175,10 +209,19 @@ async function handle(req: IncomingMessage, res: ServerResponse, transport: Http
     res.writeHead(404);
     return res.end();
   }
-  let body: Body = {};
-  try { body = JSON.parse(await readBody(req) || "{}"); } catch { /* malformed below */ }
   let reply: Reply;
   try {
+    // the key is checked before a byte of the body is buffered, and a declared
+    // length past the cap is refused before it is read
+    checkKey(req);
+    if (Number(req.headers["content-length"] ?? 0) > MAX_BODY) {
+      throw new Refusal(413, "malformed");
+    }
+    let body: Body = {};
+    try { body = JSON.parse(await readBody(req) || "{}"); } catch (error) {
+      if (error instanceof Refusal) throw error;   // the body was too large
+      /* otherwise malformed JSON: an empty body, refused below */
+    }
     reply = await gateway(req, body, transport);
   } catch (error) {
     const r = error instanceof Refusal ? error : new Refusal(502, "upstream");

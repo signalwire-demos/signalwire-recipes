@@ -112,6 +112,11 @@ layer for a recorder, and asserts the following.
 - the third turn on a two-turn cap and the third `start` on a two-conversation cap are 429s with no request
 - `log` returns user and assistant entries only, `end` sends `end_conversation`, and an unknown method is a 400
 - the token appears in no response body or header
+- a JSON-RPC error from the service is a JSON 502 the page can show, not an HTML 500
+- a body past 16 KiB is a 413 with no request, and in Node the key is checked before a byte of it is buffered
+- a turn counter left by a visitor who never sent `end` is forgotten after the conversation timeout, and a live one is kept
+- a cap that does not parse stops the Node process instead of disabling itself
+- the page's form is disabled until `start` answers and while a turn is out
 - the TypeScript surface, on a real port, serves the same page, refuses the same requests, caps the same counts and sends the same six envelopes
 
 ## Limitations
@@ -124,7 +129,9 @@ The origin allowlist stops a key pasted into someone else's page. It does not
 stop `curl`, which omits the header. The caps are what bound that.
 
 A page refresh loses the handle, so the visitor starts a new conversation.
-Keeping it in `sessionStorage` is a page change, not a gateway change.
+Keeping it in `sessionStorage` is a page change, not a gateway change. The
+`end` sent on `pagehide` is best effort; the turn counter expires on its own
+if it never arrives.
 
 The verifier proves the gateway and the envelopes, not the model's replies.
 

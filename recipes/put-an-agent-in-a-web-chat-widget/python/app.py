@@ -43,25 +43,32 @@ KEY = os.environ["CHAT_GATEWAY_KEY"]              # the page carries this
 SECRET = os.environ["CHAT_GATEWAY_SECRET"].encode()   # the page never sees this
 ALLOWED_ORIGINS = {o.strip() for o in os.getenv("ALLOWED_ORIGINS", "").split(",")
                    if o.strip()}
+# int() refuses a typo, so a mistyped cap stops the process rather than
+# silently disabling the cap
 MAX_NEW = int(os.getenv("MAX_NEW_CONVERSATIONS", "60"))
 WINDOW = int(os.getenv("WINDOW_SECONDS", "60"))
 MAX_TURNS = int(os.getenv("MAX_TURNS", "200"))
 TIMEOUT = int(os.getenv("CONVERSATION_TIMEOUT", "1800"))
+MAX_BODY = 16 * 1024   # a chat message, not an upload
 PAGE = (Path(__file__).resolve().parent.parent / "web" / "widget.html").read_text("utf-8")
 VISIBLE_ROLES = ("user", "assistant")   # a page redraws these; never the prompt or tools
 
 # counters live in this process; behind replicas each keeps its own
 _mints = deque()
-_turns = {}
+_turns = {}   # conversation id -> [turns used, last seen]
+
+
+class UpstreamError(Exception):
+    """A JSON-RPC error from the service. It arrives inside an HTTP 200."""
 
 
 def rpc(method, params, http=None):
-    """One JSON-RPC 2.0 request. An error arrives inside an HTTP 200."""
+    """One JSON-RPC 2.0 request."""
     body = {"jsonrpc": "2.0", "id": uuid.uuid4().hex, "method": method, "params": params}
     envelope = (http or client._http).post(CHAT, body=body)
     if "error" in envelope:
         err = envelope["error"] or {}
-        raise RuntimeError(f"{err.get('code')}: {err.get('message', '')}")
+        raise UpstreamError(f"{err.get('code')}: {err.get('message', '')}")
     return envelope.get("result", {})
 
 
@@ -99,8 +106,8 @@ def check_key_and_origin():
         refuse(403, "origin")
 
 
-def charge_mint():
-    now = time.time()
+def charge_mint(now=None):
+    now = now or time.time()
     while _mints and _mints[0] < now - WINDOW:
         _mints.popleft()
     if len(_mints) >= MAX_NEW:
@@ -108,13 +115,36 @@ def charge_mint():
     _mints.append(now)
 
 
-def charge_turn(cid):
-    if _turns.get(cid, 0) >= MAX_TURNS:
+def prune(now=None):
+    """Forget conversations idle past the service's own timeout, so a visitor
+    who closes the tab without `end` does not leave a counter behind forever."""
+    now = now or time.time()
+    for cid in [c for c, (_, last) in _turns.items() if last < now - TIMEOUT]:
+        del _turns[cid]
+
+
+def charge_turn(cid, now=None):
+    now = now or time.time()
+    prune(now)
+    used, _ = _turns.get(cid, (0, now))
+    if used >= MAX_TURNS:
         refuse(429, "limit")
-    _turns[cid] = _turns.get(cid, 0) + 1
+    _turns[cid] = [used + 1, now]
 
 
 app = Flask(__name__)
+app.config["MAX_CONTENT_LENGTH"] = MAX_BODY
+
+
+@app.errorhandler(413)
+def too_large(_exc):
+    return jsonify({"error": "malformed"}), 413
+
+
+@app.errorhandler(UpstreamError)
+def upstream_failed(_exc):
+    # the page always reads JSON; a refusal it can show beats an HTML 500
+    return jsonify({"error": "upstream"}), 502
 
 
 @app.get("/")

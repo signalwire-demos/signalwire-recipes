@@ -18,14 +18,17 @@
   <p>Ask the shop anything. This is the same agent that answers the phone.</p>
   <div id="log" aria-live="polite"></div>
   <form id="form">
-    <input id="text" autocomplete="off" placeholder="Type a message" required>
-    <button>Send</button>
+    <fieldset id="controls" disabled>
+      <input id="text" autocomplete="off" placeholder="Type a message" required>
+      <button>Send</button>
+    </fieldset>
   </form>
   <script>
     // The page knows two things: where the gateway is, and a publishable key.
     // Not the project, not the API token, and not which agent runs.
     const KEY = "__CHAT_KEY__";
     const log = document.getElementById("log");
+    const controls = document.getElementById("controls");
     let handle = null;
 
     function show(who, text) {
@@ -47,8 +50,10 @@
       return data;
     }
 
+    // one request in flight at a time: the form waits for start, and for
+    // each turn's reply, so a fast typist cannot send before there is a handle
     gateway({ method: "start" })
-      .then((s) => { if (s.greeting) show("agent", s.greeting); })
+      .then((s) => { if (s.greeting) show("agent", s.greeting); controls.disabled = false; })
       .catch((e) => show("agent", "Chat is unavailable: " + e.message));
 
     document.getElementById("form").addEventListener("submit", async (event) => {
@@ -58,11 +63,15 @@
       if (!message) return;
       input.value = "";
       show("you", message);
+      controls.disabled = true;
       try {
         const turn = await gateway({ method: "chat", handle, message });
         show("agent", turn.response);
       } catch (e) {
         show("agent", "Sorry, that did not go through: " + e.message);
+      } finally {
+        controls.disabled = false;
+        input.focus();
       }
     });
 

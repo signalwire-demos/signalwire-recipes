@@ -73,6 +73,22 @@ const unknown = await call({ method: "summarize", handle });
 answers.push(ok({ status: "ended", id: "ignored" }));
 const ended = await call({ method: "end", handle });
 const mintCapped = await call({ method: "start" });
+// the service says no (an expired conversation): a JSON refusal, not a crash
+answers.push({ jsonrpc: "2.0", id: "x", error: { code: -32001, message: "unknown" } });
+const upstream = await call({ method: "chat", handle, message: "still there?" });
+const sentBeforeBig = sent.length;
+const oversized = "x".repeat(recipe.MAX_BODY + 1);
+const big = await call({ method: "chat", handle, message: oversized });
+const bigNoKey = await fetch(`${base}/chat/`, {
+  method: "POST", body: JSON.stringify({ message: oversized }),
+  headers: { "content-type": "application/json" },
+});
+// a counter left behind by a visitor who never sent end is forgotten after the timeout
+const nowSec = Date.now() / 1000;
+recipe.turns.set("chat-abandoned", { used: 1, last: nowSec - recipe.TIMEOUT - 1 });
+recipe.turns.set("chat-live", { used: 1, last: nowSec });
+recipe.prune();
+const pruned = [...recipe.turns.keys()].sort();
 server.close();
 
 console.log(JSON.stringify({
@@ -83,5 +99,8 @@ console.log(JSON.stringify({
   started, forged: forged.status, sentAfterForged,
   turn, empty: empty.status, second: second.status, capped: capped.status,
   log, unknown: unknown.status, ended, mintCapped: mintCapped.status,
+  upstream, big: big.status, sentAfterBig: sent.length - sentBeforeBig,
+  bigNoKey: bigNoKey.status, pruned,
+  pageWaits: pageText.includes('<fieldset id="controls" disabled>'),
   sent, timeout: recipe.TIMEOUT,
 }));

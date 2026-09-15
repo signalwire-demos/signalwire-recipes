@@ -24,7 +24,9 @@ in app.py.
 """
 import os
 import pathlib
+import subprocess
 import sys
+import time
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent.parent / "tools"))
@@ -61,10 +63,11 @@ def ok(result):
 
 
 def check_upstream(bodies, sv):
-    """What the platform received: two creates, two chats, a log, an end."""
+    """What the platform received: two creates, two chats, a log, an end, and
+    the chat the service refused."""
     methods = [b["method"] for b in bodies]
-    assert methods == ["create_conversation", "create_conversation", "chat", "chat",
-                       "chat_log", "end_conversation"], methods
+    assert methods[:6] == ["create_conversation", "create_conversation", "chat", "chat",
+                           "chat_log", "end_conversation"], methods
     for body in bodies:
         v = sv[body["method"]]
         assert body["jsonrpc"] == "2.0" and v["envelope"] <= set(body), body
@@ -168,6 +171,29 @@ def main():
     for r in (page, started, turn, second, log, ended):
         assert TOKEN not in r.get_data(as_text=True) and TOKEN not in str(r.headers)
 
+    # the service says no (an expired conversation): a JSON refusal the page can
+    # show, not an HTML 500 it cannot parse
+    rec.responses.append({"jsonrpc": "2.0", "id": "x",
+                          "error": {"code": -32001, "message": "unknown"}})
+    upstream = web.post("/chat/", json={"method": "chat", "handle": handle,
+                                        "message": "still there?"}, headers=BEARER)
+    assert upstream.status_code == 502 and upstream.get_json() == {"error": "upstream"}
+    # a body past the cap is refused before the platform is asked
+    sent = len(rec.calls)
+    big = web.post("/chat/", json={"method": "chat", "handle": handle,
+                                   "message": "x" * (recipe.MAX_BODY + 1)}, headers=BEARER)
+    assert big.status_code == 413 and big.get_json() == {"error": "malformed"}, big.status_code
+    assert len(rec.calls) == sent
+    # a counter left behind by a visitor who never sent end is forgotten after the timeout
+    now = time.time()
+    recipe._turns["chat-abandoned"] = [1, now - recipe.TIMEOUT - 1]
+    recipe._turns["chat-live"] = [1, now]
+    recipe.prune(now)
+    # the live conversation keeps its counter; the abandoned one is gone
+    assert sorted(recipe._turns) == sorted([cid, "chat-live"]), sorted(recipe._turns)
+    # the page cannot send before start has answered, or while a turn is out
+    assert '<fieldset id="controls" disabled>' in page.text
+
     # the TypeScript surface, on a real port, through the same wire
     node = V.node_surface(HERE, GREETING, REPLY, env=ENV)
     if node is None:
@@ -185,8 +211,20 @@ def main():
         assert node["log"]["json"] == {"messages": [LOG[1], LOG[3]]}, node["log"]
         assert node["unknown"] == 400 and node["ended"]["json"] == {"status": "ended"}, node
         assert node["mintCapped"] == 429, node["mintCapped"]
+        assert node["upstream"]["status"] == 502, node["upstream"]
+        assert node["upstream"]["json"] == {"error": "upstream"}, node["upstream"]
+        assert node["big"] == 413 and node["sentAfterBig"] == 0, node
+        assert node["bigNoKey"] == 401, node["bigNoKey"]
+        ts_cid = node["sent"][1]["body"]["params"]["id"]
+        assert node["pruned"] == sorted([ts_cid, "chat-live"]), node["pruned"]
+        assert node["pageWaits"] is True, node
         assert all(s["path"] == CHAT for s in node["sent"]), node["sent"]
-        check_upstream([s["body"] for s in node["sent"]], sv)
+        check_upstream([s["body"] for s in node["sent"][:6]], sv)
+        # a cap that does not parse must stop the process, not disable itself
+        bad = subprocess.run(["node", str(HERE / "typescript" / "dist" / "index.js")],
+                             env={**os.environ, **ENV, "MAX_TURNS": "2O0"},
+                             capture_output=True, text=True, cwd=HERE / "typescript")
+        assert bad.returncode != 0 and "MAX_TURNS" in bad.stderr, bad.stderr[-400:]
         ts_note = ("typescript serves the same page, refuses the same requests, caps the "
                    "same counts and sends the same six envelopes")
 
