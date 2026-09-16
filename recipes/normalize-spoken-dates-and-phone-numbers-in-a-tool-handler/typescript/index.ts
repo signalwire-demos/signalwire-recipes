@@ -68,9 +68,12 @@ function resolve(month: number, day: number, year: number | undefined, start: Da
     return d.getUTCMonth() === month - 1 && d.getUTCDate() === day ? d : undefined;
   };
   if (year) return make(year);
-  const thisYear = make(start.getUTCFullYear());
-  if (!thisYear) return undefined;
-  return thisYear >= start ? thisYear : make(start.getUTCFullYear() + 1);
+  // the next time the date comes round; February 29th can be eight years off
+  for (let y = start.getUTCFullYear(); y <= start.getUTCFullYear() + 8; y++) {
+    const candidate = make(y);
+    if (candidate && candidate >= start) return candidate;
+  }
+  return undefined;
 }
 
 /**

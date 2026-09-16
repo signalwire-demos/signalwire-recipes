@@ -11,9 +11,12 @@ account and no network.
 ```bash
 git clone https://github.com/signalwire-demos/signalwire-recipes.git
 cd signalwire-recipes
-pip install -r requirements.txt
+pip install -r requirements.txt -r recipes/<slug>/python/requirements.txt
 python verify.py <slug>          # proves the claim, no credentials needed
 ```
+
+The root requirements are the verifier's tooling; each recipe pins its own SDK
+and framework in its `python/requirements.txt`, so both are installed.
 
 Then read `recipes/<slug>/README.md` and run the surface you want. Every recipe
 ships a `.env.example` and commits no secrets.

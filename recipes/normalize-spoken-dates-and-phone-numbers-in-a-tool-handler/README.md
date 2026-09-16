@@ -94,17 +94,18 @@ python verify.py          # from the recipe folder, not python/
 ```
 
 With today pinned to Saturday 5 September 2026 through `TODAY`, the verifier
-renders the document and runs thirteen pairs through the handler. It asserts
+renders the document and runs fourteen pairs through the handler. It asserts
 the following.
 
 - one tool on each surface, `date` and `phone` both required, and both descriptions carry the spoken examples
 - "tomorrow", "today", "Tuesday" and "next Tuesday" become the 6th, the 5th, the 8th and the 15th of September, each read back with its weekday
 - "Saturday", said on a Saturday, is the 12th, not today
 - "the fifth of March" and "March 5th" both become `2027-03-05`; "September 30", "9/30" and "the twenty second of September" stay in 2026
+- "February 29th", said in 2026, is `2028-02-29`, the next leap day rather than nothing
 - the same number in seven spellings, spoken and written, one with the leading one, all become `+14155550123` and are read back as grouped words
 - every success writes `callback.date` and `callback.phone` to `global_data` as one action
 - "someday soon" and "February 30" are `UNPARSED_DATE`; a seven digit number is `UNPARSED_PHONE`, each with no action
-- the TypeScript surface, through its own `/swaig` route with the documented `argument` shape, gives the same thirteen results
+- the TypeScript surface, through its own `/swaig` route with the documented `argument` shape, gives the same fourteen results
 
 ## Limitations
 
@@ -116,9 +117,10 @@ catches the difference either way.
 Times of day are not parsed. Add them as a third parameter with the same
 shape: words in, a typed state out when the words do not resolve.
 
-A year makes a date absolute even when it is in the past. "February 29"
-resolves only when this year or next is a leap year. Ten digits are taken as a
-North American number with no check on the area code. Each is one line to
+A year makes a date absolute even when it is in the past. A yearless date
+is searched eight years ahead, far enough for "February 29" across a skipped
+century leap year. Ten digits are taken as a North American number with no
+check on the area code. Each is one line to
 tighten once you know your callers.
 
 The TypeScript SDK's `/swaig` route in 2.0.5 hands `argument` to the handler

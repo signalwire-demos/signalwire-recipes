@@ -55,14 +55,24 @@ def _next_weekday(start, name):
 
 
 def _resolve(month, day, year, start):
-    """A calendar date, or None when the day does not exist in that month."""
-    try:
-        if year:
+    """A calendar date, or None when the day does not exist in that month.
+
+    Without a year, the next time the date comes round. February 29th exists
+    in one year of four, and a century rule can stretch that to eight, so the
+    search runs that far rather than stopping at next year."""
+    if year:
+        try:
             return date(year, month, day)
-        this_year = date(start.year, month, day)
-        return this_year if this_year >= start else date(start.year + 1, month, day)
-    except ValueError:
-        return None
+        except ValueError:
+            return None
+    for candidate_year in range(start.year, start.year + 9):
+        try:
+            candidate = date(candidate_year, month, day)
+        except ValueError:
+            continue
+        if candidate >= start:
+            return candidate
+    return None
 
 
 def normalize_date(text, start):

@@ -64,6 +64,8 @@ CASES = [
     (("9/30", "4155550123"), ok("2026-09-30", "Wednesday, September 30th")),
     (("the twenty second of September", "4155550123"),
      ok("2026-09-22", "Tuesday, September 22nd")),
+    # 2026 is not a leap year and 2027 is not either: the next 29th is 2028
+    (("February 29th", "4155550123"), ok("2028-02-29", "Tuesday, February 29th")),
     (("someday soon", "4155550123"), bad_date("someday soon")),
     (("February 30", "4155550123"), bad_date("February 30")),
     (("tomorrow", "five five five oh one two three"),
@@ -119,9 +121,9 @@ def main():
         (tfn,) = tai["SWAIG"]["functions"]
         check_tool(tfn, "typescript")
         check(node["results"], "typescript")
-        ts_note = "typescript gives the same thirteen results through its /swaig route"
+        ts_note = "typescript gives the same fourteen results through its /swaig route"
 
-    print(f"ok: with today {TODAY}, ten spoken dates and numbers become ISO dates and "
+    print(f"ok: with today {TODAY}, eleven spoken dates and numbers become ISO dates and "
           f"{PHONE} in set_global_data and are read back as words; 'someday soon', "
           f"'February 30' and a seven digit number get typed UNPARSED states; {ts_note}")
 
