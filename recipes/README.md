@@ -2,7 +2,7 @@
 
 Every folder here is self-contained. Clone the repository, open one, and run it.
 
-128 recipes, each proved by its own verifier.
+130 recipes, each proved by its own verifier.
 
 Each recipe proves one claim about the platform. Its `verify.py` checks that claim
 against the document the platform actually receives, so it runs without an account
@@ -14,7 +14,7 @@ and without a network.
 - [Voice](#voice) (57)
 - [Messaging](#messaging) (12)
 - [MFA](#mfa) (1)
-- [Video](#video) (5)
+- [Video](#video) (7)
 - [Fax](#fax) (2)
 - [Builds](#builds)
 
@@ -259,6 +259,7 @@ Rooms, recording, streaming, and PSTN into a room.
 | [Add a phone caller to a video room](add-a-phone-caller-to-a-video-room/) | Create a video room through REST, then connect a phone call to that room. | Markup, Python |
 | [Create a video room and join from the browser](create-a-video-room-and-join-from-the-browser/) | A room is created over REST, a token is minted per participant, and the browser joins with layouts and screen share. | Python, TypeScript |
 | [Launch a prebuilt video conference](launch-a-prebuilt-video-conference/) | Create a themed hosted video conference over REST, then retrieve participant tokens with names and access scopes. | Python |
+| [Manage video rooms over REST](manage-video-rooms-over-rest/) | Create a room for each meeting with a member cap and a join window. List and update your rooms over REST, and delete a room when the meeting is over. | Python, TypeScript |
 
 ### Monitoring
 
@@ -266,6 +267,12 @@ Rooms, recording, streaming, and PSTN into a room.
 |---|---|---|
 | [Record a video room](record-a-video-room/) | Enable recording when you create a video room, then list or delete session recordings through the REST API. | Python |
 | [Stream a video room to RTMP](stream-a-video-room-to-rtmp/) | Start, update, or stop a video room's RTMP stream through REST using your streaming server URL. | Python |
+
+### Other
+
+| Recipe | What it shows | Runs as |
+|---|---|---|
+| [Add a group chat to a video room](add-a-group-chat-to-a-video-room/) | Let everyone in a video room send text beside the video. The room owns one chat thread that outlives the call, and the browser reads and writes it with a token your server mints. | Python, TypeScript |
 
 ## Fax
 

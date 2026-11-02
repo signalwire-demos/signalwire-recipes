@@ -1,0 +1,33 @@
+{
+  "slug": "manage-video-rooms-over-rest",
+  "title": "Manage video rooms over REST",
+  "alias": "video room lifecycle management",
+  "also_known_as": [
+    "room per meeting",
+    "scheduled video rooms",
+    "conference room CRUD"
+  ],
+  "summary": "Create a room for each meeting with a member cap and a join window. List and update your rooms over REST, and delete a room when the meeting is over.",
+  "scenario": "a booking system that opens a room before each appointment and closes it afterwards",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "video",
+  "products": [
+    "video"
+  ],
+  "capabilities": [
+    "rest"
+  ],
+  "subcategory": "call-control",
+  "prerequisites": [
+    "create-a-video-room-and-join-from-the-browser"
+  ],
+  "related": [
+    "record-a-video-room",
+    "add-a-phone-caller-to-a-video-room"
+  ],
+  "next": []
+}

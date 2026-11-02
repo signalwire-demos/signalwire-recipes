@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Room chat</title>
+    <style>
+      body { margin: 0; font: 15px/1.4 system-ui, sans-serif; background: #0f0f12; color: #e6e6ea; }
+      main { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; height: 100vh; padding: 12px; box-sizing: border-box; }
+      #room video { width: 100%; height: 100%; object-fit: contain; background: #000; border-radius: 6px; }
+      aside { display: flex; flex-direction: column; min-height: 0; }
+      #chat-log { flex: 1; overflow-y: auto; margin: 0 0 8px; padding: 0; list-style: none; }
+      #chat-log li { padding: 6px 8px; border-top: 1px solid #2a2a31; overflow-wrap: anywhere; }
+      form { display: flex; gap: 6px; }
+      #chat-input { flex: 1; }
+      #leave { margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="room" aria-label="Video"></section>
+      <aside aria-label="Chat">
+        <ul id="chat-log" aria-live="polite"></ul>
+        <form onsubmit="return false">
+          <input id="chat-input" type="text" autocomplete="off" placeholder="Message the room" />
+          <button id="chat-send" type="submit">Send</button>
+        </form>
+        <button id="leave" type="button">Leave</button>
+      </aside>
+    </main>
+    <!-- Vite serves index.ts and proxies /token to the Flask app; see vite.config.ts -->
+    <script type="module" src="/index.ts"></script>
+  </body>
+</html>

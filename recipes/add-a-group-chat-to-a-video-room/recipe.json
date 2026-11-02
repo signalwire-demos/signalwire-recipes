@@ -1,0 +1,39 @@
+{
+  "slug": "add-a-group-chat-to-a-video-room",
+  "former_slugs": [
+    "send-text-and-read-conversation-history-in-the-browser"
+  ],
+  "title": "Add a group chat to a video room",
+  "alias": "in-room text chat",
+  "also_known_as": [
+    "video room chat",
+    "in-meeting chat",
+    "in-call messaging"
+  ],
+  "summary": "Let everyone in a video room send text beside the video. The room owns one chat thread that outlives the call, and the browser reads and writes it with a token your server mints.",
+  "scenario": "a team stand-up room where someone joining late reads what was typed before they arrived",
+  "surfaces": [
+    "python",
+    "typescript"
+  ],
+  "demo": "none",
+  "category": "video",
+  "products": [
+    "video",
+    "messaging"
+  ],
+  "capabilities": [
+    "browser-sdk",
+    "chat",
+    "call-fabric"
+  ],
+  "subcategory": "other",
+  "prerequisites": [
+    "create-a-video-room-and-join-from-the-browser",
+    "call-from-a-browser"
+  ],
+  "related": [
+    "add-a-phone-caller-to-a-video-room"
+  ],
+  "next": []
+}
