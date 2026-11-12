@@ -1,0 +1,51 @@
+{
+  "slug": "ai-trivia-hotline-with-answers-the-model-never-sees",
+  "kind": "build",
+  "title": "AI trivia hotline: a game graded in code with an answer key the model never sees",
+  "alias": "voice game with server-side state",
+  "also_known_as": [
+    "phone trivia game",
+    "AI quiz line",
+    "interactive voice game",
+    "hidden-state voice agent"
+  ],
+  "summary": "A trivia hotline demo built to show a voice AI agent that keeps no game state and never sees the answers. The handler grades each answer, writes the score and the next question, and ends the game itself.",
+  "scenario": "A caller plays five trivia questions and hears a running score, graded on the server with fuzzy matching",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "dynamic-config"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/07-trivia-hotline",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "configure-an-agent-per-request"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "07-trivia-hotline",
+    "status": "ready",
+    "group": "A",
+    "size": "S",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "dynamic-config"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

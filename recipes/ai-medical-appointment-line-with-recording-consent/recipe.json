@@ -1,0 +1,55 @@
+{
+  "slug": "ai-medical-appointment-line-with-recording-consent",
+  "kind": "build",
+  "title": "AI medical appointment line: recording that starts only in the handler that records consent",
+  "alias": "recording consent as a state machine",
+  "also_known_as": [
+    "clinic scheduling bot",
+    "recording disclosure IVR",
+    "consent-gated recording",
+    "AI appointment booking"
+  ],
+  "summary": "A medical appointment demo built to show compliance as a state machine rather than a prompt. The consent step has one tool, recording starts in its handler on yes, and the audit record is built from handler data.",
+  "scenario": "A caller hears a disclosure, says yes or no, and either books an appointment on a recorded call or holds one unrecorded",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "record_call",
+    "post_prompt"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/12-medical-appointment-line",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "record-a-call",
+    "extract-structured-data-after-a-call",
+    "get-recording-consent-before-recording"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "12-medical-appointment-line",
+    "status": "ready",
+    "group": "B",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "record_call",
+      "post_prompt"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

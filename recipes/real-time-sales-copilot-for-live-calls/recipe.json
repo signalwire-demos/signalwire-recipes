@@ -1,0 +1,49 @@
+{
+  "slug": "real-time-sales-copilot-for-live-calls",
+  "kind": "build",
+  "title": "Real-time sales copilot: a sidecar that rides a human call and surfaces objection playbooks on the rep's screen",
+  "alias": "real-time agent assist for sales calls",
+  "also_known_as": [
+    "AI sales coaching",
+    "objection handling cards",
+    "conversation intelligence",
+    "ai_sidecar copilot"
+  ],
+  "summary": "A sales copilot demo built to show an ai_sidecar listening to both legs of a human call without speaking. A code classifier decides the objection category, and the talk tracks go only to the rep's page, never into the prompt.",
+  "scenario": "A customer talks to a human rep; when they raise a pricing, timing, competitor or authority objection, a talk-track card appears within a turn",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "ai_sidecar"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/23-sales-call-copilot",
+  "composes": [
+    "run-an-ai-sidecar-on-a-live-call",
+    "give-an-agent-a-tool",
+    "transfer-a-call"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "23-sales-call-copilot",
+    "status": "blocked",
+    "group": "C",
+    "size": "L",
+    "primitives": [
+      "ai_sidecar",
+      "swml-service",
+      "swaig-functions",
+      "sidecar-callbacks",
+      "connect-verb",
+      "server-sent-events"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

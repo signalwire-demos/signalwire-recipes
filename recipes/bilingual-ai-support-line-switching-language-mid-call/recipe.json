@@ -1,0 +1,54 @@
+{
+  "slug": "bilingual-ai-support-line-switching-language-mid-call",
+  "kind": "build",
+  "title": "Bilingual AI support line: English and Spanish from one code path, switching mid-sentence",
+  "alias": "multilingual voice AI agent",
+  "also_known_as": [
+    "bilingual IVR",
+    "Spanish-speaking AI agent",
+    "language switching mid-call",
+    "language-neutral tool results"
+  ],
+  "summary": "A bilingual support demo built to show multilingual as configuration rather than a second code path. Each language is one add_language call, and the handlers return language-neutral JSON the model voices in whichever language is live.",
+  "scenario": "A caller to an internet provider talks in English or Spanish, switches at any point, and gets an outage check or a balance",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "multilingual",
+    "contexts-steps"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/35-bilingual-support-line",
+  "composes": [
+    "switch-language-mid-call",
+    "cover-tool-latency-with-fillers",
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "35-bilingual-support-line",
+    "status": "ready",
+    "group": "D",
+    "size": "S",
+    "primitives": [
+      "add_language",
+      "languages_enabled",
+      "internal-fillers",
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

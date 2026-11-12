@@ -1,0 +1,58 @@
+{
+  "slug": "after-hours-ai-answering-service-with-urgent-call-forwarding",
+  "kind": "build",
+  "title": "After-hours AI answering service: code decides whether the AI is on the call at all",
+  "alias": "AI after-hours answering service",
+  "also_known_as": [
+    "virtual receptionist after hours",
+    "emergency call forwarding",
+    "message taking bot",
+    "business hours call routing"
+  ],
+  "summary": "An answering service demo built to show a per-call check deciding whether an AI answers at all. In hours the SWML is a plain connect, after hours one tool classifies urgency and the handler picks the route.",
+  "scenario": "During business hours calls ring the office with no AI; after hours an agent takes a message by text or forwards an urgent call",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "dynamic-config",
+    "contexts-steps",
+    "connect",
+    "send_sms"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/19-answering-service",
+  "composes": [
+    "configure-an-agent-per-request",
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "hand-off-from-ai-to-a-human-agent",
+    "text-the-caller-during-the-call"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "19-answering-service",
+    "status": "proposed",
+    "group": "B",
+    "size": "M",
+    "primitives": [
+      "dynamic-config",
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "connect",
+      "send_sms",
+      "global_data"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

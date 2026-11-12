@@ -1,0 +1,54 @@
+{
+  "slug": "ai-order-status-line-showing-the-model-a-curated-slice",
+  "kind": "build",
+  "title": "AI order status line: the handler holds the full record and the model sees a curated slice",
+  "alias": "data projection for voice AI",
+  "also_known_as": [
+    "order status IVR",
+    "where is my order bot",
+    "refund automation with rules",
+    "verify-then-expand"
+  ],
+  "summary": "An order status demo built to show verify-then-expand projection. The full record enters global_data, the step text exposes three fields, and the refund thresholds are read only inside the handler.",
+  "scenario": "A caller checks an order, asks for a refund, and a server-side rule credits it or hands it to a specialist, once per order",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "connect",
+    "data-projection"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/32-order-status-line",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "hand-off-from-ai-to-a-human-agent",
+    "hide-fields-from-the-model"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "32-order-status-line",
+    "status": "ready",
+    "group": "D",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "connect",
+      "data-projection"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

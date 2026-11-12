@@ -1,0 +1,52 @@
+{
+  "slug": "absence-reporting-line-with-details-in-any-order",
+  "kind": "build",
+  "title": "Absence reporting line: the caller gives details in any order and code decides when the form is complete",
+  "alias": "voice slot filling",
+  "also_known_as": [
+    "grammar filling",
+    "any-order form by phone",
+    "absence hotline",
+    "attendance reporting line"
+  ],
+  "summary": "An absence reporting demo built to show slot filling where the model collects and code decides completeness. One tool with six optional parameters merges each turn, validates dates from spoken words, and opens confirmation only when nothing is missing.",
+  "scenario": "A parent or employee reports an absence however the details come out, and the agent asks only for what is still missing",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "slot-filling"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/20-absence-reporting",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "collect-required-details-in-any-order"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "20-absence-reporting",
+    "status": "proposed",
+    "group": "B",
+    "size": "S",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "add_language",
+      "grammar-filling"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

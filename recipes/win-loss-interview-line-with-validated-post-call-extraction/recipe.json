@@ -1,0 +1,50 @@
+{
+  "slug": "win-loss-interview-line-with-validated-post-call-extraction",
+  "kind": "build",
+  "title": "Win/loss interview line: post-call extraction validated against a schema you own",
+  "alias": "AI win/loss analysis by phone",
+  "also_known_as": [
+    "competitive intelligence interviews",
+    "post-call structured extraction",
+    "buyer interview automation",
+    "sales analytics from calls"
+  ],
+  "summary": "A win/loss interview demo built to show post-call analysis on structured extraction rather than a summary. The post prompt and the validator are generated from one JSON Schema, and a record that fails it is flagged, never repaired.",
+  "scenario": "A prospect gives a short interview, the call becomes a JSON record validated against a schema, and a report rolls the records up",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "post_prompt"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/25-win-loss-analyzer",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "extract-structured-data-after-a-call"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "25-win-loss-analyzer",
+    "status": "ready",
+    "group": "C",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "post_prompt",
+      "on_summary",
+      "schema-validation"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

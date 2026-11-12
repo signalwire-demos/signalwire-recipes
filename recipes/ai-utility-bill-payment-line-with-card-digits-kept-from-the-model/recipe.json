@@ -1,0 +1,54 @@
+{
+  "slug": "ai-utility-bill-payment-line-with-card-digits-kept-from-the-model",
+  "kind": "build",
+  "title": "AI utility bill payment line: card digits that never reach the model, the recording or the logs",
+  "alias": "AI pay-by-phone with payment isolation",
+  "also_known_as": [
+    "pay by phone IVR",
+    "AI bill payment line",
+    "keypad card entry",
+    "payment handoff to the SWML pay verb"
+  ],
+  "summary": "A utility bill payment demo built to show a voice AI agent handing the card entry to the SWML pay verb. Recording stops before the first digit, the amount comes from the billing record, and the model never hears the result.",
+  "scenario": "A caller verifies an account, hears the balance and pays by keypad while the recording is paused",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "pay",
+    "record_call"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/10-utility-bill-payment-line",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "take-a-payment-without-the-model-seeing-the-card",
+    "record-a-call"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "10-utility-bill-payment-line",
+    "status": "confirm",
+    "group": "B",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "pay",
+      "record_call"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

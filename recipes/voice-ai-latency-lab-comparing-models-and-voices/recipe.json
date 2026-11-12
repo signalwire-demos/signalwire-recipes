@@ -1,0 +1,54 @@
+{
+  "slug": "voice-ai-latency-lab-comparing-models-and-voices",
+  "kind": "build",
+  "title": "Voice AI latency lab: the same agent under several models and voices, timed from the platform's own stamps",
+  "alias": "voice AI latency benchmark",
+  "also_known_as": [
+    "LLM latency comparison",
+    "TTS voice benchmark",
+    "mouth-to-ear latency",
+    "conversation analytics"
+  ],
+  "summary": "A latency lab demo built to show model choice as a configuration change, measured from the platform's per-turn timings. A test diffs every configuration's SWML against the baseline so a comparison cannot quietly become unfair.",
+  "scenario": "A harness calls one agent under each configuration with the same scripted caller and prints a side-by-side latency table",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "dynamic-config",
+    "post_prompt",
+    "contexts-steps"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/36-voice-latency-lab",
+  "composes": [
+    "configure-an-agent-per-request",
+    "extract-structured-data-after-a-call",
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "36-voice-latency-lab",
+    "status": "confirm",
+    "group": "D",
+    "size": "L",
+    "primitives": [
+      "dynamic-config",
+      "set_prompt_llm_params",
+      "add_language",
+      "post_prompt",
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "global_data"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

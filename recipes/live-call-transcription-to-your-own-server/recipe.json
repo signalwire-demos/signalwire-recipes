@@ -1,0 +1,46 @@
+{
+  "slug": "live-call-transcription-to-your-own-server",
+  "kind": "build",
+  "title": "Live call transcription line: every word posted to a server you own, with no model in the call path",
+  "alias": "real-time call transcription webhook",
+  "also_known_as": [
+    "live transcription API",
+    "speech-to-text on a phone call",
+    "transcript streaming",
+    "dictation line"
+  ],
+  "summary": "A transcription line demo built to show live_transcribe sending every utterance to your own authenticated webhook. The SWML has no ai verb, viewers get a read-only login, and the payload adapter is the one place that knows the event shape.",
+  "scenario": "A caller dials in and talks; each utterance is posted to your endpoint, stored per call and re-broadcast over Server-Sent Events",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "live_transcribe"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/21-meeting-transcription-line",
+  "composes": [
+    "transcribe-a-call-in-the-background",
+    "verify-a-webhook-signature"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "21-meeting-transcription-line",
+    "status": "confirm",
+    "group": "C",
+    "size": "M",
+    "primitives": [
+      "swml-service",
+      "live_transcribe",
+      "live-events-webhook",
+      "transcript-consumer",
+      "sse"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

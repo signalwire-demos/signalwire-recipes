@@ -1,0 +1,49 @@
+{
+  "slug": "ai-movie-showtimes-hotline-from-one-swml-file",
+  "kind": "build",
+  "title": "AI movie showtimes hotline: a governed voice agent in one SWML file and no server",
+  "alias": "no-code AI phone agent",
+  "also_known_as": [
+    "showtimes hotline",
+    "SWML script agent",
+    "zero-install voice AI",
+    "dashboard-hosted agent"
+  ],
+  "summary": "A movie showtimes demo built to show a voice AI agent as one SWML file pasted into the Dashboard. Its only tool is a DataMap that fetches a feed, so the model never sees a URL it was not given.",
+  "scenario": "A caller asks what is playing tonight and hears the films and times from a JSON feed, with nothing installed anywhere",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "swml",
+    "datamap"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/06-movie-showtimes-hotline",
+  "composes": [
+    "run-an-agent-from-one-yaml-file",
+    "call-an-api-without-a-backend"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "06-movie-showtimes-hotline",
+    "status": "ready",
+    "group": "A",
+    "size": "S",
+    "primitives": [
+      "swml-script",
+      "ai-verb",
+      "datamap",
+      "datamap-foreach",
+      "datamap-expressions",
+      "fallback-output"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

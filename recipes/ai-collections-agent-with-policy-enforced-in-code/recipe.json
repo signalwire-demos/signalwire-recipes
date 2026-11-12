@@ -1,0 +1,53 @@
+{
+  "slug": "ai-collections-agent-with-policy-enforced-in-code",
+  "kind": "build",
+  "title": "AI collections agent: a payment policy the model cannot reveal or bargain over",
+  "alias": "AI debt collection voice agent",
+  "also_known_as": [
+    "collections IVR",
+    "payment plan negotiation bot",
+    "authority inversion",
+    "hardship options by phone"
+  ],
+  "summary": "A collections demo built to show a voice AI agent negotiating against a policy it has never seen. Minimum payment, maximum term and refusal limit live in code, and the handler moves the call when they are exhausted.",
+  "scenario": "A caller with an overdue balance proposes a plan, the policy accepts or refuses it, and repeated refusals end in hardship options",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "connect"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/11-collections-agent",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "hand-off-from-ai-to-a-human-agent",
+    "require-verification-before-unlocking-tools"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "11-collections-agent",
+    "status": "ready",
+    "group": "B",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "connect",
+      "authority-inversion"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

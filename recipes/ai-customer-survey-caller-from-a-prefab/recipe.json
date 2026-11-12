@@ -1,0 +1,49 @@
+{
+  "slug": "ai-customer-survey-caller-from-a-prefab",
+  "kind": "build",
+  "title": "AI customer survey caller: a prefab agent with validation the handler owns",
+  "alias": "automated phone survey",
+  "also_known_as": [
+    "NPS survey call",
+    "outbound feedback bot",
+    "CSAT by phone",
+    "SurveyAgent prefab"
+  ],
+  "summary": "A customer survey demo built to show a prefab SurveyAgent configured rather than written. The two tools are overridden with one strict schema, so the handler decides what counts as an answer and what is recorded.",
+  "scenario": "A customer gets a short follow-up call, answers four questions, and the validated answers land in a file you can score",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "prefab",
+    "dynamic-config",
+    "rest"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/17-customer-survey-caller",
+  "composes": [
+    "start-from-a-prefab-agent",
+    "configure-an-agent-per-request",
+    "place-an-outbound-ai-call"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "17-customer-survey-caller",
+    "status": "ready",
+    "group": "B",
+    "size": "S",
+    "primitives": [
+      "prefab",
+      "global_data",
+      "dynamic-config",
+      "rest-dial"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

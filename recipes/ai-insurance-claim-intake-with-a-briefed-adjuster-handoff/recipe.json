@@ -1,0 +1,60 @@
+{
+  "slug": "ai-insurance-claim-intake-with-a-briefed-adjuster-handoff",
+  "kind": "build",
+  "title": "AI insurance claim intake: the adjuster is briefed and accepts before the bridge completes",
+  "alias": "AI first notice of loss intake",
+  "also_known_as": [
+    "FNOL automation",
+    "claims intake bot",
+    "warm transfer with briefing",
+    "screened call handoff"
+  ],
+  "summary": "An insurance claim intake demo built to show a screened handoff where the human is briefed before the bridge. Every gathered answer is checked in code, and the platform, not the model, decides where the caller lands.",
+  "scenario": "A caller reports an accident, the agent files the claim, holds the caller and phones an adjuster who presses 1 to take the call",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "gather",
+    "hold",
+    "rpc_dial",
+    "conference"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/09-insurance-claim-intake",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "pause-a-voice-ai-agent-mid-call",
+    "brief-the-human-before-the-bridge-completes",
+    "build-a-conference-call",
+    "enforce-state-transitions-in-a-tool-handler"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "09-insurance-claim-intake",
+    "status": "ready",
+    "group": "B",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "gather",
+      "set_functions",
+      "valid_steps",
+      "global_data",
+      "hold",
+      "rpc_dial",
+      "execute_rpc",
+      "join_conference",
+      "swml_change_step"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

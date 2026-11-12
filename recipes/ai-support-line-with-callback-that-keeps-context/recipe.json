@@ -1,0 +1,58 @@
+{
+  "slug": "ai-support-line-with-callback-that-keeps-context",
+  "kind": "build",
+  "title": "AI support line with callback: the issue survives the queue and the return call without the model carrying it",
+  "alias": "AI callback scheduling with context",
+  "also_known_as": [
+    "virtual hold callback",
+    "AI triage and transfer",
+    "call-back automation",
+    "context-preserving callback"
+  ],
+  "summary": "A support line demo built to show a callback whose context lives in a store, not the model. The handler files the triage and the caller's real number, a worker dials back, and the return call opens already informed.",
+  "scenario": "A caller describes a problem, reaches a human now or is called back later by a worker that already knows the issue",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "connect",
+    "dynamic-config",
+    "rest"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/15-support-line-with-callback",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "hand-off-from-ai-to-a-human-agent",
+    "configure-an-agent-per-request",
+    "place-an-outbound-ai-call"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "15-support-line-with-callback",
+    "status": "ready",
+    "group": "B",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "connect",
+      "dynamic-config",
+      "rest-dial",
+      "agent-server"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

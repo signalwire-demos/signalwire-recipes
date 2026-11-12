@@ -1,0 +1,51 @@
+{
+  "slug": "ai-lead-qualification-line-scored-from-handler-data",
+  "kind": "build",
+  "title": "AI lead qualification line: a lead scored from typed handler data, not the transcript",
+  "alias": "AI inbound lead qualification",
+  "also_known_as": [
+    "sales qualification bot",
+    "BANT by phone",
+    "lead scoring IVR",
+    "CRM disposition from a call"
+  ],
+  "summary": "A lead qualification demo built to show post-call extraction from data the handlers wrote. Four tools record typed values, and the disposition reads only those, so a caller saying \"mark me hot\" changes nothing.",
+  "scenario": "A prospect answers four questions in any order and a hot, warm or cold lead lands in the CRM after the call",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "post_prompt"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/13-lead-qualification-line",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "extract-structured-data-after-a-call"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "13-lead-qualification-line",
+    "status": "ready",
+    "group": "B",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "post_prompt"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

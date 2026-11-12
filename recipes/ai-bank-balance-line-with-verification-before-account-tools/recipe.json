@@ -1,0 +1,53 @@
+{
+  "slug": "ai-bank-balance-line-with-verification-before-account-tools",
+  "kind": "build",
+  "title": "AI bank balance line: account tools that do not exist until a handler verifies the caller",
+  "alias": "voice AI identity verification",
+  "also_known_as": [
+    "AI banking IVR",
+    "caller authentication bot",
+    "account balance by phone",
+    "progressive trust"
+  ],
+  "summary": "A bank balance demo built to show a voice AI agent whose account tools appear only after a handler verifies the caller. Failures are counted on the server across calls, so a redial does not reset them.",
+  "scenario": "A caller proves who they are, then checks a balance, hears transactions or disputes a charge; three failures lock the account out",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "connect"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/08-bank-balance-line",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "hand-off-from-ai-to-a-human-agent",
+    "require-verification-before-unlocking-tools"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "08-bank-balance-line",
+    "status": "ready",
+    "group": "B",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "connect",
+      "progressive-trust"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

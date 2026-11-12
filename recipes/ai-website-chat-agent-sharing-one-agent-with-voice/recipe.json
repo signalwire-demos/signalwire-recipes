@@ -1,0 +1,51 @@
+{
+  "slug": "ai-website-chat-agent-sharing-one-agent-with-voice",
+  "kind": "build",
+  "title": "AI website chat agent: the phone agent in a chat bubble, with the API token kept off the page",
+  "alias": "web chat widget for a voice AI agent",
+  "also_known_as": [
+    "website chatbot",
+    "chat gateway",
+    "omnichannel support bot",
+    "publishable key chat widget"
+  ],
+  "summary": "A website chat demo built to show channel parity from the browser. A ChatGateway holds the API token, pins the agent URL and caps conversations, so the page carries only a publishable key.",
+  "scenario": "A hotel guest opens the chat bubble on the website and gets the same concierge, with the same rules, that answers the phone",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "ai-chat"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/28-website-chat-agent",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "put-an-agent-in-a-web-chat-widget"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "28-website-chat-agent",
+    "status": "confirm",
+    "group": "C",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "ai-chat-gateway"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

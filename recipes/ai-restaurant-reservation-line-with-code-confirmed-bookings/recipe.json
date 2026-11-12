@@ -1,0 +1,51 @@
+{
+  "slug": "ai-restaurant-reservation-line-with-code-confirmed-bookings",
+  "kind": "build",
+  "title": "AI restaurant reservation line: a booking the model cannot confirm until code has made it",
+  "alias": "AI phone reservation system",
+  "also_known_as": [
+    "restaurant answering AI",
+    "voice table booking",
+    "AI host for restaurants",
+    "reservation bot"
+  ],
+  "summary": "A restaurant reservation demo built to show a voice AI agent that cannot announce a booking the code has not made. One step exposes one tool, the handler checks hours and party size, writes the row, and only then moves the call on.",
+  "scenario": "A caller books a table by phone and hears a confirmation code read back from the row the handler wrote",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "dynamic-config"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/01-restaurant-reservation-line",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "configure-an-agent-per-request"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "01-restaurant-reservation-line",
+    "status": "ready",
+    "group": "A",
+    "size": "S",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "dynamic-config"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

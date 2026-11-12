@@ -1,0 +1,49 @@
+{
+  "slug": "compliance-call-monitor-with-live-disclosure-checks",
+  "kind": "build",
+  "title": "Compliance call monitor: required disclosures checked as they are spoken, with one alert per miss",
+  "alias": "real-time call compliance monitoring",
+  "also_known_as": [
+    "disclosure monitoring",
+    "call QA automation",
+    "live transcript rule engine",
+    "supervisor alerting"
+  ],
+  "summary": "A compliance monitor demo built to show rules enforced by code on a live transcript, not judged by a model. Each phrase counts by the time it was spoken, each rule settles once, and the alert goes by SMS or webhook.",
+  "scenario": "While a rep is on a live call, a rule engine checks each required phrase against its deadline and pages a supervisor once when one is missed",
+  "category": "voice",
+  "products": [
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "live_transcribe",
+    "send_sms"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/26-compliance-call-monitor",
+  "composes": [
+    "transcribe-a-call-in-the-background"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "26-compliance-call-monitor",
+    "status": "confirm",
+    "group": "C",
+    "size": "M",
+    "primitives": [
+      "swml-service",
+      "live_transcribe",
+      "live-events-webhook",
+      "transcript-consumer",
+      "rule-engine",
+      "send_sms",
+      "alert-webhook"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

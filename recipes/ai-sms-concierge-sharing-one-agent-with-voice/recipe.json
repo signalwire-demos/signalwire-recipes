@@ -1,0 +1,56 @@
+{
+  "slug": "ai-sms-concierge-sharing-one-agent-with-voice",
+  "kind": "build",
+  "title": "AI SMS concierge: one agent definition answering texts and calls with the same rules",
+  "alias": "omnichannel AI agent over SMS and voice",
+  "also_known_as": [
+    "text message concierge",
+    "SMS chatbot",
+    "AI Chat API",
+    "hotel guest services bot"
+  ],
+  "summary": "An SMS concierge demo built to show one agent file serving voice and text. Inbound texts run the same SWML through the AI Chat API, so verification, step-scoped tools and the service enum hold on both channels.",
+  "scenario": "A hotel guest calls or texts the same concierge, verifies a room, asks about amenities and logs requests, with one conversation per phone number",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "ai-chat",
+    "cxml"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/27-sms-concierge",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "run-the-same-agent-over-text",
+    "reply-to-an-inbound-sms",
+    "verify-a-webhook-signature"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "27-sms-concierge",
+    "status": "confirm",
+    "group": "C",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "ai-chat-client",
+      "laml-webhooks"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

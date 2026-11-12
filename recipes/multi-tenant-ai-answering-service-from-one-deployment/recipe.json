@@ -1,0 +1,50 @@
+{
+  "slug": "multi-tenant-ai-answering-service-from-one-deployment",
+  "kind": "build",
+  "title": "Multi-tenant AI answering service: one deployment answering as many businesses, configured per request",
+  "alias": "multi-tenant voice AI platform",
+  "also_known_as": [
+    "AI answering service for agencies",
+    "white-label voice agent",
+    "per-tenant configuration",
+    "tenant routing by called number"
+  ],
+  "summary": "An agency answering service demo built to show per-request configuration instead of a deployment per customer. The callback resolves the tenant and registers only its tools, so another tenant's tool does not exist in the SWML.",
+  "scenario": "A caller to the dental office hears the dental office and a caller to the HVAC company hears the HVAC company, each with its own voice, hours and tools",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "dynamic-config",
+    "connect"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/33-agency-answering-service",
+  "composes": [
+    "configure-an-agent-per-request",
+    "give-an-agent-a-tool",
+    "hand-off-from-ai-to-a-human-agent"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "33-agency-answering-service",
+    "status": "ready",
+    "group": "D",
+    "size": "L",
+    "primitives": [
+      "dynamic-config",
+      "define_tool",
+      "add_swaig_query_params",
+      "global_data",
+      "connect",
+      "tenant-yaml"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

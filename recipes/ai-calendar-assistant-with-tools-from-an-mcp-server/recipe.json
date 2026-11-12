@@ -1,0 +1,42 @@
+{
+  "slug": "ai-calendar-assistant-with-tools-from-an-mcp-server",
+  "kind": "build",
+  "title": "AI calendar assistant over MCP: tools from an MCP server on a live call, scoped by the token",
+  "alias": "MCP client in a voice AI agent",
+  "also_known_as": [
+    "MCP tools on a phone call",
+    "calendar booking by voice",
+    "Model Context Protocol",
+    "scheduling assistant"
+  ],
+  "summary": "A calendar assistant demo built to show MCP tools reaching a live call through one add_mcp_server call. The bearer token sets the tool list, the server holds the rules, and a caller ID signature keeps meetings to their owner.",
+  "scenario": "A phone line books and moves appointments with calendar tools that live behind an MCP server the platform connects to at call start",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "mcp-client"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/30-calendar-assistant-over-mcp",
+  "composes": [
+    "call-an-mcp-server-from-a-live-call"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "30-calendar-assistant-over-mcp",
+    "status": "ready",
+    "group": "D",
+    "size": "M",
+    "primitives": [
+      "mcp-client"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

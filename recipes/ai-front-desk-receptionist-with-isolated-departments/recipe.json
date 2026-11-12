@@ -1,0 +1,50 @@
+{
+  "slug": "ai-front-desk-receptionist-with-isolated-departments",
+  "kind": "build",
+  "title": "AI front desk receptionist: departments as isolated personas that cannot use each other's tools",
+  "alias": "AI receptionist with department routing",
+  "also_known_as": [
+    "virtual receptionist",
+    "AI call routing",
+    "multi-persona voice agent",
+    "AI switchboard"
+  ],
+  "summary": "A front desk demo built to show one voice AI agent with four personas that cannot reach each other's tools. Each department is an isolated context, the routing graph is code, and a refund needs a verified invoice.",
+  "scenario": "A caller reaches one front desk and is routed to sales, support or billing, each a different voice with its own tools",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "isolated-contexts"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/03-front-desk-receptionist",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "split-one-number-into-isolated-personas",
+    "scope-tools-per-step"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "03-front-desk-receptionist",
+    "status": "exists",
+    "group": "A",
+    "size": "S",
+    "primitives": [
+      "contexts-steps",
+      "isolated-contexts",
+      "valid_contexts",
+      "valid_steps",
+      "set_functions",
+      "add_language"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

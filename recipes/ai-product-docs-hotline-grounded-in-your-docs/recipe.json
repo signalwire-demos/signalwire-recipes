@@ -1,0 +1,45 @@
+{
+  "slug": "ai-product-docs-hotline-grounded-in-your-docs",
+  "kind": "build",
+  "title": "AI product docs hotline: answers taken from your documentation or a refusal, never a guess",
+  "alias": "voice RAG over product documentation",
+  "also_known_as": [
+    "AI support hotline",
+    "docs chatbot by phone",
+    "knowledge base voice agent",
+    "grounded voice assistant"
+  ],
+  "summary": "A product docs hotline demo built to show a voice AI agent grounded by its tool rather than its prompt. A similarity gate drops weak search results before the model sees them, so an off-topic question gets a refusal.",
+  "scenario": "A caller asks how the product works and hears an answer from a local search index of the docs, or \"That's not in the docs\"",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "vector-search"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/02-product-docs-hotline",
+  "composes": [
+    "ground-an-agent-in-your-docs"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "02-product-docs-hotline",
+    "status": "ready",
+    "group": "A",
+    "size": "S",
+    "primitives": [
+      "native_vector_search",
+      "response_format_callback",
+      "sw-search",
+      "add_language"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

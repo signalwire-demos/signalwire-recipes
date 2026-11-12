@@ -2,7 +2,7 @@
 
 Every folder here is self-contained. Clone the repository, open one, and run it.
 
-130 recipes, each proved by its own verifier.
+165 recipes, each proved by its own verifier.
 
 Each recipe proves one claim about the platform. Its `verify.py` checks that claim
 against the document the platform actually receives, so it runs without an account
@@ -289,11 +289,95 @@ Send and receive fax with status webhooks.
 
 A build is an application you deploy and operate, assembled from the recipes above.
 
+### [AI SMS concierge: one agent definition answering texts and calls with the same rules](ai-sms-concierge-sharing-one-agent-with-voice/)
+
+An SMS concierge demo built to show one agent file serving voice and text. Inbound texts run the same SWML through the AI Chat API, so verification, step-scoped tools and the service enum hold on both channels.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Run the same voice AI agent over text chat](run-the-same-agent-over-text/), [Reply to an inbound SMS](reply-to-an-inbound-sms/), [Verify a webhook signature](verify-a-webhook-signature/)
+
+### [AI appointment reminder caller: consent, do-not-call and calling hours enforced before the dial](ai-appointment-reminder-caller-with-consent-checks/)
+
+An appointment reminder demo built to show outbound voice AI with consent handling in code. The dialer skips anyone without consent, on the do-not-call list or outside hours. The model learns the appointment only after identity is confirmed.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Place an outbound AI call](place-an-outbound-ai-call/), [Check consent before an outbound call](check-consent-before-an-outbound-call/)
+
+### [AI bank balance line: account tools that do not exist until a handler verifies the caller](ai-bank-balance-line-with-verification-before-account-tools/)
+
+A bank balance demo built to show a voice AI agent whose account tools appear only after a handler verifies the caller. Failures are counted on the server across calls, so a redial does not reset them.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Hand off from AI to a human agent](hand-off-from-ai-to-a-human-agent/), [Require verification before unlocking AI agent tools](require-verification-before-unlocking-tools/)
+
+### [AI calendar assistant over MCP: tools from an MCP server on a live call, scoped by the token](ai-calendar-assistant-with-tools-from-an-mcp-server/)
+
+A calendar assistant demo built to show MCP tools reaching a live call through one add_mcp_server call. The bearer token sets the tool list, the server holds the rules, and a caller ID signature keeps meetings to their owner.
+
+Composes: [Call an MCP server from a live call](call-an-mcp-server-from-a-live-call/)
+
+### [AI collections agent: a payment policy the model cannot reveal or bargain over](ai-collections-agent-with-policy-enforced-in-code/)
+
+A collections demo built to show a voice AI agent negotiating against a policy it has never seen. Minimum payment, maximum term and refusal limit live in code, and the handler moves the call when they are exhausted.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Hand off from AI to a human agent](hand-off-from-ai-to-a-human-agent/), [Require verification before unlocking AI agent tools](require-verification-before-unlocking-tools/)
+
+### [AI customer survey caller: a prefab agent with validation the handler owns](ai-customer-survey-caller-from-a-prefab/)
+
+A customer survey demo built to show a prefab SurveyAgent configured rather than written. The two tools are overridden with one strict schema, so the handler decides what counts as an answer and what is recorded.
+
+Composes: [Start from a prefab AI agent](start-from-a-prefab-agent/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Place an outbound AI call](place-an-outbound-ai-call/)
+
 ### [AI drive-thru ordering: a voice agent whose flow your code controls](ai-drive-thru-ordering-with-a-code-driven-voice-agent/)
 
 A fast-food drive-thru demo built to show a voice AI agent run by a state machine in your code. Steps scope the tools, handlers move the flow, upsell rules run as code, and a live order board updates from events.
 
 Composes: [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Push events from a voice AI agent to the browser](push-events-from-an-agent-to-the-browser/), [Give a voice AI agent a video avatar](give-an-agent-a-video-avatar/), [Let a browser dial your agent with no dashboard setup](let-a-browser-dial-your-agent-with-no-dashboard-setup/), [Call from a browser](call-from-a-browser/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Control when a caller can interrupt a voice AI agent](control-when-a-caller-can-interrupt-a-voice-agent/)
+
+### [AI front desk receptionist: departments as isolated personas that cannot use each other's tools](ai-front-desk-receptionist-with-isolated-departments/)
+
+A front desk demo built to show one voice AI agent with four personas that cannot reach each other's tools. Each department is an isolated context, the routing graph is code, and a refund needs a verified invoice.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Run isolated personas behind one number](split-one-number-into-isolated-personas/), [Control which tools an AI agent can call at each step](scope-tools-per-step/)
+
+### [AI hiring phone screen: a voice form the candidate cannot reorder or skip](ai-hiring-phone-screen-with-fixed-order-questions/)
+
+A hiring phone screen demo built to show a gather step asking questions in a fixed order with confirmed read-backs. The platform injects one question at a time, and the handler writes the answers, not the model.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Place an outbound AI call](place-an-outbound-ai-call/)
+
+### [AI insurance claim intake: the adjuster is briefed and accepts before the bridge completes](ai-insurance-claim-intake-with-a-briefed-adjuster-handoff/)
+
+An insurance claim intake demo built to show a screened handoff where the human is briefed before the bridge. Every gathered answer is checked in code, and the platform, not the model, decides where the caller lands.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Pause a voice AI agent mid-call and bring it back](pause-a-voice-ai-agent-mid-call/), [Whisper a summary to the agent before connecting the caller](brief-the-human-before-the-bridge-completes/), [Build a conference call](build-a-conference-call/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/)
+
+### [AI lead qualification line: a lead scored from typed handler data, not the transcript](ai-lead-qualification-line-scored-from-handler-data/)
+
+A lead qualification demo built to show post-call extraction from data the handlers wrote. Four tools record typed values, and the disposition reads only those, so a caller saying "mark me hot" changes nothing.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Extract structured data after a call](extract-structured-data-after-a-call/)
+
+### [AI medical appointment line: recording that starts only in the handler that records consent](ai-medical-appointment-line-with-recording-consent/)
+
+A medical appointment demo built to show compliance as a state machine rather than a prompt. The consent step has one tool, recording starts in its handler on yes, and the audit record is built from handler data.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Record a call](record-a-call/), [Extract structured data after a call](extract-structured-data-after-a-call/), [Get recording consent before recording](get-recording-consent-before-recording/)
+
+### [AI movie showtimes hotline: a governed voice agent in one SWML file and no server](ai-movie-showtimes-hotline-from-one-swml-file/)
+
+A movie showtimes demo built to show a voice AI agent as one SWML file pasted into the Dashboard. Its only tool is a DataMap that fetches a feed, so the model never sees a URL it was not given.
+
+Composes: [Run a voice AI agent from one YAML file](run-an-agent-from-one-yaml-file/), [Let a voice AI agent call an API without your server](call-an-api-without-a-backend/)
+
+### [AI order status line: the handler holds the full record and the model sees a curated slice](ai-order-status-line-showing-the-model-a-curated-slice/)
+
+An order status demo built to show verify-then-expand projection. The full record enters global_data, the step text exposes three fields, and the refund thresholds are read only inside the handler.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Hand off from AI to a human agent](hand-off-from-ai-to-a-human-agent/), [Show the AI model only the fields it needs](hide-fields-from-the-model/)
+
+### [AI package tracking line: an external API called from the SWML with no server in the call path](ai-package-tracking-line-with-no-backend/)
+
+A package tracking demo built to show a voice AI agent calling a carrier API without a backend. The HTTP request and the sentence template ship inside the SWML, and SignalWire runs them during the call.
+
+Composes: [Let a voice AI agent call an API without your server](call-an-api-without-a-backend/)
 
 ### [AI phone ordering: a voice agent working with a live backend in real time](ai-phone-ordering-with-a-live-backend/)
 
@@ -301,11 +385,89 @@ A coffee shop ordering demo built to show a voice AI agent working with a real b
 
 Composes: [Give a voice AI agent a tool](give-an-agent-a-tool/), [Push events from a voice AI agent to the browser](push-events-from-an-agent-to-the-browser/), [Let a browser dial your agent with no dashboard setup](let-a-browser-dial-your-agent-with-no-dashboard-setup/), [Call from a browser](call-from-a-browser/), [Route a call to an AI agent](route-a-call-to-an-ai-agent/), [Keep per-call state server-side, keyed by call id](keep-heavy-state-out-of-global-data/), [Commit a transaction from a call](commit-a-transaction-from-a-call/), [Verify a webhook signature](verify-a-webhook-signature/)
 
+### [AI product docs hotline: answers taken from your documentation or a refusal, never a guess](ai-product-docs-hotline-grounded-in-your-docs/)
+
+A product docs hotline demo built to show a voice AI agent grounded by its tool rather than its prompt. A similarity gate drops weak search results before the model sees them, so an off-topic question gets a refusal.
+
+Composes: [Ground a voice AI agent in your documents](ground-an-agent-in-your-docs/)
+
+### [AI restaurant reservation line: a booking the model cannot confirm until code has made it](ai-restaurant-reservation-line-with-code-confirmed-bookings/)
+
+A restaurant reservation demo built to show a voice AI agent that cannot announce a booking the code has not made. One step exposes one tool, the handler checks hours and party size, writes the row, and only then moves the call on.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/)
+
+### [AI stock quote line: two agents sharing one reusable skill with different settings](ai-stock-quote-line-built-on-a-reusable-skill/)
+
+A stock quote demo built to show a skill written once and loaded by two agents with different parameters. The skill holds the provider, keeps the API key out of the SWML, and scopes each agent by a watchlist.
+
+Composes: [Write a reusable AI agent skill](write-a-reusable-agent-skill/)
+
+### [AI support line with callback: the issue survives the queue and the return call without the model carrying it](ai-support-line-with-callback-that-keeps-context/)
+
+A support line demo built to show a callback whose context lives in a store, not the model. The handler files the triage and the caller's real number, a worker dials back, and the return call opens already informed.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Hand off from AI to a human agent](hand-off-from-ai-to-a-human-agent/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Place an outbound AI call](place-an-outbound-ai-call/)
+
+### [AI travel concierge: two agents handing a caller back and forth with context and no transcript](ai-travel-concierge-with-context-carrying-agent-handoffs/)
+
+A travel concierge demo built to show two voice AI agents trading a caller with context in both directions. A one-time token in the transfer URL keys a short-lived record, and each agent rebuilds its state from that.
+
+Composes: [Transfer a call without losing context](transfer-a-call-without-losing-context/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/)
+
+### [AI trivia hotline: a game graded in code with an answer key the model never sees](ai-trivia-hotline-with-answers-the-model-never-sees/)
+
+A trivia hotline demo built to show a voice AI agent that keeps no game state and never sees the answers. The handler grades each answer, writes the score and the next question, and ends the game itself.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/)
+
+### [AI utility bill payment line: card digits that never reach the model, the recording or the logs](ai-utility-bill-payment-line-with-card-digits-kept-from-the-model/)
+
+A utility bill payment demo built to show a voice AI agent handing the card entry to the SWML pay verb. Recording stops before the first digit, the amount comes from the billing record, and the model never hears the result.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Take a payment without the model seeing the card](take-a-payment-without-the-model-seeing-the-card/), [Record a call](record-a-call/)
+
+### [AI website chat agent: the phone agent in a chat bubble, with the API token kept off the page](ai-website-chat-agent-sharing-one-agent-with-voice/)
+
+A website chat demo built to show channel parity from the browser. A ChatGateway holds the API token, pins the agent URL and caps conversations, so the page carries only a publishable key.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Put an AI agent in a web chat widget](put-an-agent-in-a-web-chat-widget/)
+
+### [Absence reporting line: the caller gives details in any order and code decides when the form is complete](absence-reporting-line-with-details-in-any-order/)
+
+An absence reporting demo built to show slot filling where the model collects and code decides completeness. One tool with six optional parameters merges each turn, validates dates from spoken words, and opens confirmation only when nothing is missing.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Collect required details in any order with a voice AI agent](collect-required-details-in-any-order/)
+
+### [After-hours AI answering service: code decides whether the AI is on the call at all](after-hours-ai-answering-service-with-urgent-call-forwarding/)
+
+An answering service demo built to show a per-call check deciding whether an AI answers at all. In hours the SWML is a plain connect, after hours one tool classifies urgency and the handler picks the route.
+
+Composes: [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Hand off from AI to a human agent](hand-off-from-ai-to-a-human-agent/), [Text the caller during the call](text-the-caller-during-the-call/)
+
+### [Appointment confirmation by SMS: a text built by the handler and a reply that calls the customer back](appointment-confirmation-sms-with-a-call-back-on-reply/)
+
+An appointment confirmation demo built to show one booking presented across voice and SMS with its memory in code. The handler writes the text from the stored record, and the dial-back loads that record before the model speaks.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Text the caller during the call](text-the-caller-during-the-call/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Place an outbound AI call](place-an-outbound-ai-call/), [Reply to an inbound SMS](reply-to-an-inbound-sms/), [Verify a webhook signature](verify-a-webhook-signature/)
+
+### [Bilingual AI support line: English and Spanish from one code path, switching mid-sentence](bilingual-ai-support-line-switching-language-mid-call/)
+
+A bilingual support demo built to show multilingual as configuration rather than a second code path. Each language is one add_language call, and the handlers return language-neutral JSON the model voices in whichever language is live.
+
+Composes: [Switch language mid-call](switch-language-mid-call/), [Cover AI agent tool latency with fillers](cover-tool-latency-with-fillers/), [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/)
+
 ### [Competitor alerts on live calls: real-time agent assist from an AI listener](real-time-agent-assist-competitor-alerts-on-live-calls/)
 
 A sales-call demo built to show real-time agent assist: an AI listener rides along on a live call, notices when the customer names a competitor, and posts the alert to your server while the sentence is still being spoken. It never speaks into the call.
 
 Composes: [Run an AI sidecar on a live call](run-an-ai-sidecar-on-a-live-call/), [Give a voice AI agent a tool](give-an-agent-a-tool/)
+
+### [Compliance call monitor: required disclosures checked as they are spoken, with one alert per miss](compliance-call-monitor-with-live-disclosure-checks/)
+
+A compliance monitor demo built to show rules enforced by code on a live transcript, not judged by a model. Each phrase counts by the time it was spoken, each rule settles once, and the alert goes by SMS or webhook.
+
+Composes: [Transcribe a call in the background](transcribe-a-call-in-the-background/)
 
 ### [Embed a state-aware voice agent in your web page](embed-a-state-aware-voice-agent-in-your-web-page/)
 
@@ -313,11 +475,35 @@ Embed a voice and video assistant that searches your documentation, knows the cu
 
 Composes: [Ground a voice AI agent in your documents](ground-an-agent-in-your-docs/), [Push events from a voice AI agent to the browser](push-events-from-an-agent-to-the-browser/), [Give a voice AI agent a video avatar](give-an-agent-a-video-avatar/), [Cover AI agent tool latency with fillers](cover-tool-latency-with-fillers/), [Let a browser dial your agent with no dashboard setup](let-a-browser-dial-your-agent-with-no-dashboard-setup/), [Call from a browser](call-from-a-browser/), [Inject a message into a live AI call](inject-a-message-into-a-live-ai-call/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Keep per-call state server-side, keyed by call id](keep-heavy-state-out-of-global-data/), [Run a voice AI agent as an AWS Lambda function](run-an-agent-as-a-cloud-function/)
 
+### [Give Claude a phone number: an AI phone line whose tools are also an MCP server](ai-phone-line-that-is-also-an-mcp-server/)
+
+A phone line demo built to show an AI agent's tools served as an MCP endpoint with its own credential. An allowlist keeps call-control tools off MCP, and the handlers carry the booking rules on both channels.
+
+Composes: [Expose a voice AI agent as an MCP server](expose-an-agent-as-an-mcp-server/), [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Hand off from AI to a human agent](hand-off-from-ai-to-a-human-agent/)
+
 ### [IVR navigator: an AI agent that works through phone menus to reach a human](ivr-navigation-ai-agent-that-reaches-a-human/)
 
 An IVR navigation demo built to show an AI agent dialing into an unknown phone tree, listening, and pressing the digits that serve a goal, without speaking. When it reaches a human it hands off with the full path it took.
 
 Composes: [Send DTMF to someone else's IVR](send-dtmf-to-an-external-ivr/), [Place an outbound AI call](place-an-outbound-ai-call/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Record a call](record-a-call/), [Transfer a call without losing context](transfer-a-call-without-losing-context/), [Transfer a call](transfer-a-call/)
+
+### [Live call transcription line: every word posted to a server you own, with no model in the call path](live-call-transcription-to-your-own-server/)
+
+A transcription line demo built to show live_transcribe sending every utterance to your own authenticated webhook. The SWML has no ai verb, viewers get a read-only login, and the payload adapter is the one place that knows the event shape.
+
+Composes: [Transcribe a call in the background](transcribe-a-call-in-the-background/), [Verify a webhook signature](verify-a-webhook-signature/)
+
+### [Live captions from a phone call: a web page that shows each line with its real delay](live-captions-web-page-from-a-phone-call/)
+
+A live captions demo built to show a transcript stream rendered in a browser with its latency measured. The delay is computed on the server from the platform's timestamp, and the page can read one call but change nothing.
+
+Composes: [Transcribe a call in the background](transcribe-a-call-in-the-background/), [Verify a webhook signature](verify-a-webhook-signature/)
+
+### [Multi-tenant AI answering service: one deployment answering as many businesses, configured per request](multi-tenant-ai-answering-service-from-one-deployment/)
+
+An agency answering service demo built to show per-request configuration instead of a deployment per customer. The callback resolves the tenant and registers only its tools, so another tenant's tool does not exist in the SWML.
+
+Composes: [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Give a voice AI agent a tool](give-an-agent-a-tool/), [Hand off from AI to a human agent](hand-off-from-ai-to-a-human-agent/)
 
 ### [Order status desk: one omnichannel AI agent for web chat and phone](omnichannel-ai-agent-for-web-chat-and-phone/)
 
@@ -325,8 +511,32 @@ An order status demo built to show one AI agent serving web chat and phone calls
 
 Composes: [Put an AI agent in a web chat widget](put-an-agent-in-a-web-chat-widget/), [Run the same voice AI agent over text chat](run-the-same-agent-over-text/), [Route a call to an AI agent](route-a-call-to-an-ai-agent/), [Give a voice AI agent a tool](give-an-agent-a-tool/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Place an outbound call](place-an-outbound-call/), [Inject a message into a live AI call](inject-a-message-into-a-live-ai-call/), [End or transfer a live call over REST](end-or-transfer-a-live-call-over-rest/)
 
+### [Real-time sales copilot: a sidecar that rides a human call and surfaces objection playbooks on the rep's screen](real-time-sales-copilot-for-live-calls/)
+
+A sales copilot demo built to show an ai_sidecar listening to both legs of a human call without speaking. A code classifier decides the objection category, and the talk tracks go only to the rep's page, never into the prompt.
+
+Composes: [Run an AI sidecar on a live call](run-an-ai-sidecar-on-a-live-call/), [Give a voice AI agent a tool](give-an-agent-a-tool/), [Transfer a call](transfer-a-call/)
+
+### [Support copilot that acts: a sidecar issues the credit the rep offers, under a cap enforced in code](support-copilot-that-acts-on-live-calls-with-a-credit-cap/)
+
+A support copilot demo built to show an ai_sidecar executing scoped tools on a call it does not own. The cap, the caller binding and the one-credit-per-order rule live in the handler, and every refusal reads the same to the model.
+
+Composes: [Run an AI sidecar on a live call](run-an-ai-sidecar-on-a-live-call/), [Give a voice AI agent a tool](give-an-agent-a-tool/), [Transfer a call](transfer-a-call/)
+
 ### [Video blackjack dealer: a voice AI agent that controls the browser](video-ai-dealer-controlling-the-browser-over-webrtc/)
 
 A blackjack game built to show a video AI agent controlling a web page in real time over WebRTC. Stepped conversation contexts run the hand, every card and chip change reaches the page as an event, and the dealer's voice is chosen on the page.
 
 Composes: [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Enforce an AI agent's next step in code](enforce-state-transitions-in-a-tool-handler/), [Push events from a voice AI agent to the browser](push-events-from-an-agent-to-the-browser/), [Give a voice AI agent a video avatar](give-an-agent-a-video-avatar/), [Let a browser dial your agent with no dashboard setup](let-a-browser-dial-your-agent-with-no-dashboard-setup/), [Call from a browser](call-from-a-browser/), [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/)
+
+### [Voice AI latency lab: the same agent under several models and voices, timed from the platform's own stamps](voice-ai-latency-lab-comparing-models-and-voices/)
+
+A latency lab demo built to show model choice as a configuration change, measured from the platform's per-turn timings. A test diffs every configuration's SWML against the baseline so a comparison cannot quietly become unfair.
+
+Composes: [Configure a voice AI agent per request for many tenants](configure-an-agent-per-request/), [Extract structured data after a call](extract-structured-data-after-a-call/), [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/)
+
+### [Win/loss interview line: post-call extraction validated against a schema you own](win-loss-interview-line-with-validated-post-call-extraction/)
+
+A win/loss interview demo built to show post-call analysis on structured extraction rather than a summary. The post prompt and the validator are generated from one JSON Schema, and a record that fails it is flagged, never repaired.
+
+Composes: [Walk a caller through steps they cannot skip](walk-a-caller-through-ordered-steps/), [Control which tools an AI agent can call at each step](scope-tools-per-step/), [Extract structured data after a call](extract-structured-data-after-a-call/)

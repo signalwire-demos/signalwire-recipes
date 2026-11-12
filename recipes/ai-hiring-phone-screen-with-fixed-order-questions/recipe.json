@@ -1,0 +1,56 @@
+{
+  "slug": "ai-hiring-phone-screen-with-fixed-order-questions",
+  "kind": "build",
+  "title": "AI hiring phone screen: a voice form the candidate cannot reorder or skip",
+  "alias": "automated candidate phone screening",
+  "also_known_as": [
+    "AI recruiter call",
+    "voice screening interview",
+    "outbound hiring bot",
+    "pre-screen IVR"
+  ],
+  "summary": "A hiring phone screen demo built to show a gather step asking questions in a fixed order with confirmed read-backs. The platform injects one question at a time, and the handler writes the answers, not the model.",
+  "scenario": "A candidate is called, or calls in, and answers five screening questions in a fixed order before anything else can happen",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "gather",
+    "dynamic-config",
+    "rest"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/04-hiring-phone-screen",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "configure-an-agent-per-request",
+    "place-an-outbound-ai-call"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "04-hiring-phone-screen",
+    "status": "ready",
+    "group": "A",
+    "size": "S",
+    "primitives": [
+      "contexts-steps",
+      "gather",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "dynamic-config",
+      "rest-dial"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

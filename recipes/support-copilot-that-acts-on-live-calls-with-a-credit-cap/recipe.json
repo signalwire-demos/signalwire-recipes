@@ -1,0 +1,50 @@
+{
+  "slug": "support-copilot-that-acts-on-live-calls-with-a-credit-cap",
+  "kind": "build",
+  "title": "Support copilot that acts: a sidecar issues the credit the rep offers, under a cap enforced in code",
+  "alias": "agent assist with scoped tool execution",
+  "also_known_as": [
+    "AI copilot for support reps",
+    "mid-call automation",
+    "real-time agent assist",
+    "issue a credit by voice"
+  ],
+  "summary": "A support copilot demo built to show an ai_sidecar executing scoped tools on a call it does not own. The cap, the caller binding and the one-credit-per-order rule live in the handler, and every refusal reads the same to the model.",
+  "scenario": "A customer talks to a human rep while a sidecar looks up the order and issues the credit the rep promised, or refuses and says why on the rep's screen",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "ai_sidecar"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/24-support-copilot-that-acts",
+  "composes": [
+    "run-an-ai-sidecar-on-a-live-call",
+    "give-an-agent-a-tool",
+    "transfer-a-call"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "24-support-copilot-that-acts",
+    "status": "blocked",
+    "group": "C",
+    "size": "L",
+    "primitives": [
+      "ai_sidecar",
+      "swml-service",
+      "swaig-functions",
+      "handler-enforced-cap",
+      "sidecar-callbacks",
+      "connect-verb",
+      "server-sent-events"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

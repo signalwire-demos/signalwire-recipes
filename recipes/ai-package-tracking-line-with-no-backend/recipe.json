@@ -1,0 +1,43 @@
+{
+  "slug": "ai-package-tracking-line-with-no-backend",
+  "kind": "build",
+  "title": "AI package tracking line: an external API called from the SWML with no server in the call path",
+  "alias": "serverless voice agent API lookup",
+  "also_known_as": [
+    "package tracking IVR",
+    "AI shipment status line",
+    "DataMap tool",
+    "no-code API integration"
+  ],
+  "summary": "A package tracking demo built to show a voice AI agent calling a carrier API without a backend. The HTTP request and the sentence template ship inside the SWML, and SignalWire runs them during the call.",
+  "scenario": "A caller reads out a tracking number and hears where the package is, fetched from a carrier feed during the call",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "datamap"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/05-package-tracking-line",
+  "composes": [
+    "call-an-api-without-a-backend"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "05-package-tracking-line",
+    "status": "ready",
+    "group": "A",
+    "size": "S",
+    "primitives": [
+      "datamap",
+      "add_language"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

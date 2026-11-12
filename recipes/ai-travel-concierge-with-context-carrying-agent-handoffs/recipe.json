@@ -1,0 +1,55 @@
+{
+  "slug": "ai-travel-concierge-with-context-carrying-agent-handoffs",
+  "kind": "build",
+  "title": "AI travel concierge: two agents handing a caller back and forth with context and no transcript",
+  "alias": "multi-agent voice handoff",
+  "also_known_as": [
+    "agent-to-agent transfer",
+    "specialist handoff",
+    "AI concierge",
+    "booking desk agent"
+  ],
+  "summary": "A travel concierge demo built to show two voice AI agents trading a caller with context in both directions. A one-time token in the transfer URL keys a short-lived record, and each agent rebuilds its state from that.",
+  "scenario": "A caller plans a trip with a concierge, is handed to a booking desk that already knows the trip, and comes back with the hold made",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "swml_transfer",
+    "dynamic-config",
+    "contexts-steps"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/16-travel-concierge",
+  "composes": [
+    "transfer-a-call-without-losing-context",
+    "configure-an-agent-per-request",
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "16-travel-concierge",
+    "status": "ready",
+    "group": "B",
+    "size": "M",
+    "primitives": [
+      "agent-server",
+      "swml_transfer",
+      "dynamic-config",
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

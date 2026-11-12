@@ -1,0 +1,62 @@
+{
+  "slug": "appointment-confirmation-sms-with-a-call-back-on-reply",
+  "kind": "build",
+  "title": "Appointment confirmation by SMS: a text built by the handler and a reply that calls the customer back",
+  "alias": "SMS appointment confirmation with voice follow-up",
+  "also_known_as": [
+    "booking confirmation text",
+    "reply CHANGE to reschedule",
+    "two-way SMS reminders",
+    "AI dial-back"
+  ],
+  "summary": "An appointment confirmation demo built to show one booking presented across voice and SMS with its memory in code. The handler writes the text from the stored record, and the dial-back loads that record before the model speaks.",
+  "scenario": "A caller books by phone, gets the details by text, and a reply of CHANGE places a call back that already knows the booking",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice",
+    "messaging"
+  ],
+  "capabilities": [
+    "contexts-steps",
+    "send_sms",
+    "dynamic-config",
+    "rest",
+    "cxml"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/29-appointment-confirmation-sms",
+  "composes": [
+    "walk-a-caller-through-ordered-steps",
+    "scope-tools-per-step",
+    "enforce-state-transitions-in-a-tool-handler",
+    "text-the-caller-during-the-call",
+    "configure-an-agent-per-request",
+    "place-an-outbound-ai-call",
+    "reply-to-an-inbound-sms",
+    "verify-a-webhook-signature"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "29-appointment-confirmation-sms",
+    "status": "proposed",
+    "group": "C",
+    "size": "M",
+    "primitives": [
+      "contexts-steps",
+      "set_functions",
+      "valid_steps",
+      "swml_change_step",
+      "global_data",
+      "send_sms",
+      "dynamic-config",
+      "rest-dial",
+      "laml-webhooks"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

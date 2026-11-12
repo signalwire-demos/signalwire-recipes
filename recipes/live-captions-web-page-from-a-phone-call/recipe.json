@@ -1,0 +1,47 @@
+{
+  "slug": "live-captions-web-page-from-a-phone-call",
+  "kind": "build",
+  "title": "Live captions from a phone call: a web page that shows each line with its real delay",
+  "alias": "real-time call captioning",
+  "also_known_as": [
+    "live captions display",
+    "accessibility captions for calls",
+    "transcription latency display",
+    "caption overlay"
+  ],
+  "summary": "A live captions demo built to show a transcript stream rendered in a browser with its latency measured. The delay is computed on the server from the platform's timestamp, and the page can read one call but change nothing.",
+  "scenario": "Open a web page while a call is running and watch captions appear, partial text in grey and finals solid, each with its measured delay",
+  "category": "voice",
+  "products": [
+    "voice"
+  ],
+  "capabilities": [
+    "live_transcribe"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/22-live-caption-display",
+  "composes": [
+    "transcribe-a-call-in-the-background",
+    "verify-a-webhook-signature"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "22-live-caption-display",
+    "status": "confirm",
+    "group": "C",
+    "size": "M",
+    "primitives": [
+      "swml-service",
+      "live_transcribe",
+      "live-events-webhook",
+      "transcript-consumer",
+      "sse",
+      "captions-page"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}

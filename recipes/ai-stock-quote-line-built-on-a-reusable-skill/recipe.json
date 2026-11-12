@@ -1,0 +1,45 @@
+{
+  "slug": "ai-stock-quote-line-built-on-a-reusable-skill",
+  "kind": "build",
+  "title": "AI stock quote line: two agents sharing one reusable skill with different settings",
+  "alias": "reusable skill for voice AI agents",
+  "also_known_as": [
+    "stock price hotline",
+    "SkillBase",
+    "packaged agent capability",
+    "market data by phone"
+  ],
+  "summary": "A stock quote demo built to show a skill written once and loaded by two agents with different parameters. The skill holds the provider, keeps the API key out of the SWML, and scopes each agent by a watchlist.",
+  "scenario": "A caller asks what a ticker is trading at; a public line answers any symbol and an employee line answers only the company's",
+  "category": "ai-agents",
+  "products": [
+    "ai-agents",
+    "voice"
+  ],
+  "capabilities": [
+    "skills"
+  ],
+  "surfaces": [],
+  "repo": "https://github.com/signalwire-demos/ai-recipes/tree/main/recipes/34-stock-quote-line",
+  "composes": [
+    "write-a-reusable-agent-skill"
+  ],
+  "demo": "none",
+  "upstream": {
+    "repo": "signalwire-demos/ai-recipes",
+    "id": "34-stock-quote-line",
+    "status": "ready",
+    "group": "D",
+    "size": "M",
+    "primitives": [
+      "custom-skill",
+      "add_skill",
+      "add_skill_directory",
+      "agent-server"
+    ],
+    "sdk_pin": "3.7.5",
+    "commit": "73a0337",
+    "imported": "2026-11-09",
+    "refreshed": "2026-11-09"
+  }
+}
