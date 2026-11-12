@@ -49,8 +49,9 @@
       "rest-dial"
     ],
     "sdk_pin": "3.7.5",
+    "editorial_composes": [],
     "commit": "73a0337",
     "imported": "2026-11-09",
-    "refreshed": "2026-11-09"
+    "refreshed": "2026-11-12"
   }
 }
